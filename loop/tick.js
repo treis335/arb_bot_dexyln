@@ -8,6 +8,7 @@ const renderPrices = require('../tui/renderPrices');
 const renderArb = require('../tui/renderArb');
 const renderLog = require('../tui/renderlog');
 const { renderFooter, setRpcHealthy } = require('../tui/renderFooter');
+const { fetchWalletBalance } = require('../utils/walletBalance');
 
 let bestOpportunity = null;
 
@@ -45,14 +46,19 @@ async function tick(boxes) {
 
   try {
     opps = arbDetector.analyzeAll(cycles);
-    bestOpportunity = opps[0] || null;   // ← guarda a melhor
+    bestOpportunity = opps[0] || null;
   } catch (e) {
     logError('analyzeAll', e);
     opps = [];
     bestOpportunity = null;
   }
 
-  try { renderPrices(pairStates, boxes); } catch (e) { logError('renderPrices', e); }
+  // Consulta saldo da carteira (não bloqueia)
+  const walletBalances = process.env.SENDER_ADDRESS
+    ? await fetchWalletBalance(process.env.SENDER_ADDRESS).catch(() => ({}))
+    : {};
+
+  try { renderPrices(pairStates, boxes, walletBalances); } catch (e) { logError('renderPrices', e); }
   try { renderArb(opps, boxes);          } catch (e) { logError('renderArb', e); }
   try { renderLog(opps, boxes);          } catch (e) { logError('renderLog', e); }
   try { renderFooter(opps, Date.now() - t0, boxes); } catch (e) { logError('renderFooter', e); }

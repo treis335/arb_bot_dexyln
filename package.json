@@ -10,9 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@aptos-labs/ts-sdk": "^1.30.0",
     "axios": "^1.16.1",
     "blessed": "^0.1.81",
     "dotenv": "^17.4.2",
-    "supra-l1-sdk": "^5.0.2"
+    "supra-l1-sdk": "^5.0.2",
+    "tweetnacl": "^1.0.3"
   }
 }

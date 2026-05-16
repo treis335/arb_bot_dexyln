@@ -1,0 +1,4 @@
+node_modules/
+*.env
+arb_errors.log
+arb_snapshot_*.txt

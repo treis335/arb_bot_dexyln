@@ -4,17 +4,27 @@ const { CONFIG } = require('../config/config');
 
 let sortedPairs = null;
 
-function renderPrices(pairStates, boxes) {
+function renderPrices(pairStates, boxes, walletBalances = {}) {
   const { headerBox, pricesBox } = boxes;
   const active = pairStates.filter(Boolean);
   if (!sortedPairs) {
     sortedPairs = [...active].sort((a, b) => a.tokenB.localeCompare(b.tokenB) || a.tokenA.localeCompare(a.tokenA));
   }
 
+  // Linha de saldos da carteira
+  let balanceLine = '';
+  if (Object.keys(walletBalances).length > 0) {
+    const parts = Object.entries(walletBalances).map(([symbol, amount]) => {
+      const formatted = amount >= 1000 ? amount.toFixed(0) : amount.toFixed(4);
+      return `{yellow-fg}${formatted} ${symbol}{/}`;
+    });
+    balanceLine = `{grey-fg}  Carteira: {/}${parts.join('  ')}\n`;
+  }
+
   const hdr = [
     '{bright-cyan-fg}{bold}  ◈  DEXLYN ARBITRAGE BOT v2.5.1{/}',
     '{grey-fg}  EMA Trend · Opt Size · Auto Score · ' + new Date().toLocaleDateString('pt-PT') + '{/}',
-    '',
+    balanceLine,
     `{yellow-fg}{bold}  MERCADO — ${active.length} pares activos{/}`,
     '{grey-fg}  ' +
       'PAR'.padEnd(12) +

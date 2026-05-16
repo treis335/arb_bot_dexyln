@@ -6,10 +6,18 @@ const { logError } = require('./utils/logError');
 const { getSupraClient } = require('./utils/supraClient');
 
 (async () => {
+  // Tratamento global de erros
   process.on('uncaughtException', (err) => { logError('uncaughtException', err); });
   process.on('unhandledRejection', (reason) => { logError('unhandledRejection', reason); });
 
-  await getSupraClient(); // inicializa o cliente SDK
+  // Inicialização segura do SDK – se falhar, o bot continua só com deteção
+  try {
+   // await getSupraClient();
+    console.log('✅ Cliente Supra pronto.');
+  } catch (e) {
+    logError('SupraClient init', e);
+    console.warn('⚠️ Cliente Supra indisponível – execução de arbitragem desativada.');
+  }
 
   const boxes = initScreen();
 

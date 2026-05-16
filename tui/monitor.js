@@ -2,6 +2,10 @@ const blessed = require('blessed');
 const fs = require('fs');
 const path = require('path');
 
+// Importações movidas para o topo (boas práticas)
+const { getBestOpportunity } = require('../loop/tick');
+const { executeArbitrage } = require('../executor/executeArb');
+
 function initScreen() {
   const screen = blessed.screen({
     smartCSR: true, title: 'Dexlyn Arb Bot v2.5.1',
@@ -119,10 +123,8 @@ function initScreen() {
     }
   });
 
-  // ── Executar arbitragem (tecla 'e') ──────────────────
+    // ── Executar arbitragem (tecla 'e') ──────────────────
   screen.key(['e'], async () => {
-    const { getBestOpportunity } = require('../loop/tick');
-    const { executeArbitrage } = require('../executor/executeArb');
     const opp = getBestOpportunity();
     if (!opp) {
       footerBox.setContent('{yellow-fg} Nenhuma oportunidade para executar.{/}');
@@ -131,13 +133,16 @@ function initScreen() {
     }
     footerBox.setContent('{yellow-fg} A submeter transação...{/}');
     screen.render();
-    const res = await executeArbitrage(opp);
-    if (res && res.success) {
-      footerBox.setContent(`{green-fg}✅ Executado com sucesso! Tx: ${res.txHash.slice(0,10)}...{/}`);
-    } else if (res) {
-      footerBox.setContent(`{red-fg}❌ Transação falhou. Tx: ${res.txHash.slice(0,10)}...{/}`);
-    } else {
-      footerBox.setContent('{red-fg}❌ Erro ao submeter transação.{/}');
+    
+    try {
+      const res = await executeArbitrage(opp);
+      if (res && res.txHash) {
+        footerBox.setContent(`{green-fg}✅ Tx: ${res.txHash.slice(0,12)}... (aguarda confirmação){/}`);
+      } else {
+        footerBox.setContent('{red-fg}❌ Falhou. Vê logs.{/}');
+      }
+    } catch (e) {
+      footerBox.setContent(`{red-fg}❌ Erro: ${e.message.slice(0,40)}{/}`);
     }
     screen.render();
   });

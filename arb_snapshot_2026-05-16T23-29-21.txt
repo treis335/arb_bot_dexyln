@@ -1,0 +1,16 @@
+  💰 Total estimado: 1.105 SUPRA (2 arbs)
+
+  🔥 EXEC  +5.987%  +0.725 SUPRA  opt:12 SUPRA
+  ████████░░ 78 P:100% L:72% T:0%
+  rota: SUPRA→dexUSDC→LUCKY→SUPRA
+  ├ SUPRA→dexUSDC  in:12.104557  out:0.006331
+  ├ dexUSDC→LUCKY  in:0.006331  out:1225.285744
+  └ LUCKY→SUPRA  in:1225.285744  out:12.829245
+  ──────────────────────────────────────
+  🔥 EXEC  +1.864%  +0.380 SUPRA  opt:20 SUPRA
+  ███████░░░ 74 P:93% L:72% T:0%
+  rota: SUPRA→dexUSDC→DAWGZ→SUPRA
+  ├ SUPRA→dexUSDC  in:20.387189  out:0.010663
+  ├ dexUSDC→DAWGZ  in:0.010663  out:2738.267165
+  └ DAWGZ→SUPRA  in:2738.267165  out:20.767212
+  ──────────────────────────────────────

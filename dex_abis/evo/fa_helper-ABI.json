@@ -1,0 +1,22 @@
+{
+  "address": "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64",
+  "name": "fa_helper",
+  "friends": [],
+  "exposed_functions": [
+    {
+      "name": "is_sorted",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x1::fungible_asset::Metadata>",
+        "0x1::object::Object<0x1::fungible_asset::Metadata>"
+      ],
+      "return": [
+        "bool"
+      ]
+    }
+  ],
+  "structs": []
+}

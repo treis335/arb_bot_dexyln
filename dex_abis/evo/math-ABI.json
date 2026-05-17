@@ -1,0 +1,109 @@
+{
+  "address": "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64",
+  "name": "math",
+  "friends": [],
+  "exposed_functions": [
+    {
+      "name": "div_rounding_up_u128",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u128",
+        "u128"
+      ],
+      "return": [
+        "u128"
+      ]
+    },
+    {
+      "name": "div_rounding_up_u256",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u256",
+        "u256"
+      ],
+      "return": [
+        "u256"
+      ]
+    },
+    {
+      "name": "mul_div_rounding_up_u128",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u128",
+        "u128",
+        "u128"
+      ],
+      "return": [
+        "u128"
+      ]
+    },
+    {
+      "name": "mul_div_rounding_up_u64",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u64",
+        "u64",
+        "u64"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "mul_div_u256",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u256",
+        "u256",
+        "u256"
+      ],
+      "return": [
+        "u256"
+      ]
+    },
+    {
+      "name": "overflow_add_u256",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u256",
+        "u256"
+      ],
+      "return": [
+        "u256"
+      ]
+    },
+    {
+      "name": "wrapping_sub_u256",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u256",
+        "u256"
+      ],
+      "return": [
+        "u256"
+      ]
+    }
+  ],
+  "structs": []
+}

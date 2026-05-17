@@ -1,0 +1,680 @@
+{
+  "address": "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64",
+  "name": "iasset_lp_rewards",
+  "friends": [
+    "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_position_nft_manager",
+    "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_scripts"
+  ],
+  "exposed_functions": [
+    {
+      "name": "admin_create_deposit_account",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>"
+      ],
+      "return": []
+    },
+    {
+      "name": "admin_init_deposit_resource_accounts",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer"
+      ],
+      "return": []
+    },
+    {
+      "name": "claim_rewards",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "claim_rewards_internal",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "address",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "deposit_rewards_coin",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "finalize_position_for_burn",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "address",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "get_deposit_account_address",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>"
+      ],
+      "return": [
+        "address"
+      ]
+    },
+    {
+      "name": "get_epoch_data",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u64"
+      ],
+      "return": [
+        "u256",
+        "u64",
+        "u64",
+        "u64"
+      ]
+    },
+    {
+      "name": "get_pending_rewards",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u64"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_pool_epoch_start",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_pool_reward_info",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>"
+      ],
+      "return": [
+        "u256",
+        "u64",
+        "u256",
+        "u64",
+        "u64",
+        "u64"
+      ]
+    },
+    {
+      "name": "get_position_epoch_info",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u64"
+      ],
+      "return": [
+        "u64",
+        "u64",
+        "u64",
+        "bool"
+      ]
+    },
+    {
+      "name": "get_position_reward_info",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u64"
+      ],
+      "return": [
+        "u64",
+        "u64",
+        "u256",
+        "u64"
+      ]
+    },
+    {
+      "name": "get_reward_pool_info",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>"
+      ],
+      "return": [
+        "0x1::string::String",
+        "address"
+      ]
+    },
+    {
+      "name": "get_supported_iassets",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "vector<address>"
+      ]
+    },
+    {
+      "name": "is_initialized",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "is_pool_registered",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "is_position_stale",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u64"
+      ],
+      "return": [
+        "bool",
+        "u64",
+        "u64"
+      ]
+    },
+    {
+      "name": "is_supported_iasset",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x1::fungible_asset::Metadata>"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "register_iasset",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x1::fungible_asset::Metadata>"
+      ],
+      "return": []
+    },
+    {
+      "name": "register_iassets",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "vector<0x1::object::Object<0x1::fungible_asset::Metadata>>"
+      ],
+      "return": []
+    },
+    {
+      "name": "register_pool",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>"
+      ],
+      "return": []
+    },
+    {
+      "name": "try_register_pool",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>"
+      ],
+      "return": []
+    },
+    {
+      "name": "unregister_iassets",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "vector<0x1::object::Object<0x1::fungible_asset::Metadata>>"
+      ],
+      "return": []
+    },
+    {
+      "name": "update_position_rewards",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "address",
+        "u64",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>"
+      ],
+      "return": []
+    }
+  ],
+  "structs": [
+    {
+      "name": "DepositAccountCreated",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "pool",
+          "type": "address"
+        },
+        {
+          "name": "deposit_account",
+          "type": "address"
+        }
+      ]
+    },
+    {
+      "name": "DepositResourceAccountsInitialized",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "admin",
+          "type": "address"
+        }
+      ]
+    },
+    {
+      "name": "EpochData",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "total_points",
+          "type": "u256"
+        },
+        {
+          "name": "rewards",
+          "type": "u64"
+        },
+        {
+          "name": "start_time",
+          "type": "u64"
+        },
+        {
+          "name": "end_time",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "EpochStartRegistry",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "epoch_start_times",
+          "type": "0x1::table::Table<address, u64>"
+        }
+      ]
+    },
+    {
+      "name": "IAssetRewardsState",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "pool_rewards",
+          "type": "0x1::table::Table<address, 0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::iasset_lp_rewards::PoolIAssetRewards>"
+        },
+        {
+          "name": "admin",
+          "type": "address"
+        },
+        {
+          "name": "is_initialized",
+          "type": "bool"
+        },
+        {
+          "name": "iassets",
+          "type": "0x1::smart_table::SmartTable<address, bool>"
+        }
+      ]
+    },
+    {
+      "name": "PoolDepositAccounts",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "accounts",
+          "type": "0x1::table::Table<address, 0x1::account::SignerCapability>"
+        }
+      ]
+    },
+    {
+      "name": "PoolIAssetRewards",
+      "is_native": false,
+      "abilities": [
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "token_0_metadata",
+          "type": "0x1::object::Object<0x1::fungible_asset::Metadata>"
+        },
+        {
+          "name": "token_1_metadata",
+          "type": "0x1::object::Object<0x1::fungible_asset::Metadata>"
+        },
+        {
+          "name": "total_iasset_0_amount",
+          "type": "u64"
+        },
+        {
+          "name": "total_iasset_1_amount",
+          "type": "u64"
+        },
+        {
+          "name": "total_points_accumulated",
+          "type": "u256"
+        },
+        {
+          "name": "points_last_update_time",
+          "type": "u64"
+        },
+        {
+          "name": "current_epoch",
+          "type": "u64"
+        },
+        {
+          "name": "epoch_total_points",
+          "type": "u256"
+        },
+        {
+          "name": "epoch_rewards",
+          "type": "u64"
+        },
+        {
+          "name": "epoch_timestamp",
+          "type": "u64"
+        },
+        {
+          "name": "position_rewards",
+          "type": "0x1::table::Table<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::iasset_lp_rewards::PositionKey, 0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::iasset_lp_rewards::PositionIAssetRewards>"
+        },
+        {
+          "name": "epoch_history",
+          "type": "0x1::table::Table<u64, 0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::iasset_lp_rewards::EpochData>"
+        }
+      ]
+    },
+    {
+      "name": "PoolRewardsInfo",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "pools",
+          "type": "0x1::table::Table<address, 0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::iasset_lp_rewards::RewardPoolInfo>"
+        }
+      ]
+    },
+    {
+      "name": "PositionIAssetRewards",
+      "is_native": false,
+      "abilities": [
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "iasset_amount_0",
+          "type": "u64"
+        },
+        {
+          "name": "iasset_amount_1",
+          "type": "u64"
+        },
+        {
+          "name": "points_accumulated",
+          "type": "u256"
+        },
+        {
+          "name": "points_last_update_time",
+          "type": "u64"
+        },
+        {
+          "name": "last_claimed_epoch",
+          "type": "u64"
+        },
+        {
+          "name": "pending_rewards",
+          "type": "u64"
+        },
+        {
+          "name": "epoch_points",
+          "type": "0x1::table::Table<u64, u256>"
+        },
+        {
+          "name": "created_at",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "PositionKey",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "name": "position_id",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "RewardPoolInfo",
+      "is_native": false,
+      "abilities": [
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "name",
+          "type": "0x1::string::String"
+        },
+        {
+          "name": "extend_ref",
+          "type": "0x1::object::ExtendRef"
+        }
+      ]
+    },
+    {
+      "name": "RewardsClaimed",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "name": "pool",
+          "type": "address"
+        },
+        {
+          "name": "position_id",
+          "type": "u64"
+        },
+        {
+          "name": "amount",
+          "type": "u64"
+        },
+        {
+          "name": "epoch_from",
+          "type": "u64"
+        },
+        {
+          "name": "epoch_to",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "RewardsDeposited",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "pool",
+          "type": "address"
+        },
+        {
+          "name": "amount",
+          "type": "u64"
+        },
+        {
+          "name": "epoch",
+          "type": "u64"
+        }
+      ]
+    }
+  ]
+}

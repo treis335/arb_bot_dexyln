@@ -1,0 +1,1359 @@
+{
+  "address": "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083",
+  "name": "stake_fa",
+  "friends": [],
+  "exposed_functions": [
+    {
+      "name": "accept_admin_role",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer"
+      ],
+      "return": []
+    },
+    {
+      "name": "boost",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::PoolIdentifier",
+        "0x3::token::Token"
+      ],
+      "return": []
+    },
+    {
+      "name": "create_boost_config",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "address",
+        "0x1::string::String",
+        "u128"
+      ],
+      "return": [
+        "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::NFTBoostConfig"
+      ]
+    },
+    {
+      "name": "deposit_reward_assets",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::PoolIdentifier",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "deposit_reward_for_rate_growth",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::PoolIdentifier",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "disable_emergency",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::PoolIdentifier"
+      ],
+      "return": []
+    },
+    {
+      "name": "emergency_unstake",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::PoolIdentifier"
+      ],
+      "return": [
+        "u64",
+        "0x1::option::Option<0x1::fungible_asset::FungibleAsset>",
+        "0x1::option::Option<0x3::token::Token>"
+      ]
+    },
+    {
+      "name": "enable_emergency",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::PoolIdentifier"
+      ],
+      "return": []
+    },
+    {
+      "name": "finalize_dynamic_pool_rewards",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::PoolIdentifier",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "get_boost_config",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address",
+        "address",
+        "address"
+      ],
+      "return": [
+        "address",
+        "0x1::string::String",
+        "u128"
+      ]
+    },
+    {
+      "name": "get_current_admin",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "address"
+      ]
+    },
+    {
+      "name": "get_dynamic_pool_lockup_duration",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_end_timestamp",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address",
+        "address",
+        "address"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_metadata",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address"
+      ],
+      "return": [
+        "0x1::string::String",
+        "0x1::string::String",
+        "u8"
+      ]
+    },
+    {
+      "name": "get_module_resource_address",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "address"
+      ]
+    },
+    {
+      "name": "get_normal_pool_lockup_duration",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_pending_admin_candidate",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "0x1::option::Option<address>"
+      ]
+    },
+    {
+      "name": "get_pending_user_rewards",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address",
+        "address",
+        "address",
+        "address"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_pool_registration_fee_config",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "u64",
+        "address"
+      ]
+    },
+    {
+      "name": "get_pool_total_boosted",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address",
+        "address",
+        "address"
+      ],
+      "return": [
+        "u128"
+      ]
+    },
+    {
+      "name": "get_pool_total_stake",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address",
+        "address",
+        "address"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_reward_per_sec",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address",
+        "address",
+        "address"
+      ],
+      "return": [
+        "u128"
+      ]
+    },
+    {
+      "name": "get_start_timestamp",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address",
+        "address",
+        "address"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_treasury_withdraw_grace_period",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_unlock_time",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address",
+        "address",
+        "address",
+        "address"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_user_boosted",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address",
+        "address",
+        "address",
+        "address"
+      ],
+      "return": [
+        "u128"
+      ]
+    },
+    {
+      "name": "get_user_stake_or_zero",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address",
+        "address",
+        "address",
+        "address"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "harvest",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::PoolIdentifier"
+      ],
+      "return": [
+        "u64",
+        "0x1::fungible_asset::FungibleAsset"
+      ]
+    },
+    {
+      "name": "is_boostable",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address",
+        "address",
+        "address"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "is_boosted",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address",
+        "address",
+        "address",
+        "address"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "is_emergency",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address",
+        "address",
+        "address"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "is_finished",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address",
+        "address",
+        "address"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "is_local_emergency",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address",
+        "address",
+        "address"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "is_unlocked",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address",
+        "address",
+        "address",
+        "address"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "new_pool_identifier",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address",
+        "address",
+        "address"
+      ],
+      "return": [
+        "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::PoolIdentifier"
+      ]
+    },
+    {
+      "name": "pool_exists",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address",
+        "address",
+        "address"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "propose_new_admin",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "address"
+      ],
+      "return": []
+    },
+    {
+      "name": "register_dynamic_pool",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "address",
+        "address",
+        "0x1::option::Option<0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::NFTBoostConfig>"
+      ],
+      "return": []
+    },
+    {
+      "name": "register_pool",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "address",
+        "address",
+        "u64",
+        "u64",
+        "0x1::option::Option<0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::NFTBoostConfig>"
+      ],
+      "return": []
+    },
+    {
+      "name": "remove_boost",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::PoolIdentifier"
+      ],
+      "return": [
+        "0x3::token::Token"
+      ]
+    },
+    {
+      "name": "renew_pool",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::PoolIdentifier",
+        "u64",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "set_normal_pool_lockup_duration",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "set_pool_registration_fee",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "u64",
+        "address"
+      ],
+      "return": []
+    },
+    {
+      "name": "set_treasury_withdraw_grace_period",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "stake",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::PoolIdentifier",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "stake_exists",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address",
+        "address",
+        "address",
+        "address"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "unstake",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::PoolIdentifier",
+        "u64"
+      ],
+      "return": [
+        "0x1::fungible_asset::FungibleAsset"
+      ]
+    },
+    {
+      "name": "withdraw_to_treasury",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::PoolIdentifier",
+        "u64"
+      ],
+      "return": [
+        "0x1::fungible_asset::FungibleAsset"
+      ]
+    }
+  ],
+  "structs": [
+    {
+      "name": "AdminConfig",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "current_admin",
+          "type": "address"
+        },
+        {
+          "name": "pending_admin_candidate",
+          "type": "0x1::option::Option<address>"
+        }
+      ]
+    },
+    {
+      "name": "AdminProposedEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "old_admin",
+          "type": "address"
+        },
+        {
+          "name": "new_admin_candidate",
+          "type": "address"
+        }
+      ]
+    },
+    {
+      "name": "AdminTransferredEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "old_admin",
+          "type": "address"
+        },
+        {
+          "name": "new_admin",
+          "type": "address"
+        }
+      ]
+    },
+    {
+      "name": "BoostEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "user_address",
+          "type": "address"
+        },
+        {
+          "name": "pool_key",
+          "type": "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::PoolIdentifier"
+        },
+        {
+          "name": "token_id",
+          "type": "0x3::token::TokenId"
+        }
+      ]
+    },
+    {
+      "name": "ConfigParameterUpdatedEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "admin_address",
+          "type": "address"
+        },
+        {
+          "name": "parameter_name",
+          "type": "0x1::string::String"
+        },
+        {
+          "name": "new_value_u64",
+          "type": "u64"
+        },
+        {
+          "name": "new_value_address",
+          "type": "0x1::option::Option<address>"
+        }
+      ]
+    },
+    {
+      "name": "DepositRewardEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "depositor_address",
+          "type": "address"
+        },
+        {
+          "name": "pool_key",
+          "type": "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::PoolIdentifier"
+        },
+        {
+          "name": "amount",
+          "type": "u64"
+        },
+        {
+          "name": "new_end_timestamp",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "DynamicPoolFinalizedEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "pool_key",
+          "type": "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::PoolIdentifier"
+        },
+        {
+          "name": "finalized_by",
+          "type": "address"
+        },
+        {
+          "name": "end_timestamp",
+          "type": "u64"
+        },
+        {
+          "name": "total_reward_amount",
+          "type": "u64"
+        },
+        {
+          "name": "calculated_duration",
+          "type": "u64"
+        },
+        {
+          "name": "reward_per_sec",
+          "type": "u128"
+        }
+      ]
+    },
+    {
+      "name": "EmergencyEnabledEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "pool_key",
+          "type": "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::PoolIdentifier"
+        },
+        {
+          "name": "triggered_by",
+          "type": "address"
+        }
+      ]
+    },
+    {
+      "name": "EmergencyUnstakeEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "pool_key",
+          "type": "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::PoolIdentifier"
+        },
+        {
+          "name": "user_address",
+          "type": "address"
+        },
+        {
+          "name": "unstaked_amount",
+          "type": "u64"
+        },
+        {
+          "name": "nft_withdrawn",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "GlobalConfig",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "normal_pool_lockup_seconds",
+          "type": "u64"
+        },
+        {
+          "name": "dynamic_pool_lockup_seconds",
+          "type": "u64"
+        },
+        {
+          "name": "treasury_withdraw_grace_period_seconds",
+          "type": "u64"
+        },
+        {
+          "name": "pool_registration_fee_amount",
+          "type": "u64"
+        },
+        {
+          "name": "fee_treasury_address",
+          "type": "address"
+        }
+      ]
+    },
+    {
+      "name": "HarvestEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "user_address",
+          "type": "address"
+        },
+        {
+          "name": "pool_key",
+          "type": "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::PoolIdentifier"
+        },
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "ModuleSignerStorage",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "resource_address",
+          "type": "address"
+        },
+        {
+          "name": "signer_cap",
+          "type": "0x1::account::SignerCapability"
+        },
+        {
+          "name": "config_parameter_updated_events",
+          "type": "0x1::event::EventHandle<0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::ConfigParameterUpdatedEvent>"
+        },
+        {
+          "name": "admin_proposed_events",
+          "type": "0x1::event::EventHandle<0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::AdminProposedEvent>"
+        },
+        {
+          "name": "admin_transferred_events",
+          "type": "0x1::event::EventHandle<0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::AdminTransferredEvent>"
+        },
+        {
+          "name": "pool_registration_fee_paid_events",
+          "type": "0x1::event::EventHandle<0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::PoolRegistrationFeePaidEvent>"
+        }
+      ]
+    },
+    {
+      "name": "NFTBoostConfig",
+      "is_native": false,
+      "abilities": [
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "boost_percent",
+          "type": "u128"
+        },
+        {
+          "name": "collection_owner",
+          "type": "address"
+        },
+        {
+          "name": "collection_name",
+          "type": "0x1::string::String"
+        }
+      ]
+    },
+    {
+      "name": "PoolIdentifier",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "creator_addr",
+          "type": "address"
+        },
+        {
+          "name": "stake_addr",
+          "type": "address"
+        },
+        {
+          "name": "reward_addr",
+          "type": "address"
+        }
+      ]
+    },
+    {
+      "name": "PoolRegisteredEvent",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "pool_key",
+          "type": "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::PoolIdentifier"
+        },
+        {
+          "name": "is_dynamic",
+          "type": "bool"
+        },
+        {
+          "name": "start_timestamp",
+          "type": "u64"
+        },
+        {
+          "name": "initial_end_timestamp",
+          "type": "u64"
+        },
+        {
+          "name": "initial_reward_per_sec",
+          "type": "u128"
+        },
+        {
+          "name": "boost_enabled",
+          "type": "bool"
+        },
+        {
+          "name": "boost_config_collection_owner",
+          "type": "0x1::option::Option<address>"
+        },
+        {
+          "name": "boost_config_collection_name",
+          "type": "0x1::option::Option<0x1::string::String>"
+        },
+        {
+          "name": "boost_config_percent",
+          "type": "0x1::option::Option<u128>"
+        }
+      ]
+    },
+    {
+      "name": "PoolRegistrationFeePaidEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "caller_address",
+          "type": "address"
+        },
+        {
+          "name": "pool_key",
+          "type": "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::PoolIdentifier"
+        },
+        {
+          "name": "fee_amount",
+          "type": "u64"
+        },
+        {
+          "name": "fee_treasury_address",
+          "type": "address"
+        }
+      ]
+    },
+    {
+      "name": "PoolsManager",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "pools",
+          "type": "0x1::table::Table<0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::PoolIdentifier, 0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::StakePoolData>"
+        }
+      ]
+    },
+    {
+      "name": "RemoveBoostEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "user_address",
+          "type": "address"
+        },
+        {
+          "name": "pool_key",
+          "type": "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::PoolIdentifier"
+        },
+        {
+          "name": "token_id",
+          "type": "0x3::token::TokenId"
+        }
+      ]
+    },
+    {
+      "name": "StakeEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "user_address",
+          "type": "address"
+        },
+        {
+          "name": "pool_key",
+          "type": "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::PoolIdentifier"
+        },
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "StakePoolData",
+      "is_native": false,
+      "abilities": [
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "pool_creator",
+          "type": "address"
+        },
+        {
+          "name": "is_dynamic_pool",
+          "type": "bool"
+        },
+        {
+          "name": "stake_metadata",
+          "type": "0x1::object::Object<0x1::fungible_asset::Metadata>"
+        },
+        {
+          "name": "reward_metadata",
+          "type": "0x1::object::Object<0x1::fungible_asset::Metadata>"
+        },
+        {
+          "name": "reward_per_sec",
+          "type": "u128"
+        },
+        {
+          "name": "accum_reward",
+          "type": "u128"
+        },
+        {
+          "name": "last_updated",
+          "type": "u64"
+        },
+        {
+          "name": "start_timestamp",
+          "type": "u64"
+        },
+        {
+          "name": "end_timestamp",
+          "type": "u64"
+        },
+        {
+          "name": "stakes",
+          "type": "0x1::table::Table<address, 0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::UserStake>"
+        },
+        {
+          "name": "stake_store",
+          "type": "0x1::object::Object<0x1::fungible_asset::FungibleStore>"
+        },
+        {
+          "name": "reward_store",
+          "type": "0x1::object::Object<0x1::fungible_asset::FungibleStore>"
+        },
+        {
+          "name": "total_boosted",
+          "type": "u128"
+        },
+        {
+          "name": "nft_boost_config",
+          "type": "0x1::option::Option<0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::NFTBoostConfig>"
+        },
+        {
+          "name": "emergency_locked",
+          "type": "bool"
+        },
+        {
+          "name": "stakes_closed",
+          "type": "bool"
+        },
+        {
+          "name": "stake_events",
+          "type": "0x1::event::EventHandle<0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::StakeEvent>"
+        },
+        {
+          "name": "unstake_events",
+          "type": "0x1::event::EventHandle<0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::UnstakeEvent>"
+        },
+        {
+          "name": "deposit_events",
+          "type": "0x1::event::EventHandle<0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::DepositRewardEvent>"
+        },
+        {
+          "name": "harvest_events",
+          "type": "0x1::event::EventHandle<0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::HarvestEvent>"
+        },
+        {
+          "name": "boost_events",
+          "type": "0x1::event::EventHandle<0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::BoostEvent>"
+        },
+        {
+          "name": "remove_boost_events",
+          "type": "0x1::event::EventHandle<0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::RemoveBoostEvent>"
+        },
+        {
+          "name": "pool_registered_event",
+          "type": "0x1::event::EventHandle<0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::PoolRegisteredEvent>"
+        },
+        {
+          "name": "dynamic_pool_finalized_event",
+          "type": "0x1::event::EventHandle<0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::DynamicPoolFinalizedEvent>"
+        },
+        {
+          "name": "emergency_enabled_event",
+          "type": "0x1::event::EventHandle<0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::EmergencyEnabledEvent>"
+        },
+        {
+          "name": "emergency_unstake_event",
+          "type": "0x1::event::EventHandle<0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::EmergencyUnstakeEvent>"
+        },
+        {
+          "name": "treasury_withdrawal_event",
+          "type": "0x1::event::EventHandle<0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::TreasuryWithdrawalEvent>"
+        }
+      ]
+    },
+    {
+      "name": "TreasuryWithdrawalEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "pool_key",
+          "type": "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::PoolIdentifier"
+        },
+        {
+          "name": "treasury_address",
+          "type": "address"
+        },
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "UnstakeEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "user_address",
+          "type": "address"
+        },
+        {
+          "name": "pool_key",
+          "type": "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::stake_fa::PoolIdentifier"
+        },
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "UserStake",
+      "is_native": false,
+      "abilities": [
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "amount",
+          "type": "u64"
+        },
+        {
+          "name": "reward_points_debt",
+          "type": "u128"
+        },
+        {
+          "name": "earned_reward",
+          "type": "u64"
+        },
+        {
+          "name": "unlock_time",
+          "type": "u64"
+        },
+        {
+          "name": "nft",
+          "type": "0x1::option::Option<0x3::token::Token>"
+        },
+        {
+          "name": "boosted_amount",
+          "type": "u128"
+        }
+      ]
+    }
+  ]
+}

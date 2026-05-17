@@ -1,0 +1,49 @@
+{
+  "address": "0xdc694898dff98a1b0447e0992d0413e123ea80da1021d464a4fbaf0265870d8",
+  "name": "lp_account",
+  "friends": [],
+  "exposed_functions": [
+    {
+      "name": "initialize_lp_account",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "vector<u8>",
+        "vector<u8>"
+      ],
+      "return": []
+    },
+    {
+      "name": "retrieve_signer_cap",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer"
+      ],
+      "return": [
+        "0x1::account::SignerCapability"
+      ]
+    }
+  ],
+  "structs": [
+    {
+      "name": "CapabilityStorage",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "signer_cap",
+          "type": "0x1::account::SignerCapability"
+        }
+      ]
+    }
+  ]
+}

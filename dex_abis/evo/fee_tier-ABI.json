@@ -1,0 +1,95 @@
+{
+  "address": "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64",
+  "name": "fee_tier",
+  "friends": [],
+  "exposed_functions": [
+    {
+      "name": "add_fee_tier",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "u64",
+        "u32"
+      ],
+      "return": []
+    },
+    {
+      "name": "delete_fee_tier",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "get_tick_spacing",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "u64"
+      ],
+      "return": [
+        "u32"
+      ]
+    }
+  ],
+  "structs": [
+    {
+      "name": "AddFeeTierEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "fee",
+          "type": "u64"
+        },
+        {
+          "name": "tick_spacing",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "DeleteFeeTierEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "fee",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "FeeTiers",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "fee_tiers",
+          "type": "0x1::table::Table<u64, u32>"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "address": "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083",
+  "name": "price_aggregator",
+  "friends": [],
+  "exposed_functions": [
+    {
+      "name": "get_coin_price_in_usd",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [],
+      "return": [
+        "u128",
+        "u16"
+      ]
+    },
+    {
+      "name": "get_token_price_in_usd",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address"
+      ],
+      "return": [
+        "u128",
+        "u16"
+      ]
+    }
+  ],
+  "structs": []
+}

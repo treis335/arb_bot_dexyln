@@ -1,0 +1,699 @@
+{
+  "address": "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64",
+  "name": "evo_clamm_router",
+  "friends": [
+    "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_scripts"
+  ],
+  "exposed_functions": [
+    {
+      "name": "add_liquidity",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u64",
+        "u32",
+        "u32",
+        "0x1::fungible_asset::FungibleAsset",
+        "0x1::fungible_asset::FungibleAsset",
+        "u64",
+        "u64"
+      ],
+      "return": [
+        "0x1::fungible_asset::FungibleAsset",
+        "0x1::fungible_asset::FungibleAsset"
+      ]
+    },
+    {
+      "name": "add_liquidity_both_coins",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u64",
+        "u32",
+        "u32",
+        "0x1::coin::Coin<T0>",
+        "0x1::coin::Coin<T1>",
+        "u64",
+        "u64"
+      ],
+      "return": [
+        "0x1::fungible_asset::FungibleAsset",
+        "0x1::fungible_asset::FungibleAsset"
+      ]
+    },
+    {
+      "name": "add_liquidity_one_coin",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u64",
+        "u32",
+        "u32",
+        "0x1::coin::Coin<T0>",
+        "0x1::fungible_asset::FungibleAsset",
+        "u64",
+        "u64"
+      ],
+      "return": [
+        "0x1::fungible_asset::FungibleAsset",
+        "0x1::fungible_asset::FungibleAsset"
+      ]
+    },
+    {
+      "name": "add_liquidity_with_position_id",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u64",
+        "u32",
+        "u32",
+        "0x1::fungible_asset::FungibleAsset",
+        "0x1::fungible_asset::FungibleAsset",
+        "u64",
+        "u64"
+      ],
+      "return": [
+        "u64",
+        "0x1::fungible_asset::FungibleAsset",
+        "0x1::fungible_asset::FungibleAsset"
+      ]
+    },
+    {
+      "name": "collect_fee",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u64",
+        "u64",
+        "u64"
+      ],
+      "return": [
+        "0x1::fungible_asset::FungibleAsset",
+        "0x1::fungible_asset::FungibleAsset"
+      ]
+    },
+    {
+      "name": "collect_reward",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u64",
+        "u64",
+        "u64"
+      ],
+      "return": [
+        "0x1::fungible_asset::FungibleAsset"
+      ]
+    },
+    {
+      "name": "create_pool_internal",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x1::fungible_asset::Metadata>",
+        "0x1::object::Object<0x1::fungible_asset::Metadata>",
+        "u64",
+        "u128"
+      ],
+      "return": [
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>"
+      ]
+    },
+    {
+      "name": "get_pool",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x1::fungible_asset::Metadata>",
+        "0x1::object::Object<0x1::fungible_asset::Metadata>",
+        "u64"
+      ],
+      "return": [
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>"
+      ]
+    },
+    {
+      "name": "get_pool_both_coins",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "u64"
+      ],
+      "return": [
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>"
+      ]
+    },
+    {
+      "name": "get_pool_one_coin",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "0x1::object::Object<0x1::fungible_asset::Metadata>",
+        "u64"
+      ],
+      "return": [
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>"
+      ]
+    },
+    {
+      "name": "is_pool_both_coins_exists",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "u64"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "is_pool_exists",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x1::fungible_asset::Metadata>",
+        "0x1::object::Object<0x1::fungible_asset::Metadata>",
+        "u64"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "is_pool_one_coin_exists",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "0x1::object::Object<0x1::fungible_asset::Metadata>",
+        "u64"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "is_sorted_both_coins",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "is_sorted_one_coin",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "0x1::object::Object<0x1::fungible_asset::Metadata>"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "is_sorted_tokens",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x1::fungible_asset::Metadata>",
+        "0x1::object::Object<0x1::fungible_asset::Metadata>"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "quote_swap_exact_in_multi_hops",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address",
+        "vector<0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>>",
+        "0x1::object::Object<0x1::fungible_asset::Metadata>",
+        "u64"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "quote_swap_exact_out_multi_hops",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address",
+        "vector<0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>>",
+        "0x1::object::Object<0x1::fungible_asset::Metadata>",
+        "u64"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "remove_liquidity",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u64",
+        "u128",
+        "u64",
+        "u64"
+      ],
+      "return": [
+        "0x1::fungible_asset::FungibleAsset",
+        "0x1::fungible_asset::FungibleAsset"
+      ]
+    },
+    {
+      "name": "swap_coin_for_exact_coin",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "0x1::coin::Coin<T0>",
+        "u64",
+        "u128"
+      ],
+      "return": [
+        "0x1::coin::Coin<T0>",
+        "0x1::coin::Coin<T1>"
+      ]
+    },
+    {
+      "name": "swap_coin_for_exact_fa",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "0x1::coin::Coin<T0>",
+        "u64",
+        "u128"
+      ],
+      "return": [
+        "0x1::coin::Coin<T0>",
+        "0x1::fungible_asset::FungibleAsset"
+      ]
+    },
+    {
+      "name": "swap_coin_for_exact_fa_multi_hops",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "vector<0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>>",
+        "0x1::coin::Coin<T0>",
+        "u64"
+      ],
+      "return": [
+        "0x1::coin::Coin<T0>",
+        "0x1::fungible_asset::FungibleAsset"
+      ]
+    },
+    {
+      "name": "swap_exact_coin_for_coin",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "0x1::coin::Coin<T0>",
+        "u64",
+        "u128"
+      ],
+      "return": [
+        "0x1::coin::Coin<T1>"
+      ]
+    },
+    {
+      "name": "swap_exact_coin_for_fa",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "0x1::coin::Coin<T0>",
+        "u64",
+        "u128"
+      ],
+      "return": [
+        "0x1::fungible_asset::FungibleAsset"
+      ]
+    },
+    {
+      "name": "swap_exact_coin_for_fa_multi_hops",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "vector<0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>>",
+        "0x1::coin::Coin<T0>",
+        "u64"
+      ],
+      "return": [
+        "0x1::fungible_asset::FungibleAsset"
+      ]
+    },
+    {
+      "name": "swap_exact_fa_for_coin",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "0x1::fungible_asset::FungibleAsset",
+        "u64",
+        "u128"
+      ],
+      "return": [
+        "0x1::coin::Coin<T0>"
+      ]
+    },
+    {
+      "name": "swap_exact_fa_for_fa",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "0x1::fungible_asset::FungibleAsset",
+        "u64",
+        "u128"
+      ],
+      "return": [
+        "0x1::fungible_asset::FungibleAsset"
+      ]
+    },
+    {
+      "name": "swap_exact_fa_for_fa_multi_hops",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "vector<0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>>",
+        "0x1::fungible_asset::FungibleAsset",
+        "u64"
+      ],
+      "return": [
+        "0x1::fungible_asset::FungibleAsset"
+      ]
+    },
+    {
+      "name": "swap_fa_for_exact_coin",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "0x1::fungible_asset::FungibleAsset",
+        "u64",
+        "u128"
+      ],
+      "return": [
+        "0x1::fungible_asset::FungibleAsset",
+        "0x1::coin::Coin<T0>"
+      ]
+    },
+    {
+      "name": "swap_fa_for_exact_fa",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "0x1::fungible_asset::FungibleAsset",
+        "u64",
+        "u128"
+      ],
+      "return": [
+        "0x1::fungible_asset::FungibleAsset",
+        "0x1::fungible_asset::FungibleAsset"
+      ]
+    },
+    {
+      "name": "swap_fa_for_exact_fa_multi_hops",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "vector<0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>>",
+        "0x1::fungible_asset::FungibleAsset",
+        "u64"
+      ],
+      "return": [
+        "0x1::fungible_asset::FungibleAsset",
+        "0x1::fungible_asset::FungibleAsset"
+      ]
+    },
+    {
+      "name": "swap_partial_coin_for_coin",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "0x1::coin::Coin<T0>",
+        "u64",
+        "u128"
+      ],
+      "return": [
+        "0x1::coin::Coin<T0>",
+        "0x1::coin::Coin<T1>"
+      ]
+    },
+    {
+      "name": "swap_partial_coin_for_fa",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "0x1::coin::Coin<T0>",
+        "u64",
+        "u128"
+      ],
+      "return": [
+        "0x1::coin::Coin<T0>",
+        "0x1::fungible_asset::FungibleAsset"
+      ]
+    },
+    {
+      "name": "swap_partial_fa_for_coin",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "0x1::fungible_asset::FungibleAsset",
+        "u64",
+        "u128"
+      ],
+      "return": [
+        "0x1::fungible_asset::FungibleAsset",
+        "0x1::coin::Coin<T0>"
+      ]
+    },
+    {
+      "name": "swap_partial_fa_for_fa",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "0x1::fungible_asset::FungibleAsset",
+        "u64",
+        "u128"
+      ],
+      "return": [
+        "0x1::fungible_asset::FungibleAsset",
+        "0x1::fungible_asset::FungibleAsset"
+      ]
+    }
+  ],
+  "structs": []
+}

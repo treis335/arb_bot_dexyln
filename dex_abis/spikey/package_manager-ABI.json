@@ -1,0 +1,80 @@
+{
+  "address": "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083",
+  "name": "package_manager",
+  "friends": [
+    "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::amm_router",
+    "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::coin_wrapper",
+    "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::router_stake"
+  ],
+  "exposed_functions": [
+    {
+      "name": "add_address",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "0x1::string::String",
+        "address"
+      ],
+      "return": []
+    },
+    {
+      "name": "address_exists",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "0x1::string::String"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "get_address",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "0x1::string::String"
+      ],
+      "return": [
+        "address"
+      ]
+    },
+    {
+      "name": "get_signer",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "signer"
+      ]
+    }
+  ],
+  "structs": [
+    {
+      "name": "PermissionConfig",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "signer_cap",
+          "type": "0x1::account::SignerCapability"
+        },
+        {
+          "name": "addresses",
+          "type": "0x1::smart_table::SmartTable<0x1::string::String, address>"
+        }
+      ]
+    }
+  ]
+}

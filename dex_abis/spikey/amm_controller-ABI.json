@@ -1,0 +1,242 @@
+{
+  "address": "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083",
+  "name": "amm_controller",
+  "friends": [
+    "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::amm_factory",
+    "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::amm_oracle",
+    "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::amm_pair",
+    "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::coin_wrapper"
+  ],
+  "exposed_functions": [
+    {
+      "name": "assert_paused",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [],
+      "return": []
+    },
+    {
+      "name": "assert_unpaused",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [],
+      "return": []
+    },
+    {
+      "name": "claim_admin",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer"
+      ],
+      "return": []
+    },
+    {
+      "name": "get_admin",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "address"
+      ]
+    },
+    {
+      "name": "get_fee_on",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "get_fee_to",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "address"
+      ]
+    },
+    {
+      "name": "get_flash_loan_fee_bps",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_signer",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "signer"
+      ]
+    },
+    {
+      "name": "get_signer_address",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "address"
+      ]
+    },
+    {
+      "name": "get_swap_fee",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "u8"
+      ]
+    },
+    {
+      "name": "pause",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer"
+      ],
+      "return": []
+    },
+    {
+      "name": "set_admin_address",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "address"
+      ],
+      "return": []
+    },
+    {
+      "name": "set_fee_to",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "address"
+      ],
+      "return": []
+    },
+    {
+      "name": "set_flash_loan_fee",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "set_swap_fee",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "u8"
+      ],
+      "return": []
+    },
+    {
+      "name": "unpause",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer"
+      ],
+      "return": []
+    }
+  ],
+  "structs": [
+    {
+      "name": "FlashLoanConfig",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "fee_bps",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "SwapConfig",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "extend_ref",
+          "type": "0x1::object::ExtendRef"
+        },
+        {
+          "name": "fee_to",
+          "type": "address"
+        },
+        {
+          "name": "current_admin",
+          "type": "address"
+        },
+        {
+          "name": "pending_admin",
+          "type": "address"
+        },
+        {
+          "name": "fee_on",
+          "type": "bool"
+        },
+        {
+          "name": "paused",
+          "type": "bool"
+        },
+        {
+          "name": "swap_fee",
+          "type": "u8"
+        }
+      ]
+    }
+  ]
+}

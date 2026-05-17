@@ -1,0 +1,1527 @@
+{
+  "address": "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64",
+  "name": "evo_clamm_liquidity_pool",
+  "friends": [
+    "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_position_nft_manager",
+    "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_router",
+    "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::reward_manager"
+  ],
+  "exposed_functions": [
+    {
+      "name": "add_liquidity",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u64",
+        "u128",
+        "&mut 0x1::fungible_asset::FungibleAsset",
+        "&mut 0x1::fungible_asset::FungibleAsset"
+      ],
+      "return": []
+    },
+    {
+      "name": "add_reward",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u64",
+        "0x1::fungible_asset::FungibleAsset"
+      ],
+      "return": []
+    },
+    {
+      "name": "close_position",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "collect_fee",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u64",
+        "u64",
+        "u64"
+      ],
+      "return": [
+        "0x1::fungible_asset::FungibleAsset",
+        "0x1::fungible_asset::FungibleAsset"
+      ]
+    },
+    {
+      "name": "collect_reward",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u64",
+        "u64",
+        "u64"
+      ],
+      "return": [
+        "0x1::fungible_asset::FungibleAsset"
+      ]
+    },
+    {
+      "name": "consult",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u64"
+      ],
+      "return": [
+        "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64",
+        "u128"
+      ]
+    },
+    {
+      "name": "count_pool",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "create_pool",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x1::fungible_asset::Metadata>",
+        "0x1::object::Object<0x1::fungible_asset::Metadata>",
+        "u64",
+        "u128"
+      ],
+      "return": [
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>"
+      ]
+    },
+    {
+      "name": "extract_core_position",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::Position"
+      ],
+      "return": [
+        "u64",
+        "u32",
+        "u32",
+        "u128",
+        "u256",
+        "u256",
+        "u64",
+        "u64"
+      ]
+    },
+    {
+      "name": "extract_position_rewards",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::Position"
+      ],
+      "return": [
+        "vector<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::PositionRewardInfo>"
+      ]
+    },
+    {
+      "name": "extract_reward_info",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::PositionRewardInfo"
+      ],
+      "return": [
+        "u256",
+        "u64"
+      ]
+    },
+    {
+      "name": "get_all_pools",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "vector<0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>>"
+      ]
+    },
+    {
+      "name": "get_observation_cardinality",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>"
+      ],
+      "return": [
+        "u16"
+      ]
+    },
+    {
+      "name": "get_observation_cardinality_next",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>"
+      ],
+      "return": [
+        "u16"
+      ]
+    },
+    {
+      "name": "get_observation_index",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>"
+      ],
+      "return": [
+        "u16"
+      ]
+    },
+    {
+      "name": "get_pool",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x1::fungible_asset::Metadata>",
+        "0x1::object::Object<0x1::fungible_asset::Metadata>",
+        "u64"
+      ],
+      "return": [
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>"
+      ]
+    },
+    {
+      "name": "get_pool_address",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x1::fungible_asset::Metadata>",
+        "0x1::object::Object<0x1::fungible_asset::Metadata>",
+        "u64"
+      ],
+      "return": [
+        "address"
+      ]
+    },
+    {
+      "name": "get_pool_info",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>"
+      ],
+      "return": [
+        "0x1::object::Object<0x1::fungible_asset::Metadata>",
+        "0x1::object::Object<0x1::fungible_asset::Metadata>",
+        "u128",
+        "u32",
+        "u128",
+        "u64",
+        "u32"
+      ]
+    },
+    {
+      "name": "get_pool_signer",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>"
+      ],
+      "return": [
+        "signer"
+      ]
+    },
+    {
+      "name": "get_pool_view",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>"
+      ],
+      "return": [
+        "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPoolView"
+      ]
+    },
+    {
+      "name": "get_pool_views",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "u64",
+        "u64"
+      ],
+      "return": [
+        "vector<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPoolView>"
+      ]
+    },
+    {
+      "name": "get_pool_views_by_addresses",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "vector<address>"
+      ],
+      "return": [
+        "vector<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPoolView>"
+      ]
+    },
+    {
+      "name": "get_position",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u64"
+      ],
+      "return": [
+        "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::Position"
+      ]
+    },
+    {
+      "name": "get_position_info",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u64"
+      ],
+      "return": [
+        "u128",
+        "u32",
+        "u32",
+        "u64",
+        "u64"
+      ]
+    },
+    {
+      "name": "get_position_token_amounts",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "address",
+        "u64"
+      ],
+      "return": [
+        "u64",
+        "u64"
+      ]
+    },
+    {
+      "name": "get_position_with_pending_fees_and_rewards",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u64"
+      ],
+      "return": [
+        "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::Position"
+      ]
+    },
+    {
+      "name": "get_quote_at_tick",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "u32",
+        "u64",
+        "0x1::object::Object<0x1::fungible_asset::Metadata>",
+        "0x1::object::Object<0x1::fungible_asset::Metadata>"
+      ],
+      "return": [
+        "u128"
+      ]
+    },
+    {
+      "name": "get_reserves_size",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>"
+      ],
+      "return": [
+        "u64",
+        "u64"
+      ]
+    },
+    {
+      "name": "get_swap_receipt_amount",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::SwapReciept"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_swap_receipt_token_metadata",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::SwapReciept"
+      ],
+      "return": [
+        "0x1::object::Object<0x1::fungible_asset::Metadata>"
+      ]
+    },
+    {
+      "name": "get_ticks",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u32",
+        "u32"
+      ],
+      "return": [
+        "vector<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::TickView>"
+      ]
+    },
+    {
+      "name": "get_tokens",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>"
+      ],
+      "return": [
+        "0x1::object::Object<0x1::fungible_asset::Metadata>",
+        "0x1::object::Object<0x1::fungible_asset::Metadata>"
+      ]
+    },
+    {
+      "name": "increase_observation_cardinality_next",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u16"
+      ],
+      "return": []
+    },
+    {
+      "name": "initialize_reward",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "0x1::object::Object<0x1::fungible_asset::Metadata>",
+        "address"
+      ],
+      "return": []
+    },
+    {
+      "name": "is_pool_exists",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x1::fungible_asset::Metadata>",
+        "0x1::object::Object<0x1::fungible_asset::Metadata>",
+        "u64"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "observations",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u16"
+      ],
+      "return": [
+        "u64",
+        "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64",
+        "u256",
+        "bool"
+      ]
+    },
+    {
+      "name": "observe",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "vector<u64>"
+      ],
+      "return": [
+        "vector<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64>",
+        "vector<u256>"
+      ]
+    },
+    {
+      "name": "open_position",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u32",
+        "u32"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "pay_swap",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "0x1::fungible_asset::FungibleAsset",
+        "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::SwapReciept"
+      ],
+      "return": []
+    },
+    {
+      "name": "quote_swap",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "bool",
+        "bool",
+        "u64",
+        "u128"
+      ],
+      "return": [
+        "u64",
+        "u64",
+        "u64"
+      ]
+    },
+    {
+      "name": "remove_empty_pool",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>"
+      ],
+      "return": []
+    },
+    {
+      "name": "remove_liquidity",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u64",
+        "u128"
+      ],
+      "return": [
+        "0x1::fungible_asset::FungibleAsset",
+        "0x1::fungible_asset::FungibleAsset"
+      ]
+    },
+    {
+      "name": "remove_reward",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u64",
+        "u64"
+      ],
+      "return": [
+        "0x1::fungible_asset::FungibleAsset"
+      ]
+    },
+    {
+      "name": "rewards_count",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "swap",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "bool",
+        "bool",
+        "u64",
+        "u128"
+      ],
+      "return": [
+        "0x1::fungible_asset::FungibleAsset",
+        "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::SwapReciept"
+      ]
+    },
+    {
+      "name": "update_reward_emissions",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u64",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "update_reward_manager",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u64",
+        "address"
+      ],
+      "return": []
+    }
+  ],
+  "structs": [
+    {
+      "name": "AddLiquidityEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "name": "pool",
+          "type": "address"
+        },
+        {
+          "name": "position_id",
+          "type": "u64"
+        },
+        {
+          "name": "liquidity",
+          "type": "u128"
+        },
+        {
+          "name": "amount_0",
+          "type": "u64"
+        },
+        {
+          "name": "amount_1",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "AddRewardEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "pool",
+          "type": "address"
+        },
+        {
+          "name": "reward_index",
+          "type": "u64"
+        },
+        {
+          "name": "manager",
+          "type": "address"
+        },
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "CollectFeeEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "name": "pool",
+          "type": "address"
+        },
+        {
+          "name": "position_id",
+          "type": "u64"
+        },
+        {
+          "name": "amount_0",
+          "type": "u64"
+        },
+        {
+          "name": "amount_1",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "CollectProtocolFee",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "admin",
+          "type": "address"
+        },
+        {
+          "name": "pool",
+          "type": "address"
+        },
+        {
+          "name": "amount_0",
+          "type": "u64"
+        },
+        {
+          "name": "amount_1",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "CollectRewardEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "name": "pool",
+          "type": "address"
+        },
+        {
+          "name": "position_id",
+          "type": "u64"
+        },
+        {
+          "name": "reward_index",
+          "type": "u64"
+        },
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "CreatePoolEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "creator",
+          "type": "address"
+        },
+        {
+          "name": "pool",
+          "type": "address"
+        },
+        {
+          "name": "token_x",
+          "type": "0x1::object::Object<0x1::fungible_asset::Metadata>"
+        },
+        {
+          "name": "token_y",
+          "type": "0x1::object::Object<0x1::fungible_asset::Metadata>"
+        },
+        {
+          "name": "fee",
+          "type": "u64"
+        },
+        {
+          "name": "tick_spacing",
+          "type": "u32"
+        }
+      ]
+    },
+    {
+      "name": "IncreaseObservationCardinalityNextEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "pool",
+          "type": "address"
+        },
+        {
+          "name": "observation_cardinality_next_old",
+          "type": "u16"
+        },
+        {
+          "name": "observation_cardinality_next_new",
+          "type": "u16"
+        }
+      ]
+    },
+    {
+      "name": "InitRewardEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "pool",
+          "type": "address"
+        },
+        {
+          "name": "reward_index",
+          "type": "u64"
+        },
+        {
+          "name": "manager",
+          "type": "address"
+        }
+      ]
+    },
+    {
+      "name": "LiquidityPool",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "token_0_reserve",
+          "type": "0x1::object::Object<0x1::fungible_asset::FungibleStore>"
+        },
+        {
+          "name": "token_1_reserve",
+          "type": "0x1::object::Object<0x1::fungible_asset::FungibleStore>"
+        },
+        {
+          "name": "current_tick",
+          "type": "u32"
+        },
+        {
+          "name": "current_sqrt_price",
+          "type": "u128"
+        },
+        {
+          "name": "liquidity",
+          "type": "u128"
+        },
+        {
+          "name": "tick_bitmap",
+          "type": "0x1::table::Table<u16, u256>"
+        },
+        {
+          "name": "ticks",
+          "type": "0x1::table::Table<u32, 0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::TickInfo>"
+        },
+        {
+          "name": "positions",
+          "type": "0x1::table::Table<vector<u8>, 0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::Position>"
+        },
+        {
+          "name": "next_position_id",
+          "type": "u64"
+        },
+        {
+          "name": "fee_growth_global_0_x64",
+          "type": "u256"
+        },
+        {
+          "name": "fee_growth_global_1_x64",
+          "type": "u256"
+        },
+        {
+          "name": "reward_infos",
+          "type": "vector<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::PoolRewardInfo>"
+        },
+        {
+          "name": "reward_last_updated_at_seconds",
+          "type": "u64"
+        },
+        {
+          "name": "fee_rate",
+          "type": "u64"
+        },
+        {
+          "name": "tick_spacing",
+          "type": "u32"
+        },
+        {
+          "name": "max_liquidity_per_tick",
+          "type": "u128"
+        },
+        {
+          "name": "unlocked",
+          "type": "bool"
+        },
+        {
+          "name": "extend_ref",
+          "type": "0x1::object::ExtendRef"
+        }
+      ]
+    },
+    {
+      "name": "LiquidityPoolView",
+      "is_native": false,
+      "abilities": [
+        "drop"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "pool_addr",
+          "type": "address"
+        },
+        {
+          "name": "token_0",
+          "type": "address"
+        },
+        {
+          "name": "token_1",
+          "type": "address"
+        },
+        {
+          "name": "token_0_decimals",
+          "type": "u8"
+        },
+        {
+          "name": "token_1_decimals",
+          "type": "u8"
+        },
+        {
+          "name": "token_0_reserve",
+          "type": "u64"
+        },
+        {
+          "name": "token_1_reserve",
+          "type": "u64"
+        },
+        {
+          "name": "current_tick",
+          "type": "u32"
+        },
+        {
+          "name": "current_sqrt_price",
+          "type": "u128"
+        },
+        {
+          "name": "liquidity",
+          "type": "u128"
+        },
+        {
+          "name": "fee_growth_global_0_x64",
+          "type": "u256"
+        },
+        {
+          "name": "fee_growth_global_1_x64",
+          "type": "u256"
+        },
+        {
+          "name": "reward_infos",
+          "type": "vector<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::PoolRewardInfo>"
+        },
+        {
+          "name": "fee_rate",
+          "type": "u64"
+        },
+        {
+          "name": "tick_spacing",
+          "type": "u32"
+        }
+      ]
+    },
+    {
+      "name": "LiquidityPools",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "all_pools",
+          "type": "vector<0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>>"
+        }
+      ]
+    },
+    {
+      "name": "PoolAccountCap",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "signer_cap",
+          "type": "0x1::account::SignerCapability"
+        }
+      ]
+    },
+    {
+      "name": "PoolOracle",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "observation_index",
+          "type": "u16"
+        },
+        {
+          "name": "observation_cardinality",
+          "type": "u16"
+        },
+        {
+          "name": "observation_cardinality_next",
+          "type": "u16"
+        },
+        {
+          "name": "observations",
+          "type": "vector<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::oracle::Observation>"
+        }
+      ]
+    },
+    {
+      "name": "PoolRewardInfo",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "token_metadata",
+          "type": "0x1::object::Object<0x1::fungible_asset::Metadata>"
+        },
+        {
+          "name": "remaining_reward",
+          "type": "u64"
+        },
+        {
+          "name": "emissions_per_second",
+          "type": "u64"
+        },
+        {
+          "name": "growth_global",
+          "type": "u256"
+        },
+        {
+          "name": "manager",
+          "type": "address"
+        }
+      ]
+    },
+    {
+      "name": "Position",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "id",
+          "type": "u64"
+        },
+        {
+          "name": "tick_lower",
+          "type": "u32"
+        },
+        {
+          "name": "tick_upper",
+          "type": "u32"
+        },
+        {
+          "name": "liquidity",
+          "type": "u128"
+        },
+        {
+          "name": "fee_growth_inside_0_last_x64",
+          "type": "u256"
+        },
+        {
+          "name": "fee_growth_inside_1_last_x64",
+          "type": "u256"
+        },
+        {
+          "name": "tokens_owed_0",
+          "type": "u64"
+        },
+        {
+          "name": "tokens_owed_1",
+          "type": "u64"
+        },
+        {
+          "name": "reward_infos",
+          "type": "vector<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::PositionRewardInfo>"
+        }
+      ]
+    },
+    {
+      "name": "PositionRewardInfo",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "reward_growth_inside_last",
+          "type": "u256"
+        },
+        {
+          "name": "amount_owed",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "RemoveLiquidityEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "name": "pool",
+          "type": "address"
+        },
+        {
+          "name": "position_id",
+          "type": "u64"
+        },
+        {
+          "name": "liquidity",
+          "type": "u128"
+        },
+        {
+          "name": "amount_0",
+          "type": "u64"
+        },
+        {
+          "name": "amount_1",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "RemovePoolEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "pool",
+          "type": "address"
+        },
+        {
+          "name": "token_x",
+          "type": "0x1::object::Object<0x1::fungible_asset::Metadata>"
+        },
+        {
+          "name": "token_y",
+          "type": "0x1::object::Object<0x1::fungible_asset::Metadata>"
+        },
+        {
+          "name": "fee",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "RemoveRewardEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "pool",
+          "type": "address"
+        },
+        {
+          "name": "reward_index",
+          "type": "u64"
+        },
+        {
+          "name": "manager",
+          "type": "address"
+        },
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "SwapEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "pool",
+          "type": "address"
+        },
+        {
+          "name": "zero_for_one",
+          "type": "bool"
+        },
+        {
+          "name": "is_exact_in",
+          "type": "bool"
+        },
+        {
+          "name": "amount_in",
+          "type": "u64"
+        },
+        {
+          "name": "amount_out",
+          "type": "u64"
+        },
+        {
+          "name": "fee_amount",
+          "type": "u64"
+        },
+        {
+          "name": "sqrt_price_after",
+          "type": "u128"
+        },
+        {
+          "name": "liquidity_after",
+          "type": "u128"
+        },
+        {
+          "name": "tick_after",
+          "type": "u32"
+        }
+      ]
+    },
+    {
+      "name": "SwapReciept",
+      "is_native": false,
+      "abilities": [],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "pool",
+          "type": "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>"
+        },
+        {
+          "name": "token_metadata",
+          "type": "0x1::object::Object<0x1::fungible_asset::Metadata>"
+        },
+        {
+          "name": "amount_in",
+          "type": "u64"
+        },
+        {
+          "name": "protocol_fee_amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "TickInfo",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "liquditiy_gross",
+          "type": "u128"
+        },
+        {
+          "name": "liquidity_net",
+          "type": "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i128::I128"
+        },
+        {
+          "name": "fee_growth_outside_0_x64",
+          "type": "u256"
+        },
+        {
+          "name": "fee_growth_outside_1_x64",
+          "type": "u256"
+        },
+        {
+          "name": "reward_growths_outside",
+          "type": "vector<u256>"
+        },
+        {
+          "name": "initialized",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "TickView",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "tick",
+          "type": "u32"
+        },
+        {
+          "name": "liquidity_gross",
+          "type": "u128"
+        },
+        {
+          "name": "liquidity_net",
+          "type": "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i128::I128"
+        },
+        {
+          "name": "fee_growth_outside_0_x64",
+          "type": "u256"
+        },
+        {
+          "name": "fee_growth_outside_1_x64",
+          "type": "u256"
+        },
+        {
+          "name": "reward_growths_outside",
+          "type": "vector<u256>"
+        }
+      ]
+    },
+    {
+      "name": "UpdateRewardEmissionsEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "pool",
+          "type": "address"
+        },
+        {
+          "name": "reward_index",
+          "type": "u64"
+        },
+        {
+          "name": "manager",
+          "type": "address"
+        },
+        {
+          "name": "emissions_per_second",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "UpdateRewardManagerEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "pool",
+          "type": "address"
+        },
+        {
+          "name": "reward_index",
+          "type": "u64"
+        },
+        {
+          "name": "manager",
+          "type": "address"
+        }
+      ]
+    }
+  ]
+}

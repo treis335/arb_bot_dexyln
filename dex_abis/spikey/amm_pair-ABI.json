@@ -1,0 +1,364 @@
+{
+  "address": "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083",
+  "name": "amm_oracle",
+  "friends": [],
+  "exposed_functions": [
+    {
+      "name": "add_router_token",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x1::fungible_asset::Metadata>"
+      ],
+      "return": []
+    },
+    {
+      "name": "get_anchor_token",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "0x1::object::Object<0x1::fungible_asset::Metadata>"
+      ]
+    },
+    {
+      "name": "get_average_block_time",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_average_price",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x1::fungible_asset::Metadata>"
+      ],
+      "return": [
+        "u128"
+      ]
+    },
+    {
+      "name": "get_average_price_v2",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x1::fungible_asset::Metadata>"
+      ],
+      "return": [
+        "u128"
+      ]
+    },
+    {
+      "name": "get_current_price",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x1::fungible_asset::Metadata>"
+      ],
+      "return": [
+        "u128"
+      ]
+    },
+    {
+      "name": "get_lp_token_value",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::amm_pair::Pair>",
+        "u64"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_lp_token_value_v2",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::amm_pair::Pair>",
+        "u64"
+      ],
+      "return": [
+        "u128"
+      ]
+    },
+    {
+      "name": "get_quantity",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x1::fungible_asset::Metadata>",
+        "u64"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_quantity_v2",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x1::fungible_asset::Metadata>",
+        "u64"
+      ],
+      "return": [
+        "u128"
+      ]
+    },
+    {
+      "name": "get_router_token",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "u64"
+      ],
+      "return": [
+        "0x1::object::Object<0x1::fungible_asset::Metadata>"
+      ]
+    },
+    {
+      "name": "get_router_token_address",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "u64"
+      ],
+      "return": [
+        "address"
+      ]
+    },
+    {
+      "name": "get_router_token_length",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "initialize",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x1::fungible_asset::Metadata>"
+      ],
+      "return": []
+    },
+    {
+      "name": "is_initialized",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "is_router_token",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x1::fungible_asset::Metadata>"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "remove_router_token",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x1::fungible_asset::Metadata>"
+      ],
+      "return": []
+    },
+    {
+      "name": "update",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x1::fungible_asset::Metadata>",
+        "0x1::object::Object<0x1::fungible_asset::Metadata>"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "update_block_info",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "bool"
+      ]
+    }
+  ],
+  "structs": [
+    {
+      "name": "BlockInfo",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "height",
+          "type": "u64"
+        },
+        {
+          "name": "timestamp",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "Observation",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "timestamp",
+          "type": "u64"
+        },
+        {
+          "name": "price_0_cumulative",
+          "type": "u128"
+        },
+        {
+          "name": "price_1_cumulative",
+          "type": "u128"
+        }
+      ]
+    },
+    {
+      "name": "Oracle",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "anchor_token",
+          "type": "0x1::object::Object<0x1::fungible_asset::Metadata>"
+        },
+        {
+          "name": "block_info",
+          "type": "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::amm_oracle::BlockInfo"
+        },
+        {
+          "name": "pair_observations",
+          "type": "0x1::simple_map::SimpleMap<0x1::object::Object<0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::amm_pair::Pair>, 0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::amm_oracle::Observation>"
+        },
+        {
+          "name": "router_tokens",
+          "type": "0x1::smart_vector::SmartVector<0x1::object::Object<0x1::fungible_asset::Metadata>>"
+        }
+      ]
+    },
+    {
+      "name": "RouterTokenEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "name": "is_added",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "UpdateEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "pair",
+          "type": "address"
+        },
+        {
+          "name": "price_0_cumulative",
+          "type": "u128"
+        },
+        {
+          "name": "price_1_cumulative",
+          "type": "u128"
+        },
+        {
+          "name": "timestamp",
+          "type": "u64"
+        }
+      ]
+    }
+  ]
+}

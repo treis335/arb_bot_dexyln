@@ -1,0 +1,99 @@
+{
+  "address": "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932",
+  "name": "merkle_tree",
+  "friends": [],
+  "exposed_functions": [
+    {
+      "name": "compare_vector_greater_than",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&vector<u8>",
+        "&vector<u8>"
+      ],
+      "return": [
+        "u8"
+      ]
+    },
+    {
+      "name": "ensure_multileaf_merkle_proof_lengths",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": [
+            "drop"
+          ]
+        }
+      ],
+      "params": [
+        "vector<vector<u8>>",
+        "vector<bool>",
+        "vector<T0>"
+      ],
+      "return": []
+    },
+    {
+      "name": "generate_merkle_tree",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "vector<vector<u8>>"
+      ],
+      "return": [
+        "vector<u8>"
+      ]
+    },
+    {
+      "name": "get_immediate_root_hash",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&vector<u8>",
+        "&vector<u8>"
+      ],
+      "return": [
+        "vector<u8>"
+      ]
+    },
+    {
+      "name": "is_valid_multileaf_merkle_proof",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "vector<vector<u8>>",
+        "vector<bool>",
+        "vector<vector<u8>>",
+        "vector<u8>"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "verify_merkle_tree",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "vector<u8>",
+        "vector<vector<u8>>",
+        "vector<u8>"
+      ],
+      "return": [
+        "bool"
+      ]
+    }
+  ],
+  "structs": []
+}

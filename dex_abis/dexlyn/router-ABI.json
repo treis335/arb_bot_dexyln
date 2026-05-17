@@ -1,0 +1,463 @@
+{
+  "address": "0xdc694898dff98a1b0447e0992d0413e123ea80da1021d464a4fbaf0265870d8",
+  "name": "router",
+  "friends": [],
+  "exposed_functions": [
+    {
+      "name": "add_liquidity",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "0x1::coin::Coin<T0>",
+        "u64",
+        "0x1::coin::Coin<T1>",
+        "u64"
+      ],
+      "return": [
+        "0x1::coin::Coin<T0>",
+        "0x1::coin::Coin<T1>",
+        "0x1::coin::Coin<0x22a28a1b5264935d4778d542b1e84bca8879cf78f6183e1a9429b56a40a1a7c4::lp_coin::LP<T0, T1, T2>>"
+      ]
+    },
+    {
+      "name": "calc_optimal_coin_values",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "u64",
+        "u64",
+        "u64",
+        "u64"
+      ],
+      "return": [
+        "u64",
+        "u64"
+      ]
+    },
+    {
+      "name": "convert_with_current_price",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u64",
+        "u64",
+        "u64"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_amount_in",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "u64"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_amount_out",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "u64"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_cumulative_prices",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [],
+      "return": [
+        "u128",
+        "u128",
+        "u64"
+      ]
+    },
+    {
+      "name": "get_dao_fee",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_dao_fees_config",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [],
+      "return": [
+        "u64",
+        "u64"
+      ]
+    },
+    {
+      "name": "get_decimals_scales",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [],
+      "return": [
+        "u64",
+        "u64"
+      ]
+    },
+    {
+      "name": "get_fee",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_fees_config",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [],
+      "return": [
+        "u64",
+        "u64"
+      ]
+    },
+    {
+      "name": "get_pool",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [],
+      "return": [
+        "0x1::option::Option<address>"
+      ]
+    },
+    {
+      "name": "get_reserves_for_lp_coins",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "u64"
+      ],
+      "return": [
+        "u64",
+        "u64"
+      ]
+    },
+    {
+      "name": "get_reserves_size",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [],
+      "return": [
+        "u64",
+        "u64"
+      ]
+    },
+    {
+      "name": "is_swap_exists",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "register_pool",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer"
+      ],
+      "return": []
+    },
+    {
+      "name": "remove_liquidity",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "0x1::coin::Coin<0x22a28a1b5264935d4778d542b1e84bca8879cf78f6183e1a9429b56a40a1a7c4::lp_coin::LP<T0, T1, T2>>",
+        "u64",
+        "u64"
+      ],
+      "return": [
+        "0x1::coin::Coin<T0>",
+        "0x1::coin::Coin<T1>"
+      ]
+    },
+    {
+      "name": "swap_coin_for_coin_unchecked",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "0x1::coin::Coin<T0>",
+        "u64"
+      ],
+      "return": [
+        "0x1::coin::Coin<T1>"
+      ]
+    },
+    {
+      "name": "swap_coin_for_exact_coin",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "0x1::coin::Coin<T0>",
+        "u64"
+      ],
+      "return": [
+        "0x1::coin::Coin<T0>",
+        "0x1::coin::Coin<T1>"
+      ]
+    },
+    {
+      "name": "swap_exact_coin_for_coin",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "0x1::coin::Coin<T0>",
+        "u64"
+      ],
+      "return": [
+        "0x1::coin::Coin<T1>"
+      ]
+    }
+  ],
+  "structs": []
+}

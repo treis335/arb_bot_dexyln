@@ -1,0 +1,58 @@
+{
+  "address": "0xdc694898dff98a1b0447e0992d0413e123ea80da1021d464a4fbaf0265870d8",
+  "name": "stable_curve",
+  "friends": [],
+  "exposed_functions": [
+    {
+      "name": "coin_in",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u128",
+        "u64",
+        "u64",
+        "u128",
+        "u128"
+      ],
+      "return": [
+        "u128"
+      ]
+    },
+    {
+      "name": "coin_out",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u128",
+        "u64",
+        "u64",
+        "u128",
+        "u128"
+      ],
+      "return": [
+        "u128"
+      ]
+    },
+    {
+      "name": "lp_value",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u128",
+        "u64",
+        "u128",
+        "u64"
+      ],
+      "return": [
+        "u256"
+      ]
+    }
+  ],
+  "structs": []
+}

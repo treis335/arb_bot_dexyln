@@ -1,0 +1,121 @@
+{
+  "address": "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64",
+  "name": "tick",
+  "friends": [],
+  "exposed_functions": [
+    {
+      "name": "abs_tick",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u32"
+      ],
+      "return": [
+        "u32"
+      ]
+    },
+    {
+      "name": "is_negative_tick",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u32"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "is_spaced_tick",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u32",
+        "u32"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "is_tick_spaced",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u32",
+        "u32"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "max_tick",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "u32"
+      ]
+    },
+    {
+      "name": "min_tick",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "u32"
+      ]
+    },
+    {
+      "name": "tick_adjustment",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u32"
+      ],
+      "return": [
+        "u32"
+      ]
+    },
+    {
+      "name": "tick_spacing_to_max_liquidity_per_tick",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u32"
+      ],
+      "return": [
+        "u128"
+      ]
+    },
+    {
+      "name": "zero_tick",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "u32"
+      ]
+    }
+  ],
+  "structs": []
+}

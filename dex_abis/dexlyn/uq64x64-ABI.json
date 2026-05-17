@@ -1,0 +1,133 @@
+{
+  "address": "0xdc694898dff98a1b0447e0992d0413e123ea80da1021d464a4fbaf0265870d8",
+  "name": "uq64x64",
+  "friends": [],
+  "exposed_functions": [
+    {
+      "name": "compare",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0xdc694898dff98a1b0447e0992d0413e123ea80da1021d464a4fbaf0265870d8::uq64x64::UQ64x64",
+        "&0xdc694898dff98a1b0447e0992d0413e123ea80da1021d464a4fbaf0265870d8::uq64x64::UQ64x64"
+      ],
+      "return": [
+        "u8"
+      ]
+    },
+    {
+      "name": "decode",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "0xdc694898dff98a1b0447e0992d0413e123ea80da1021d464a4fbaf0265870d8::uq64x64::UQ64x64"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "div",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "0xdc694898dff98a1b0447e0992d0413e123ea80da1021d464a4fbaf0265870d8::uq64x64::UQ64x64",
+        "u64"
+      ],
+      "return": [
+        "0xdc694898dff98a1b0447e0992d0413e123ea80da1021d464a4fbaf0265870d8::uq64x64::UQ64x64"
+      ]
+    },
+    {
+      "name": "encode",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u64"
+      ],
+      "return": [
+        "0xdc694898dff98a1b0447e0992d0413e123ea80da1021d464a4fbaf0265870d8::uq64x64::UQ64x64"
+      ]
+    },
+    {
+      "name": "fraction",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u64",
+        "u64"
+      ],
+      "return": [
+        "0xdc694898dff98a1b0447e0992d0413e123ea80da1021d464a4fbaf0265870d8::uq64x64::UQ64x64"
+      ]
+    },
+    {
+      "name": "is_zero",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0xdc694898dff98a1b0447e0992d0413e123ea80da1021d464a4fbaf0265870d8::uq64x64::UQ64x64"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "mul",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "0xdc694898dff98a1b0447e0992d0413e123ea80da1021d464a4fbaf0265870d8::uq64x64::UQ64x64",
+        "u64"
+      ],
+      "return": [
+        "0xdc694898dff98a1b0447e0992d0413e123ea80da1021d464a4fbaf0265870d8::uq64x64::UQ64x64"
+      ]
+    },
+    {
+      "name": "to_u128",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "0xdc694898dff98a1b0447e0992d0413e123ea80da1021d464a4fbaf0265870d8::uq64x64::UQ64x64"
+      ],
+      "return": [
+        "u128"
+      ]
+    }
+  ],
+  "structs": [
+    {
+      "name": "UQ64x64",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "v",
+          "type": "u128"
+        }
+      ]
+    }
+  ]
+}

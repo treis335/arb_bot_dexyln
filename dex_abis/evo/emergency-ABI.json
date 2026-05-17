@@ -1,0 +1,117 @@
+{
+  "address": "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64",
+  "name": "emergency",
+  "friends": [
+    "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool"
+  ],
+  "exposed_functions": [
+    {
+      "name": "assert_no_emergency",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [],
+      "return": []
+    },
+    {
+      "name": "disable_forever",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer"
+      ],
+      "return": []
+    },
+    {
+      "name": "is_disabled",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "is_emergency",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "pause",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer"
+      ],
+      "return": []
+    },
+    {
+      "name": "resume",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer"
+      ],
+      "return": []
+    }
+  ],
+  "structs": [
+    {
+      "name": "EmergencyAccountCap",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "signer_cap",
+          "type": "0x1::account::SignerCapability"
+        }
+      ]
+    },
+    {
+      "name": "IsDisabled",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "dummy_field",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "IsEmergency",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "dummy_field",
+          "type": "bool"
+        }
+      ]
+    }
+  ]
+}

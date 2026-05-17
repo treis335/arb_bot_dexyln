@@ -1,0 +1,336 @@
+{
+  "address": "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932",
+  "name": "rbac",
+  "friends": [],
+  "exposed_functions": [
+    {
+      "name": "assert_has_role",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "address"
+      ],
+      "return": []
+    },
+    {
+      "name": "destroy_expiry_cap",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::rbac::SetExpiryCapability<T0>"
+      ],
+      "return": []
+    },
+    {
+      "name": "destroy_manage_cap",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::rbac::ManageCapability<T0>"
+      ],
+      "return": []
+    },
+    {
+      "name": "destroy_remove_cap",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::rbac::RemoveCapability<T0>"
+      ],
+      "return": []
+    },
+    {
+      "name": "grant_role",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "address",
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::rbac::ManageCapability<T0>"
+      ],
+      "return": []
+    },
+    {
+      "name": "has_role",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "address"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "is_role_alive",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "is_role_registered",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "register_role",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer"
+      ],
+      "return": [
+        "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::rbac::ManageCapability<T0>",
+        "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::rbac::RemoveCapability<T0>",
+        "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::rbac::SetExpiryCapability<T0>"
+      ]
+    },
+    {
+      "name": "register_role_with_ttl",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "u64"
+      ],
+      "return": [
+        "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::rbac::ManageCapability<T0>",
+        "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::rbac::RemoveCapability<T0>",
+        "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::rbac::SetExpiryCapability<T0>"
+      ]
+    },
+    {
+      "name": "remove_role",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::rbac::RemoveCapability<T0>"
+      ],
+      "return": []
+    },
+    {
+      "name": "revoke_role",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "address",
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::rbac::ManageCapability<T0>"
+      ],
+      "return": []
+    },
+    {
+      "name": "set_expiration",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "u64",
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::rbac::SetExpiryCapability<T0>"
+      ],
+      "return": []
+    }
+  ],
+  "structs": [
+    {
+      "name": "GrantRole",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "name": "role_type_info",
+          "type": "0x1::type_info::TypeInfo"
+        }
+      ]
+    },
+    {
+      "name": "ManageCapability",
+      "is_native": false,
+      "abilities": [
+        "store"
+      ],
+      "generic_type_params": [
+        {
+          "constraints": [],
+          "is_phantom": true
+        }
+      ],
+      "fields": [
+        {
+          "name": "dummy_field",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "RemoveCapability",
+      "is_native": false,
+      "abilities": [
+        "store"
+      ],
+      "generic_type_params": [
+        {
+          "constraints": [],
+          "is_phantom": true
+        }
+      ],
+      "fields": [
+        {
+          "name": "dummy_field",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "RevokeRole",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "name": "role_type_info",
+          "type": "0x1::type_info::TypeInfo"
+        }
+      ]
+    },
+    {
+      "name": "RoleStore",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [
+        {
+          "constraints": [],
+          "is_phantom": true
+        }
+      ],
+      "fields": [
+        {
+          "name": "expiry_time",
+          "type": "u64"
+        },
+        {
+          "name": "has_role",
+          "type": "0x1::smart_table::SmartTable<address, bool>"
+        }
+      ]
+    },
+    {
+      "name": "SetExpiryCapability",
+      "is_native": false,
+      "abilities": [
+        "store"
+      ],
+      "generic_type_params": [
+        {
+          "constraints": [],
+          "is_phantom": true
+        }
+      ],
+      "fields": [
+        {
+          "name": "dummy_field",
+          "type": "bool"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,627 @@
+{
+  "address": "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932",
+  "name": "config",
+  "friends": [],
+  "exposed_functions": [
+    {
+      "name": "assert_admin",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer"
+      ],
+      "return": []
+    },
+    {
+      "name": "assert_allocate_rewards",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [],
+      "return": []
+    },
+    {
+      "name": "assert_delegation_pools",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer"
+      ],
+      "return": []
+    },
+    {
+      "name": "assert_owner",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer"
+      ],
+      "return": []
+    },
+    {
+      "name": "get_length_of_epoch",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_length_of_lockup_cycle",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_mut_params",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "u64",
+        "u64",
+        "u64",
+        "u64",
+        "u64",
+        "u64",
+        "u64",
+        "u64",
+        "u64",
+        "u64",
+        "u64",
+        "u64"
+      ]
+    },
+    {
+      "name": "get_number_of_epoch_in_apy",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_number_of_epoch_in_cycle",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_rewards_distribution_address",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "address"
+      ]
+    },
+    {
+      "name": "get_service_fees_address",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "address"
+      ]
+    },
+    {
+      "name": "get_threshold_rewards_to_distribute",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_withdrawal_address",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "address"
+      ]
+    },
+    {
+      "name": "is_admin",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "is_admin_delegation_pools",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "is_allocate_rewards",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "is_owner",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "set_admin_role",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "address",
+        "bool"
+      ],
+      "return": []
+    },
+    {
+      "name": "set_allocate_rewards",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "bool"
+      ],
+      "return": []
+    },
+    {
+      "name": "set_delegation_pools_role",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "address",
+        "bool"
+      ],
+      "return": []
+    },
+    {
+      "name": "set_owner_role",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "address",
+        "bool"
+      ],
+      "return": []
+    },
+    {
+      "name": "set_parameters",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "u64",
+        "u64",
+        "u64",
+        "u64",
+        "u64",
+        "u64",
+        "u64",
+        "u64",
+        "u64",
+        "u64",
+        "u64",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "set_rewards_distribution_address",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "address"
+      ],
+      "return": []
+    },
+    {
+      "name": "set_service_fees_address",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "address"
+      ],
+      "return": []
+    },
+    {
+      "name": "set_withdrawal_address",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "address"
+      ],
+      "return": []
+    }
+  ],
+  "structs": [
+    {
+      "name": "AdminRole",
+      "is_native": false,
+      "abilities": [],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "dummy_field",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "AllocateRewardsUpdatedEvent",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "value",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "BasicSettings",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "withdrawal_address",
+          "type": "address"
+        },
+        {
+          "name": "service_fee_address",
+          "type": "address"
+        },
+        {
+          "name": "rewards_address",
+          "type": "address"
+        },
+        {
+          "name": "allocate_rewards",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "Management",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "name": "owner_role_cap",
+          "type": "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::config::RoleCapabilities<0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::config::OwnerRole>"
+        },
+        {
+          "name": "admin_role_cap",
+          "type": "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::config::RoleCapabilities<0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::config::AdminRole>"
+        },
+        {
+          "name": "pm_role_cap",
+          "type": "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::config::RoleCapabilities<0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::config::PoolManagerRole>"
+        },
+        {
+          "name": "extend_ref",
+          "type": "0x1::object::ExtendRef"
+        }
+      ]
+    },
+    {
+      "name": "MutableParameters",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "min_collateralisation",
+          "type": "u64"
+        },
+        {
+          "name": "length_of_epoch",
+          "type": "u64"
+        },
+        {
+          "name": "length_of_lockup_cycle",
+          "type": "u64"
+        },
+        {
+          "name": "number_of_epoch_in_apy",
+          "type": "u64"
+        },
+        {
+          "name": "max_collateralisation_first",
+          "type": "u64"
+        },
+        {
+          "name": "max_collateralisation_second",
+          "type": "u64"
+        },
+        {
+          "name": "reward_reduction_rate",
+          "type": "u64"
+        },
+        {
+          "name": "pool_max_delegation_cap",
+          "type": "u64"
+        },
+        {
+          "name": "smallest_portion_of_distributable_rewards",
+          "type": "u64"
+        },
+        {
+          "name": "threshold_rewards_to_distribute",
+          "type": "u64"
+        },
+        {
+          "name": "min_frequency_rewards_allocation",
+          "type": "u64"
+        },
+        {
+          "name": "number_of_epoch_in_cycle",
+          "type": "u64"
+        },
+        {
+          "name": "basic_settings",
+          "type": "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::config::BasicSettings"
+        }
+      ]
+    },
+    {
+      "name": "OwnerRole",
+      "is_native": false,
+      "abilities": [],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "dummy_field",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "ParametersUpdatedEvent",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "min_collateralisation",
+          "type": "u64"
+        },
+        {
+          "name": "length_of_epoch",
+          "type": "u64"
+        },
+        {
+          "name": "lockup_cycle_length",
+          "type": "u64"
+        },
+        {
+          "name": "number_of_epoch_in_apy",
+          "type": "u64"
+        },
+        {
+          "name": "max_collateralisation_first",
+          "type": "u64"
+        },
+        {
+          "name": "max_collateralisation_second",
+          "type": "u64"
+        },
+        {
+          "name": "reward_reduction_rate",
+          "type": "u64"
+        },
+        {
+          "name": "pool_max_delegation_cap",
+          "type": "u64"
+        },
+        {
+          "name": "smallest_portion_of_distributable_rewards",
+          "type": "u64"
+        },
+        {
+          "name": "threshold_rewards_to_distribute",
+          "type": "u64"
+        },
+        {
+          "name": "min_frequency_rewards_allocation",
+          "type": "u64"
+        },
+        {
+          "name": "number_of_epoch_in_cycle",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "PoolManagerRole",
+      "is_native": false,
+      "abilities": [],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "dummy_field",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "RewardsDistributionAddressUpdatedEvent",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "new_address",
+          "type": "address"
+        }
+      ]
+    },
+    {
+      "name": "RoleCapabilities",
+      "is_native": false,
+      "abilities": [
+        "store"
+      ],
+      "generic_type_params": [
+        {
+          "constraints": [],
+          "is_phantom": true
+        }
+      ],
+      "fields": [
+        {
+          "name": "manage",
+          "type": "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::rbac::ManageCapability<T0>"
+        },
+        {
+          "name": "remove",
+          "type": "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::rbac::RemoveCapability<T0>"
+        },
+        {
+          "name": "expiry",
+          "type": "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::rbac::SetExpiryCapability<T0>"
+        }
+      ]
+    },
+    {
+      "name": "ServiceFeesAddressUpdatedEvent",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "new_address",
+          "type": "address"
+        }
+      ]
+    },
+    {
+      "name": "WithdrawalAddressUpdatedEvent",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "new_address",
+          "type": "address"
+        }
+      ]
+    }
+  ]
+}

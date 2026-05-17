@@ -1,0 +1,23 @@
+{
+  "address": "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64",
+  "name": "unsafe_math",
+  "friends": [],
+  "exposed_functions": [
+    {
+      "name": "mul_div_rounding_up",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u256",
+        "u256",
+        "u256"
+      ],
+      "return": [
+        "u256"
+      ]
+    }
+  ],
+  "structs": []
+}

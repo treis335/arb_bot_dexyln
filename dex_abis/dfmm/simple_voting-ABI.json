@@ -1,0 +1,635 @@
+{
+  "address": "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932",
+  "name": "simple_voting",
+  "friends": [],
+  "exposed_functions": [
+    {
+      "name": "add_voters",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "u64",
+        "vector<address>",
+        "vector<u64>"
+      ],
+      "return": []
+    },
+    {
+      "name": "can_vote",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "u64",
+        "address"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "create_proposal",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "u64",
+        "u64",
+        "vector<address>",
+        "vector<u64>",
+        "vector<u8>",
+        "u128",
+        "u8"
+      ],
+      "return": []
+    },
+    {
+      "name": "delete_proposal",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "get_next_proposal_id",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_proposal_details",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "u64"
+      ],
+      "return": [
+        "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::simple_voting::ProposalView"
+      ]
+    },
+    {
+      "name": "get_proposal_details_destuctured",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "u64"
+      ],
+      "return": [
+        "u64",
+        "address",
+        "u64",
+        "u64",
+        "vector<u8>",
+        "u128",
+        "u128",
+        "u8",
+        "u8"
+      ]
+    },
+    {
+      "name": "get_proposal_metadata",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "u64"
+      ],
+      "return": [
+        "vector<u8>"
+      ]
+    },
+    {
+      "name": "get_proposal_status",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "u64"
+      ],
+      "return": [
+        "u8"
+      ]
+    },
+    {
+      "name": "get_proposal_vote_count",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "u64"
+      ],
+      "return": [
+        "vector<u64>",
+        "vector<u128>"
+      ]
+    },
+    {
+      "name": "get_proposer",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "u64"
+      ],
+      "return": [
+        "address"
+      ]
+    },
+    {
+      "name": "get_total_proposals",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_voter_details",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "u64",
+        "address"
+      ],
+      "return": [
+        "bool",
+        "u8",
+        "u64"
+      ]
+    },
+    {
+      "name": "get_voting_period",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "u64"
+      ],
+      "return": [
+        "u64",
+        "u64"
+      ]
+    },
+    {
+      "name": "get_voting_system_object_address",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "address"
+      ]
+    },
+    {
+      "name": "is_voting_active",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "u64"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "remove_voters",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "u64",
+        "vector<address>"
+      ],
+      "return": []
+    },
+    {
+      "name": "resolve_proposal",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "update_min_votes_of_a_proposal",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "u64",
+        "u128"
+      ],
+      "return": []
+    },
+    {
+      "name": "vote",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "u64",
+        "u8"
+      ],
+      "return": []
+    }
+  ],
+  "structs": [
+    {
+      "name": "MinVotesUpdated",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "proposal_id",
+          "type": "u64"
+        },
+        {
+          "name": "new_min_votes",
+          "type": "u128"
+        }
+      ]
+    },
+    {
+      "name": "ObjectController",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "transfer_ref",
+          "type": "0x1::object::TransferRef"
+        },
+        {
+          "name": "extend_ref",
+          "type": "0x1::object::ExtendRef"
+        }
+      ]
+    },
+    {
+      "name": "Proposal",
+      "is_native": false,
+      "abilities": [
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "proposer",
+          "type": "address"
+        },
+        {
+          "name": "start_time",
+          "type": "u64"
+        },
+        {
+          "name": "end_time",
+          "type": "u64"
+        },
+        {
+          "name": "vote_records",
+          "type": "0x1::smart_table::SmartTable<address, 0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::simple_voting::VoterMetadata>"
+        },
+        {
+          "name": "metadata",
+          "type": "vector<u8>"
+        },
+        {
+          "name": "min_votes",
+          "type": "u128"
+        },
+        {
+          "name": "total_votes",
+          "type": "u128"
+        },
+        {
+          "name": "votes",
+          "type": "0x1::smart_table::SmartTable<u8, u128>"
+        },
+        {
+          "name": "num_options",
+          "type": "u8"
+        },
+        {
+          "name": "status",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "ProposalCreated",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "proposal_id",
+          "type": "u64"
+        },
+        {
+          "name": "proposer",
+          "type": "address"
+        },
+        {
+          "name": "start_time",
+          "type": "u64"
+        },
+        {
+          "name": "end_time",
+          "type": "u64"
+        },
+        {
+          "name": "eligible_voters",
+          "type": "vector<address>"
+        },
+        {
+          "name": "voter_weights",
+          "type": "vector<u64>"
+        },
+        {
+          "name": "max_options",
+          "type": "u8"
+        },
+        {
+          "name": "min_votes",
+          "type": "u128"
+        },
+        {
+          "name": "total_possible_votes",
+          "type": "u128"
+        },
+        {
+          "name": "metadata",
+          "type": "vector<u8>"
+        }
+      ]
+    },
+    {
+      "name": "ProposalDeleted",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "proposal_id",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "ProposalResolved",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "proposal_id",
+          "type": "u64"
+        },
+        {
+          "name": "resolver",
+          "type": "address"
+        },
+        {
+          "name": "final_status",
+          "type": "u8"
+        },
+        {
+          "name": "win_option",
+          "type": "u8"
+        },
+        {
+          "name": "options_voted",
+          "type": "vector<u8>"
+        },
+        {
+          "name": "vote_count",
+          "type": "vector<u128>"
+        },
+        {
+          "name": "total_votes",
+          "type": "u128"
+        },
+        {
+          "name": "resolution_time",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "ProposalView",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "id",
+          "type": "u64"
+        },
+        {
+          "name": "proposer",
+          "type": "address"
+        },
+        {
+          "name": "start_time",
+          "type": "u64"
+        },
+        {
+          "name": "end_time",
+          "type": "u64"
+        },
+        {
+          "name": "metadata",
+          "type": "vector<u8>"
+        },
+        {
+          "name": "min_votes",
+          "type": "u128"
+        },
+        {
+          "name": "num_options",
+          "type": "u8"
+        },
+        {
+          "name": "total_votes",
+          "type": "u128"
+        },
+        {
+          "name": "status",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "VoteCast",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "proposal_id",
+          "type": "u64"
+        },
+        {
+          "name": "voter",
+          "type": "address"
+        },
+        {
+          "name": "vote",
+          "type": "u8"
+        },
+        {
+          "name": "weight",
+          "type": "u64"
+        },
+        {
+          "name": "previous_vote",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "VoterMetadata",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "voter_weightage",
+          "type": "u64"
+        },
+        {
+          "name": "vote",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "VotersAdded",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "proposal_id",
+          "type": "u64"
+        },
+        {
+          "name": "eligible_voters",
+          "type": "vector<address>"
+        },
+        {
+          "name": "voter_weights",
+          "type": "vector<u64>"
+        }
+      ]
+    },
+    {
+      "name": "VotersRemoved",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "proposal_id",
+          "type": "u64"
+        },
+        {
+          "name": "removed_voters",
+          "type": "vector<address>"
+        }
+      ]
+    },
+    {
+      "name": "VotingSystem",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "proposals",
+          "type": "0x1::smart_table::SmartTable<u64, 0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::simple_voting::Proposal>"
+        },
+        {
+          "name": "next_proposal_id",
+          "type": "u64"
+        }
+      ]
+    }
+  ]
+}

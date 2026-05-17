@@ -1,0 +1,147 @@
+{
+  "address": "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64",
+  "name": "i128",
+  "friends": [],
+  "exposed_functions": [
+    {
+      "name": "abs",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i128::I128"
+      ],
+      "return": [
+        "u128"
+      ]
+    },
+    {
+      "name": "add",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i128::I128",
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i128::I128"
+      ],
+      "return": [
+        "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i128::I128"
+      ]
+    },
+    {
+      "name": "as_u128",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i128::I128"
+      ],
+      "return": [
+        "u128"
+      ]
+    },
+    {
+      "name": "is_negative",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i128::I128"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "is_positive",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i128::I128"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "is_zero",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i128::I128"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "new",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u128",
+        "bool"
+      ],
+      "return": [
+        "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i128::I128"
+      ]
+    },
+    {
+      "name": "sub",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i128::I128",
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i128::I128"
+      ],
+      "return": [
+        "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i128::I128"
+      ]
+    },
+    {
+      "name": "zero",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i128::I128"
+      ]
+    }
+  ],
+  "structs": [
+    {
+      "name": "I128",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "value",
+          "type": "u128"
+        },
+        {
+          "name": "is_negative",
+          "type": "bool"
+        }
+      ]
+    }
+  ]
+}

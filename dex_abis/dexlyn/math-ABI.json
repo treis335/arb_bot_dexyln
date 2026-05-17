@@ -1,0 +1,121 @@
+{
+  "address": "0xdc694898dff98a1b0447e0992d0413e123ea80da1021d464a4fbaf0265870d8",
+  "name": "math",
+  "friends": [],
+  "exposed_functions": [
+    {
+      "name": "min_u64",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u64",
+        "u64"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "mul_div",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u64",
+        "u64",
+        "u64"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "mul_div_u128",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u128",
+        "u128",
+        "u128"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "mul_div_u256",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u256",
+        "u256",
+        "u256"
+      ],
+      "return": [
+        "u256"
+      ]
+    },
+    {
+      "name": "mul_to_u128",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u64",
+        "u64"
+      ],
+      "return": [
+        "u128"
+      ]
+    },
+    {
+      "name": "overflow_add",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u128",
+        "u128"
+      ],
+      "return": [
+        "u128"
+      ]
+    },
+    {
+      "name": "pow_10",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u8"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "sqrt",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u128"
+      ],
+      "return": [
+        "u64"
+      ]
+    }
+  ],
+  "structs": []
+}

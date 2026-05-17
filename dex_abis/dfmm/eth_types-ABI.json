@@ -1,0 +1,651 @@
+{
+  "address": "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932",
+  "name": "eth_types",
+  "friends": [
+    "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::hypernova_core",
+    "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::proof_verifier"
+  ],
+  "exposed_functions": [
+    {
+      "name": "calculate_root",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&mut vector<vector<u8>>"
+      ],
+      "return": [
+        "vector<u8>"
+      ]
+    },
+    {
+      "name": "compute_fork_data_root",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "vector<u8>",
+        "&vector<u8>"
+      ],
+      "return": [
+        "vector<u8>"
+      ]
+    },
+    {
+      "name": "compute_merkle_root",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "vector<u8>",
+        "vector<vector<u8>>",
+        "u64"
+      ],
+      "return": [
+        "vector<u8>"
+      ]
+    },
+    {
+      "name": "construct_beacon_block_header",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u64",
+        "u64",
+        "vector<u8>",
+        "vector<u8>",
+        "vector<u8>"
+      ],
+      "return": [
+        "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::BeaconBlockHeader"
+      ]
+    },
+    {
+      "name": "construct_fork",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u64",
+        "vector<u8>"
+      ],
+      "return": [
+        "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::Fork"
+      ]
+    },
+    {
+      "name": "construct_lightclient_update",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u64",
+        "0x1::option::Option<vector<vector<u8>>>",
+        "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::BeaconBlockHeader",
+        "0x1::option::Option<0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::BeaconBlockHeader>",
+        "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::SyncAggregate"
+      ],
+      "return": [
+        "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::LightClientUpdate"
+      ]
+    },
+    {
+      "name": "construct_signing_data",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "vector<u8>",
+        "vector<u8>"
+      ],
+      "return": [
+        "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::SigningData"
+      ]
+    },
+    {
+      "name": "construct_sync_aggregate",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "vector<bool>",
+        "vector<u8>"
+      ],
+      "return": [
+        "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::SyncAggregate"
+      ]
+    },
+    {
+      "name": "construct_sync_committee",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "vector<0x1::bls12381::PublicKeyWithPoP>",
+        "0x1::bls12381::PublicKey"
+      ],
+      "return": [
+        "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::SyncCommittee"
+      ]
+    },
+    {
+      "name": "get_aggregate_public_key",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::SyncCommittee"
+      ],
+      "return": [
+        "&0x1::bls12381::PublicKey"
+      ]
+    },
+    {
+      "name": "get_attested_header_update",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::LightClientUpdate"
+      ],
+      "return": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::BeaconBlockHeader"
+      ]
+    },
+    {
+      "name": "get_body_root",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::BeaconBlockHeader"
+      ],
+      "return": [
+        "&vector<u8>"
+      ]
+    },
+    {
+      "name": "get_domain",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::SigningData"
+      ],
+      "return": [
+        "&vector<u8>"
+      ]
+    },
+    {
+      "name": "get_epoch",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::Fork"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_finality_branch_update",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::LightClientUpdate"
+      ],
+      "return": [
+        "0x1::option::Option<vector<vector<u8>>>"
+      ]
+    },
+    {
+      "name": "get_finalized_header_update",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::LightClientUpdate"
+      ],
+      "return": [
+        "0x1::option::Option<0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::BeaconBlockHeader>"
+      ]
+    },
+    {
+      "name": "get_fork_version",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "vector<0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::Fork>"
+      ],
+      "return": [
+        "vector<u8>"
+      ]
+    },
+    {
+      "name": "get_object_root",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::SigningData"
+      ],
+      "return": [
+        "&vector<u8>"
+      ]
+    },
+    {
+      "name": "get_parent_root",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::BeaconBlockHeader"
+      ],
+      "return": [
+        "&vector<u8>"
+      ]
+    },
+    {
+      "name": "get_proposer_index",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::BeaconBlockHeader"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_signature_slot_update",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::LightClientUpdate"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_slot",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::BeaconBlockHeader"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_state_root",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::BeaconBlockHeader"
+      ],
+      "return": [
+        "&vector<u8>"
+      ]
+    },
+    {
+      "name": "get_sync_aggregate_update",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::LightClientUpdate"
+      ],
+      "return": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::SyncAggregate"
+      ]
+    },
+    {
+      "name": "get_sync_committee_bits",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::SyncAggregate"
+      ],
+      "return": [
+        "&vector<bool>"
+      ]
+    },
+    {
+      "name": "get_sync_committee_public_keys",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::SyncCommittee"
+      ],
+      "return": [
+        "&vector<0x1::bls12381::PublicKeyWithPoP>"
+      ]
+    },
+    {
+      "name": "get_sync_committee_signature",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::SyncAggregate"
+      ],
+      "return": [
+        "&0x1::bls12381::Signature"
+      ]
+    },
+    {
+      "name": "get_version",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::Fork"
+      ],
+      "return": [
+        "&vector<u8>"
+      ]
+    },
+    {
+      "name": "hash_tree_root_beacon_block_header",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::BeaconBlockHeader"
+      ],
+      "return": [
+        "vector<u8>"
+      ]
+    },
+    {
+      "name": "hash_tree_root_fork_data",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::ForkData"
+      ],
+      "return": [
+        "vector<u8>"
+      ]
+    },
+    {
+      "name": "hash_tree_root_public_key",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "vector<u8>"
+      ],
+      "return": [
+        "vector<u8>"
+      ]
+    },
+    {
+      "name": "hash_tree_root_signing_data",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::SigningData"
+      ],
+      "return": [
+        "vector<u8>"
+      ]
+    },
+    {
+      "name": "is_valid_merkle_branch",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "vector<u8>",
+        "vector<u8>",
+        "vector<vector<u8>>",
+        "u64",
+        "u64"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "next_power_of_two",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u64"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "verify_merkle_proof",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "vector<u8>",
+        "vector<vector<u8>>",
+        "u64",
+        "vector<u8>"
+      ],
+      "return": [
+        "bool"
+      ]
+    }
+  ],
+  "structs": [
+    {
+      "name": "BeaconBlockHeader",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "slot",
+          "type": "u64"
+        },
+        {
+          "name": "proposer_index",
+          "type": "u64"
+        },
+        {
+          "name": "parent_root",
+          "type": "vector<u8>"
+        },
+        {
+          "name": "state_root",
+          "type": "vector<u8>"
+        },
+        {
+          "name": "body_root",
+          "type": "vector<u8>"
+        }
+      ]
+    },
+    {
+      "name": "Fork",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "epoch",
+          "type": "u64"
+        },
+        {
+          "name": "version",
+          "type": "vector<u8>"
+        }
+      ]
+    },
+    {
+      "name": "ForkData",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "current_version",
+          "type": "vector<u8>"
+        },
+        {
+          "name": "genesis_validators_root",
+          "type": "vector<u8>"
+        }
+      ]
+    },
+    {
+      "name": "LightClientUpdate",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "signature_slot",
+          "type": "u64"
+        },
+        {
+          "name": "finality_branch",
+          "type": "0x1::option::Option<vector<vector<u8>>>"
+        },
+        {
+          "name": "attested_block_header",
+          "type": "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::BeaconBlockHeader"
+        },
+        {
+          "name": "finalized_block_header",
+          "type": "0x1::option::Option<0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::BeaconBlockHeader>"
+        },
+        {
+          "name": "sync_aggregate",
+          "type": "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::SyncAggregate"
+        }
+      ]
+    },
+    {
+      "name": "SigningData",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "object_root",
+          "type": "vector<u8>"
+        },
+        {
+          "name": "domain",
+          "type": "vector<u8>"
+        }
+      ]
+    },
+    {
+      "name": "SyncAggregate",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "sync_committee_bits",
+          "type": "vector<bool>"
+        },
+        {
+          "name": "sync_committee_signature",
+          "type": "0x1::bls12381::Signature"
+        }
+      ]
+    },
+    {
+      "name": "SyncCommittee",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "aggregate_public_key",
+          "type": "0x1::bls12381::PublicKey"
+        },
+        {
+          "name": "public_keys",
+          "type": "vector<0x1::bls12381::PublicKeyWithPoP>"
+        }
+      ]
+    }
+  ]
+}

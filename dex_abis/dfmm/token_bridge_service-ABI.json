@@ -1,0 +1,621 @@
+{
+  "address": "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932",
+  "name": "token_bridge_service",
+  "friends": [],
+  "exposed_functions": [
+    {
+      "name": "balance_view",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "vector<u8>",
+        "u64",
+        "address"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "claim_minter_capability",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "u64",
+        "vector<u8>"
+      ],
+      "return": []
+    },
+    {
+      "name": "execute_finality",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "u64",
+        "u64",
+        "vector<u8>",
+        "vector<u8>",
+        "vector<u8>",
+        "u64",
+        "u64",
+        "vector<u8>",
+        "vector<u8>",
+        "vector<u8>",
+        "vector<vector<u8>>",
+        "vector<bool>",
+        "vector<u8>",
+        "u64",
+        "bool",
+        "u64",
+        "vector<vector<u8>>",
+        "vector<vector<u8>>",
+        "vector<u8>",
+        "vector<vector<u8>>",
+        "u64",
+        "u64",
+        "u64",
+        "vector<u8>",
+        "vector<u8>",
+        "vector<u8>",
+        "u64",
+        "vector<vector<u8>>",
+        "u64",
+        "vector<vector<u8>>",
+        "vector<u8>",
+        "vector<u8>",
+        "u64",
+        "vector<u8>",
+        "u64",
+        "vector<u8>",
+        "vector<u8>",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "execute_optimistic_or_safe",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "u64",
+        "u64",
+        "vector<u8>",
+        "vector<u8>",
+        "vector<u8>",
+        "vector<bool>",
+        "vector<u8>",
+        "u64",
+        "bool",
+        "u64",
+        "vector<vector<u8>>",
+        "vector<vector<u8>>",
+        "vector<u8>",
+        "vector<vector<u8>>",
+        "u64",
+        "u64",
+        "u64",
+        "vector<u8>",
+        "vector<u8>",
+        "vector<u8>",
+        "u64",
+        "vector<vector<u8>>",
+        "u64",
+        "vector<vector<u8>>",
+        "vector<u8>",
+        "vector<u8>",
+        "u64",
+        "vector<u8>",
+        "u64",
+        "vector<u8>",
+        "vector<u8>",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "generate_token_bridge_address",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "address"
+      ]
+    },
+    {
+      "name": "get_admin_address",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "address"
+      ]
+    },
+    {
+      "name": "get_source_token_bridge_info",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::token_bridge_service::SourceBridgeInfo"
+      ]
+    },
+    {
+      "name": "get_total_collected_fees",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "vector<u8>",
+        "u64"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_verification_method_and_safety_level",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::token_bridge_service::VerificationInfo"
+      ]
+    },
+    {
+      "name": "get_wrapped_token_metadata_and_address",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "u64",
+        "vector<u8>"
+      ],
+      "return": [
+        "0x1::object::Object<0x1::fungible_asset::Metadata>",
+        "address",
+        "vector<u8>"
+      ]
+    },
+    {
+      "name": "has_executed_event_hash",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "vector<u8>"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "is_token_bridge_paused",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "register_source_token_bridge",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "vector<u8>",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "set_token_bridge_pause_state",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "bool"
+      ],
+      "return": []
+    },
+    {
+      "name": "unregister_source_token_bridge",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer"
+      ],
+      "return": []
+    },
+    {
+      "name": "update_verification_strategy_type",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "u8",
+        "u8"
+      ],
+      "return": []
+    },
+    {
+      "name": "withdraw_collected_fee",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "vector<u8>",
+        "u64",
+        "u64"
+      ],
+      "return": []
+    }
+  ],
+  "structs": [
+    {
+      "name": "ExecutionEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "log_index",
+          "type": "u64"
+        },
+        {
+          "name": "message_id",
+          "type": "vector<u8>"
+        },
+        {
+          "name": "extracted_log_hash",
+          "type": "vector<u8>"
+        }
+      ]
+    },
+    {
+      "name": "ExtractedMessageDataEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "verification_strategy_type",
+          "type": "u8"
+        },
+        {
+          "name": "safety_level",
+          "type": "u8"
+        },
+        {
+          "name": "amount",
+          "type": "u64"
+        },
+        {
+          "name": "bridge_service_fee",
+          "type": "u64"
+        },
+        {
+          "name": "relayer_reward",
+          "type": "u64"
+        },
+        {
+          "name": "dest_chain_id",
+          "type": "u8"
+        },
+        {
+          "name": "dest_block_height",
+          "type": "u64"
+        },
+        {
+          "name": "dest_timestamp",
+          "type": "u64"
+        },
+        {
+          "name": "dest_token_addr",
+          "type": "address"
+        },
+        {
+          "name": "source_chain_id",
+          "type": "u64"
+        },
+        {
+          "name": "message_id",
+          "type": "vector<u8>"
+        },
+        {
+          "name": "source_token_bridge_addr",
+          "type": "vector<u8>"
+        },
+        {
+          "name": "sender_addr",
+          "type": "vector<u8>"
+        },
+        {
+          "name": "source_token_addr",
+          "type": "vector<u8>"
+        },
+        {
+          "name": "payload",
+          "type": "vector<u8>"
+        },
+        {
+          "name": "recipient_addr",
+          "type": "vector<u8>"
+        }
+      ]
+    },
+    {
+      "name": "MinterCapClaimedEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "admin_addr",
+          "type": "address"
+        },
+        {
+          "name": "origin_chain_id",
+          "type": "u64"
+        },
+        {
+          "name": "origin_token_addr",
+          "type": "vector<u8>"
+        },
+        {
+          "name": "wrapped_token_addr",
+          "type": "address"
+        },
+        {
+          "name": "claimer_addr",
+          "type": "address"
+        }
+      ]
+    },
+    {
+      "name": "SafetyLevelUpdatedEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "new_safety_level",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "SourceBridgeInfo",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "bridge_address",
+          "type": "vector<u8>"
+        },
+        {
+          "name": "chain_id",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "SourceTokenBridgeInfo",
+      "is_native": false,
+      "abilities": [
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "chain_id",
+          "type": "u64"
+        },
+        {
+          "name": "bridge_addr",
+          "type": "vector<u8>"
+        }
+      ]
+    },
+    {
+      "name": "SourceTokenBridgeRegisterEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "source_chain_id",
+          "type": "u64"
+        },
+        {
+          "name": "source_token_bridge_addr",
+          "type": "vector<u8>"
+        }
+      ]
+    },
+    {
+      "name": "SourceTokenBridgeUnRegisterEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "source_chain_id",
+          "type": "u64"
+        },
+        {
+          "name": "source_token_bridge_addr",
+          "type": "vector<u8>"
+        }
+      ]
+    },
+    {
+      "name": "TokenBridgePauseEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "is_paused",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "TokenBridgeState",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "safety_level",
+          "type": "u8"
+        },
+        {
+          "name": "verification_strategy_type",
+          "type": "u8"
+        },
+        {
+          "name": "is_paused",
+          "type": "bool"
+        },
+        {
+          "name": "admin_addr",
+          "type": "address"
+        },
+        {
+          "name": "bridge_signer_capability",
+          "type": "0x1::account::SignerCapability"
+        },
+        {
+          "name": "source_bridge_info",
+          "type": "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::token_bridge_service::SourceTokenBridgeInfo"
+        },
+        {
+          "name": "processed_event_hashes",
+          "type": "0x1::smart_table::SmartTable<vector<u8>, bool>"
+        }
+      ]
+    },
+    {
+      "name": "VerificationInfo",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "verification_strategy_type",
+          "type": "u8"
+        },
+        {
+          "name": "safety_level",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "VerificationStrategyUpdatedEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "verification_strategy_type",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "WithdrawCollectedFeeEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "deposit_account",
+          "type": "address"
+        },
+        {
+          "name": "amount",
+          "type": "u64"
+        },
+        {
+          "name": "wrapped_token_addr",
+          "type": "address"
+        }
+      ]
+    }
+  ]
+}

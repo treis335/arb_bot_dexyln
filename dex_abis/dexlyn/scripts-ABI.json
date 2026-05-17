@@ -1,0 +1,216 @@
+{
+  "address": "0xdc694898dff98a1b0447e0992d0413e123ea80da1021d464a4fbaf0265870d8",
+  "name": "scripts",
+  "friends": [],
+  "exposed_functions": [
+    {
+      "name": "add_liquidity",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "u64",
+        "u64",
+        "u64",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "register_pool",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer"
+      ],
+      "return": []
+    },
+    {
+      "name": "register_pool_and_add_liquidity",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "u64",
+        "u64",
+        "u64",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "remove_liquidity",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "u64",
+        "u64",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "swap",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "u64",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "swap_into",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "u64",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "swap_unchecked",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "u64",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "withdraw_accrued_dao_fee",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer"
+      ],
+      "return": []
+    },
+    {
+      "name": "withdraw_dao_fee",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "u64",
+        "u64"
+      ],
+      "return": []
+    }
+  ],
+  "structs": []
+}

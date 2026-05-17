@@ -1,0 +1,247 @@
+{
+  "address": "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64",
+  "name": "evo_clamm_position_nft_manager",
+  "friends": [
+    "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_router"
+  ],
+  "exposed_functions": [
+    {
+      "name": "burn",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u64"
+      ],
+      "return": [
+        "vector<0x1::fungible_asset::FungibleAsset>"
+      ]
+    },
+    {
+      "name": "collect_fee",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u64",
+        "u64",
+        "u64"
+      ],
+      "return": [
+        "0x1::fungible_asset::FungibleAsset",
+        "0x1::fungible_asset::FungibleAsset"
+      ]
+    },
+    {
+      "name": "collect_reward",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u64",
+        "u64",
+        "u64"
+      ],
+      "return": [
+        "0x1::fungible_asset::FungibleAsset"
+      ]
+    },
+    {
+      "name": "create_collection",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "0x1::string::String"
+      ],
+      "return": [
+        "0x1::string::String"
+      ]
+    },
+    {
+      "name": "decrease_liquidity",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u64",
+        "u128",
+        "u64",
+        "u64"
+      ],
+      "return": [
+        "0x1::fungible_asset::FungibleAsset",
+        "0x1::fungible_asset::FungibleAsset"
+      ]
+    },
+    {
+      "name": "get_nft_manager_acc_addr",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "address"
+      ]
+    },
+    {
+      "name": "get_nft_manager_acc_signer",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "signer"
+      ]
+    },
+    {
+      "name": "get_position",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u64"
+      ],
+      "return": [
+        "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::Position"
+      ]
+    },
+    {
+      "name": "get_position_token_amounts",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u64"
+      ],
+      "return": [
+        "u64",
+        "u64"
+      ]
+    },
+    {
+      "name": "get_positions",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "vector<address>",
+        "vector<u64>"
+      ],
+      "return": [
+        "vector<0x1::option::Option<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::Position>>"
+      ]
+    },
+    {
+      "name": "increase_liquidity",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u64",
+        "&mut 0x1::fungible_asset::FungibleAsset",
+        "&mut 0x1::fungible_asset::FungibleAsset",
+        "u64",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "is_owner",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "address",
+        "u64"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "mint",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "0x1::object::Object<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool::LiquidityPool>",
+        "u32",
+        "u32",
+        "&mut 0x1::fungible_asset::FungibleAsset",
+        "&mut 0x1::fungible_asset::FungibleAsset",
+        "u64",
+        "u64"
+      ],
+      "return": [
+        "u64"
+      ]
+    }
+  ],
+  "structs": [
+    {
+      "name": "PositionToken",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "pool",
+          "type": "address"
+        },
+        {
+          "name": "position_id",
+          "type": "u64"
+        },
+        {
+          "name": "burn_ref",
+          "type": "0x4::token::BurnRef"
+        }
+      ]
+    },
+    {
+      "name": "ResourceSignerCap",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "signer_cap",
+          "type": "0x1::account::SignerCapability"
+        }
+      ]
+    }
+  ]
+}

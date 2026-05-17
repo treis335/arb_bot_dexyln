@@ -1,0 +1,832 @@
+{
+  "address": "0xdc694898dff98a1b0447e0992d0413e123ea80da1021d464a4fbaf0265870d8",
+  "name": "liquidity_pool",
+  "friends": [],
+  "exposed_functions": [
+    {
+      "name": "burn",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "0x1::coin::Coin<0x22a28a1b5264935d4778d542b1e84bca8879cf78f6183e1a9429b56a40a1a7c4::lp_coin::LP<T0, T1, T2>>"
+      ],
+      "return": [
+        "0x1::coin::Coin<T0>",
+        "0x1::coin::Coin<T1>"
+      ]
+    },
+    {
+      "name": "generate_lp_object_address",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [],
+      "return": [
+        "address"
+      ]
+    },
+    {
+      "name": "get_cumulative_prices",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [],
+      "return": [
+        "u128",
+        "u128",
+        "u64"
+      ]
+    },
+    {
+      "name": "get_dao_fee",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_dao_fees_config",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [],
+      "return": [
+        "u64",
+        "u64"
+      ]
+    },
+    {
+      "name": "get_decimals_scales",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [],
+      "return": [
+        "u64",
+        "u64"
+      ]
+    },
+    {
+      "name": "get_fee",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_fees_config",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [],
+      "return": [
+        "u64",
+        "u64"
+      ]
+    },
+    {
+      "name": "get_liquidity_pool_admin_object_address",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "address"
+      ]
+    },
+    {
+      "name": "get_pool",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [],
+      "return": [
+        "0x1::option::Option<address>"
+      ]
+    },
+    {
+      "name": "get_reserves_size",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [],
+      "return": [
+        "u64",
+        "u64"
+      ]
+    },
+    {
+      "name": "initialize",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer"
+      ],
+      "return": []
+    },
+    {
+      "name": "is_pool_exists",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "is_pool_locked",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "mint",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "0x1::coin::Coin<T0>",
+        "0x1::coin::Coin<T1>"
+      ],
+      "return": [
+        "0x1::coin::Coin<0x22a28a1b5264935d4778d542b1e84bca8879cf78f6183e1a9429b56a40a1a7c4::lp_coin::LP<T0, T1, T2>>"
+      ]
+    },
+    {
+      "name": "register",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer"
+      ],
+      "return": []
+    },
+    {
+      "name": "set_dao_fee",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "set_fee",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "swap",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "0x1::coin::Coin<T0>",
+        "u64",
+        "0x1::coin::Coin<T1>",
+        "u64"
+      ],
+      "return": [
+        "0x1::coin::Coin<T0>",
+        "0x1::coin::Coin<T1>"
+      ]
+    }
+  ],
+  "structs": [
+    {
+      "name": "AdminObjectController",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "transfer_ref",
+          "type": "0x1::object::TransferRef"
+        },
+        {
+          "name": "extend_ref",
+          "type": "0x1::object::ExtendRef"
+        }
+      ]
+    },
+    {
+      "name": "LPObjectController",
+      "is_native": false,
+      "abilities": [
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "transfer_ref",
+          "type": "0x1::object::TransferRef"
+        },
+        {
+          "name": "extend_ref",
+          "type": "0x1::object::ExtendRef"
+        }
+      ]
+    },
+    {
+      "name": "LiquidityAddedEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "pair_x",
+          "type": "0x1::string::String"
+        },
+        {
+          "name": "pair_y",
+          "type": "0x1::string::String"
+        },
+        {
+          "name": "curve",
+          "type": "0x1::string::String"
+        },
+        {
+          "name": "added_x_val",
+          "type": "u64"
+        },
+        {
+          "name": "added_y_val",
+          "type": "u64"
+        },
+        {
+          "name": "lp_tokens_received",
+          "type": "u64"
+        },
+        {
+          "name": "timestamp",
+          "type": "u64"
+        },
+        {
+          "name": "reserve_x",
+          "type": "u64"
+        },
+        {
+          "name": "reserve_y",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "LiquidityPool",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [
+        {
+          "constraints": [],
+          "is_phantom": true
+        },
+        {
+          "constraints": [],
+          "is_phantom": true
+        },
+        {
+          "constraints": [],
+          "is_phantom": true
+        }
+      ],
+      "fields": [
+        {
+          "name": "coin_x_reserve",
+          "type": "0x1::coin::Coin<T0>"
+        },
+        {
+          "name": "coin_y_reserve",
+          "type": "0x1::coin::Coin<T1>"
+        },
+        {
+          "name": "last_block_timestamp",
+          "type": "u64"
+        },
+        {
+          "name": "last_price_x_cumulative",
+          "type": "u128"
+        },
+        {
+          "name": "last_price_y_cumulative",
+          "type": "u128"
+        },
+        {
+          "name": "lp_mint_cap",
+          "type": "0x1::coin::MintCapability<0x22a28a1b5264935d4778d542b1e84bca8879cf78f6183e1a9429b56a40a1a7c4::lp_coin::LP<T0, T1, T2>>"
+        },
+        {
+          "name": "lp_burn_cap",
+          "type": "0x1::coin::BurnCapability<0x22a28a1b5264935d4778d542b1e84bca8879cf78f6183e1a9429b56a40a1a7c4::lp_coin::LP<T0, T1, T2>>"
+        },
+        {
+          "name": "x_scale",
+          "type": "u64"
+        },
+        {
+          "name": "y_scale",
+          "type": "u64"
+        },
+        {
+          "name": "locked",
+          "type": "bool"
+        },
+        {
+          "name": "fee",
+          "type": "u64"
+        },
+        {
+          "name": "dao_fee",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "LiquidityRemovedEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "pair_x",
+          "type": "0x1::string::String"
+        },
+        {
+          "name": "pair_y",
+          "type": "0x1::string::String"
+        },
+        {
+          "name": "curve",
+          "type": "0x1::string::String"
+        },
+        {
+          "name": "returned_x_val",
+          "type": "u64"
+        },
+        {
+          "name": "returned_y_val",
+          "type": "u64"
+        },
+        {
+          "name": "lp_tokens_burned",
+          "type": "u64"
+        },
+        {
+          "name": "timestamp",
+          "type": "u64"
+        },
+        {
+          "name": "reserve_x",
+          "type": "u64"
+        },
+        {
+          "name": "reserve_y",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "OracleUpdatedEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "pair_x",
+          "type": "0x1::string::String"
+        },
+        {
+          "name": "pair_y",
+          "type": "0x1::string::String"
+        },
+        {
+          "name": "curve",
+          "type": "0x1::string::String"
+        },
+        {
+          "name": "last_price_x_cumulative",
+          "type": "u128"
+        },
+        {
+          "name": "last_price_y_cumulative",
+          "type": "u128"
+        },
+        {
+          "name": "timestamp",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "PoolAccountCapability",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "signer_cap",
+          "type": "0x1::account::SignerCapability"
+        },
+        {
+          "name": "lp_controller_map",
+          "type": "0x1::table::Table<address, 0xdc694898dff98a1b0447e0992d0413e123ea80da1021d464a4fbaf0265870d8::liquidity_pool::LPObjectController>"
+        }
+      ]
+    },
+    {
+      "name": "PoolCreatedEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "pair_x",
+          "type": "0x1::string::String"
+        },
+        {
+          "name": "pair_y",
+          "type": "0x1::string::String"
+        },
+        {
+          "name": "curve",
+          "type": "0x1::string::String"
+        },
+        {
+          "name": "creator",
+          "type": "address"
+        },
+        {
+          "name": "pool_address",
+          "type": "address"
+        },
+        {
+          "name": "timestamp",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "PoolId",
+      "is_native": false,
+      "abilities": [
+        "drop"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "pair_x",
+          "type": "0x1::type_info::TypeInfo"
+        },
+        {
+          "name": "pair_y",
+          "type": "0x1::type_info::TypeInfo"
+        },
+        {
+          "name": "curve",
+          "type": "0x1::type_info::TypeInfo"
+        }
+      ]
+    },
+    {
+      "name": "SwapEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "pair_x",
+          "type": "0x1::string::String"
+        },
+        {
+          "name": "pair_y",
+          "type": "0x1::string::String"
+        },
+        {
+          "name": "curve",
+          "type": "0x1::string::String"
+        },
+        {
+          "name": "x_in",
+          "type": "u64"
+        },
+        {
+          "name": "x_out",
+          "type": "u64"
+        },
+        {
+          "name": "y_in",
+          "type": "u64"
+        },
+        {
+          "name": "y_out",
+          "type": "u64"
+        },
+        {
+          "name": "timestamp",
+          "type": "u64"
+        },
+        {
+          "name": "reserve_x",
+          "type": "u64"
+        },
+        {
+          "name": "reserve_y",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "UpdateDAOFeeEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "pair_x",
+          "type": "0x1::string::String"
+        },
+        {
+          "name": "pair_y",
+          "type": "0x1::string::String"
+        },
+        {
+          "name": "curve",
+          "type": "0x1::string::String"
+        },
+        {
+          "name": "new_fee",
+          "type": "u64"
+        },
+        {
+          "name": "timestamp",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "UpdateFeeEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "pair_x",
+          "type": "0x1::string::String"
+        },
+        {
+          "name": "pair_y",
+          "type": "0x1::string::String"
+        },
+        {
+          "name": "curve",
+          "type": "0x1::string::String"
+        },
+        {
+          "name": "new_fee",
+          "type": "u64"
+        },
+        {
+          "name": "timestamp",
+          "type": "u64"
+        }
+      ]
+    }
+  ]
+}

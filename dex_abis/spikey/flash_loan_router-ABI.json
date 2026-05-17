@@ -1,0 +1,277 @@
+{
+  "address": "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083",
+  "name": "flash_loan_router",
+  "friends": [],
+  "exposed_functions": [
+    {
+      "name": "borrow_fa_from_pool",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::amm_pair::Pair>",
+        "0x1::object::Object<0x1::fungible_asset::Metadata>",
+        "u64"
+      ],
+      "return": [
+        "0x1::fungible_asset::FungibleAsset",
+        "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::amm_pair::FlashLoanReceipt"
+      ]
+    },
+    {
+      "name": "borrow_from_pool_as_coin",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "0x1::object::Object<0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::amm_pair::Pair>",
+        "u64"
+      ],
+      "return": [
+        "0x1::coin::Coin<T0>",
+        "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::flash_loan_router::FlashLoanFromPoolAsCoinReceipt<T0>"
+      ]
+    },
+    {
+      "name": "borrow_from_vault",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "u64"
+      ],
+      "return": [
+        "0x1::coin::Coin<T0>",
+        "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::coin_wrapper::FlashLoanReceipt<T0>"
+      ]
+    },
+    {
+      "name": "check_best_liquidity_source",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "0x1::object::Object<0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::amm_pair::Pair>"
+      ],
+      "return": [
+        "u8"
+      ]
+    },
+    {
+      "name": "coin_to_native_fa",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "0x1::coin::Coin<T0>"
+      ],
+      "return": [
+        "0x1::fungible_asset::FungibleAsset"
+      ]
+    },
+    {
+      "name": "expected_fee",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "u64"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_internal_metadata",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [],
+      "return": [
+        "0x1::object::Object<0x1::fungible_asset::Metadata>"
+      ]
+    },
+    {
+      "name": "get_native_metadata",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [],
+      "return": [
+        "0x1::object::Object<0x1::fungible_asset::Metadata>"
+      ]
+    },
+    {
+      "name": "initialize",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer"
+      ],
+      "return": []
+    },
+    {
+      "name": "max_flash_loan_pool",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::amm_pair::Pair>",
+        "0x1::object::Object<0x1::fungible_asset::Metadata>"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "max_flash_loan_vault",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "native_fa_to_coin",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "0x1::fungible_asset::FungibleAsset"
+      ],
+      "return": [
+        "0x1::coin::Coin<T0>"
+      ]
+    },
+    {
+      "name": "repay_fa_to_pool",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::amm_pair::Pair>",
+        "0x1::fungible_asset::FungibleAsset",
+        "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::amm_pair::FlashLoanReceipt"
+      ],
+      "return": []
+    },
+    {
+      "name": "repay_to_pool_as_coin",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "0x1::coin::Coin<T0>",
+        "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::flash_loan_router::FlashLoanFromPoolAsCoinReceipt<T0>",
+        "0x1::object::Object<0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::amm_pair::Pair>"
+      ],
+      "return": []
+    },
+    {
+      "name": "repay_to_vault",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "0x1::coin::Coin<T0>",
+        "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::coin_wrapper::FlashLoanReceipt<T0>"
+      ],
+      "return": []
+    }
+  ],
+  "structs": [
+    {
+      "name": "FlashLoanFromPoolAsCoinReceipt",
+      "is_native": false,
+      "abilities": [],
+      "generic_type_params": [
+        {
+          "constraints": [],
+          "is_phantom": true
+        }
+      ],
+      "fields": [
+        {
+          "name": "pair_receipt",
+          "type": "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::amm_pair::FlashLoanReceipt"
+        },
+        {
+          "name": "loan_amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "RouterCapability",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "signer_cap",
+          "type": "0x1::account::SignerCapability"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,310 @@
+{
+  "address": "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932",
+  "name": "message_types",
+  "friends": [
+    "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::proof_verifier"
+  ],
+  "exposed_functions": [
+    {
+      "name": "construct_message",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "vector<u8>",
+        "u64",
+        "address",
+        "u64",
+        "address",
+        "vector<u8>",
+        "u64"
+      ],
+      "return": [
+        "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::message_types::Message"
+      ]
+    },
+    {
+      "name": "decode",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&mut vector<u8>"
+      ],
+      "return": [
+        "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::message_types::ExtractedLogs"
+      ]
+    },
+    {
+      "name": "get_address",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::message_types::ExtractedLog"
+      ],
+      "return": [
+        "&vector<u8>"
+      ]
+    },
+    {
+      "name": "get_data",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::message_types::ExtractedLog"
+      ],
+      "return": [
+        "&vector<u8>"
+      ]
+    },
+    {
+      "name": "get_destination_chain_id",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::message_types::Message"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_destination_hn_address",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::message_types::Message"
+      ],
+      "return": [
+        "address"
+      ]
+    },
+    {
+      "name": "get_log",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::message_types::ExtractedLogs",
+        "u64"
+      ],
+      "return": [
+        "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::message_types::ExtractedLog"
+      ]
+    },
+    {
+      "name": "get_log_hash",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::message_types::Message"
+      ],
+      "return": [
+        "&vector<u8>"
+      ]
+    },
+    {
+      "name": "get_log_index",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::message_types::Message"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_msg_id",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::message_types::Message"
+      ],
+      "return": [
+        "&vector<u8>"
+      ]
+    },
+    {
+      "name": "get_source_chain_id",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::message_types::Message"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_source_hn_address",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::message_types::Message"
+      ],
+      "return": [
+        "address"
+      ]
+    },
+    {
+      "name": "get_topic",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::message_types::ExtractedLog",
+        "u64"
+      ],
+      "return": [
+        "&vector<u8>"
+      ]
+    },
+    {
+      "name": "get_topics",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::message_types::ExtractedLog"
+      ],
+      "return": [
+        "&vector<vector<u8>>"
+      ]
+    },
+    {
+      "name": "rlp_encode_u64",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u64"
+      ],
+      "return": [
+        "vector<u8>"
+      ]
+    }
+  ],
+  "structs": [
+    {
+      "name": "ExtractedLog",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "contract_addr",
+          "type": "vector<u8>"
+        },
+        {
+          "name": "event_topics",
+          "type": "vector<vector<u8>>"
+        },
+        {
+          "name": "event_data",
+          "type": "vector<u8>"
+        }
+      ]
+    },
+    {
+      "name": "ExtractedLogs",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "logs",
+          "type": "vector<0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::message_types::ExtractedLog>"
+        }
+      ]
+    },
+    {
+      "name": "Message",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "event_log_index",
+          "type": "u64"
+        },
+        {
+          "name": "source_chain_id",
+          "type": "u64"
+        },
+        {
+          "name": "dest_chain_id",
+          "type": "u64"
+        },
+        {
+          "name": "source_hypernova_addr",
+          "type": "address"
+        },
+        {
+          "name": "dest_hypernova_addr",
+          "type": "address"
+        },
+        {
+          "name": "message_id",
+          "type": "vector<u8>"
+        },
+        {
+          "name": "event_log_hash",
+          "type": "vector<u8>"
+        }
+      ]
+    },
+    {
+      "name": "RlpHeader",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "is_list",
+          "type": "bool"
+        },
+        {
+          "name": "payload_length",
+          "type": "u64"
+        }
+      ]
+    }
+  ]
+}

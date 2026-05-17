@@ -1,0 +1,409 @@
+{
+  "address": "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083",
+  "name": "amm_factory",
+  "friends": [
+    "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::amm_router"
+  ],
+  "exposed_functions": [
+    {
+      "name": "add_launcher_to_whitelist",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "address"
+      ],
+      "return": []
+    },
+    {
+      "name": "all_pairs",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "vector<address>"
+      ]
+    },
+    {
+      "name": "all_pairs_length",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "all_pairs_paginated",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "u64",
+        "u64"
+      ],
+      "return": [
+        "vector<address>"
+      ]
+    },
+    {
+      "name": "assert_is_pure_native_fa",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "address"
+      ],
+      "return": []
+    },
+    {
+      "name": "claim_admin",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer"
+      ],
+      "return": []
+    },
+    {
+      "name": "create_pair",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "address",
+        "address"
+      ],
+      "return": []
+    },
+    {
+      "name": "create_pair_from_router",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "address",
+        "address"
+      ],
+      "return": []
+    },
+    {
+      "name": "create_pair_locked",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "address",
+        "address"
+      ],
+      "return": []
+    },
+    {
+      "name": "get_creator_for_pair",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address"
+      ],
+      "return": [
+        "address"
+      ]
+    },
+    {
+      "name": "get_pair",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address",
+        "address"
+      ],
+      "return": [
+        "address"
+      ]
+    },
+    {
+      "name": "get_reserves",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address",
+        "address"
+      ],
+      "return": [
+        "u64",
+        "u64"
+      ]
+    },
+    {
+      "name": "initialize_launchpad_feature",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer"
+      ],
+      "return": []
+    },
+    {
+      "name": "is_initialized",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "is_whitelisted",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "pair_exists",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x1::fungible_asset::Metadata>",
+        "0x1::object::Object<0x1::fungible_asset::Metadata>"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "pair_exists_for_frontend",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "pair_exists_safe",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x1::fungible_asset::Metadata>",
+        "0x1::object::Object<0x1::fungible_asset::Metadata>"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "pair_for",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "0x1::object::Object<0x1::fungible_asset::Metadata>",
+        "0x1::object::Object<0x1::fungible_asset::Metadata>"
+      ],
+      "return": [
+        "0x1::object::Object<0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083::amm_pair::Pair>"
+      ]
+    },
+    {
+      "name": "pause",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer"
+      ],
+      "return": []
+    },
+    {
+      "name": "remove_launcher_from_whitelist",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "address"
+      ],
+      "return": []
+    },
+    {
+      "name": "set_admin",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "address"
+      ],
+      "return": []
+    },
+    {
+      "name": "set_fee_to",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "address"
+      ],
+      "return": []
+    },
+    {
+      "name": "set_flash_loan_fee",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "set_swap_fee",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "u8"
+      ],
+      "return": []
+    },
+    {
+      "name": "unpause",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer"
+      ],
+      "return": []
+    },
+    {
+      "name": "verify_and_unlock_pair",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "address"
+      ],
+      "return": []
+    }
+  ],
+  "structs": [
+    {
+      "name": "Factory",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "all_pairs",
+          "type": "0x1::smart_vector::SmartVector<address>"
+        },
+        {
+          "name": "pair_map",
+          "type": "0x1::simple_map::SimpleMap<vector<u8>, address>"
+        }
+      ]
+    },
+    {
+      "name": "LaunchpadConfig",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "creator_map",
+          "type": "0x1::simple_map::SimpleMap<address, address>"
+        },
+        {
+          "name": "whitelist",
+          "type": "0x1::simple_map::SimpleMap<address, bool>"
+        }
+      ]
+    },
+    {
+      "name": "PairCreatedEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "pair",
+          "type": "address"
+        },
+        {
+          "name": "creator",
+          "type": "address"
+        },
+        {
+          "name": "token0",
+          "type": "address"
+        },
+        {
+          "name": "token1",
+          "type": "address"
+        }
+      ]
+    }
+  ]
+}

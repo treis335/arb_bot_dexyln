@@ -1,0 +1,223 @@
+{
+  "address": "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64",
+  "name": "oracle",
+  "friends": [
+    "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::evo_clamm_liquidity_pool"
+  ],
+  "exposed_functions": [
+    {
+      "name": "binary_search",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&vector<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::oracle::Observation>",
+        "u64",
+        "u16",
+        "u16"
+      ],
+      "return": [
+        "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::oracle::Observation",
+        "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::oracle::Observation"
+      ]
+    },
+    {
+      "name": "get_observation_or_empty",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&vector<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::oracle::Observation>",
+        "u16"
+      ],
+      "return": [
+        "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::oracle::Observation"
+      ]
+    },
+    {
+      "name": "grow",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&mut vector<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::oracle::Observation>",
+        "u16",
+        "u16"
+      ],
+      "return": [
+        "u16"
+      ]
+    },
+    {
+      "name": "initialize",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&mut vector<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::oracle::Observation>",
+        "u64"
+      ],
+      "return": [
+        "u16",
+        "u16"
+      ]
+    },
+    {
+      "name": "initialized",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::oracle::Observation"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "max_observations",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "u16"
+      ]
+    },
+    {
+      "name": "observe",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&vector<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::oracle::Observation>",
+        "u64",
+        "vector<u64>",
+        "u32",
+        "u16",
+        "u128",
+        "u16"
+      ],
+      "return": [
+        "vector<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64>",
+        "vector<u256>"
+      ]
+    },
+    {
+      "name": "observe_single",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&vector<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::oracle::Observation>",
+        "u64",
+        "u64",
+        "u32",
+        "u16",
+        "u128",
+        "u16"
+      ],
+      "return": [
+        "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64",
+        "u256"
+      ]
+    },
+    {
+      "name": "seconds_per_liquidity_cumulative",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::oracle::Observation"
+      ],
+      "return": [
+        "u256"
+      ]
+    },
+    {
+      "name": "tick_cumulative",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::oracle::Observation"
+      ],
+      "return": [
+        "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64"
+      ]
+    },
+    {
+      "name": "timestamp",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::oracle::Observation"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "write",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&mut vector<0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::oracle::Observation>",
+        "u16",
+        "u64",
+        "u32",
+        "u128",
+        "u16",
+        "u16"
+      ],
+      "return": [
+        "u16",
+        "u16"
+      ]
+    }
+  ],
+  "structs": [
+    {
+      "name": "Observation",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "timestamp",
+          "type": "u64"
+        },
+        {
+          "name": "tick_cumulative",
+          "type": "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64"
+        },
+        {
+          "name": "seconds_per_liquidity_cumulative",
+          "type": "u256"
+        },
+        {
+          "name": "initialized",
+          "type": "bool"
+        }
+      ]
+    }
+  ]
+}

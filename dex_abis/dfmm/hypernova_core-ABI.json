@@ -1,0 +1,890 @@
+{
+  "address": "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932",
+  "name": "hypernova_core",
+  "friends": [
+    "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::proof_verifier"
+  ],
+  "exposed_functions": [
+    {
+      "name": "add_or_update_hypernova_config",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "u256",
+        "u64",
+        "u64",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "ensure_core_admin",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer"
+      ],
+      "return": []
+    },
+    {
+      "name": "generate_resource_address",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "address"
+      ]
+    },
+    {
+      "name": "get_admin_address",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "address"
+      ]
+    },
+    {
+      "name": "get_committee_updater_reward",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_current_sync_committee_aggregate_public_key",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "vector<u8>"
+      ]
+    },
+    {
+      "name": "get_current_sync_committee_public_keys",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "vector<vector<u8>>"
+      ]
+    },
+    {
+      "name": "get_fee_per_verification",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_forks",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::hypernova_core::ForksView"
+      ]
+    },
+    {
+      "name": "get_light_client_store",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::hypernova_core::LightClientView"
+      ]
+    },
+    {
+      "name": "get_next_sync_committee_aggregate_public_key",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "0x1::option::Option<vector<u8>>"
+      ]
+    },
+    {
+      "name": "get_next_sync_committee_public_keys",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "0x1::option::Option<vector<vector<u8>>>"
+      ]
+    },
+    {
+      "name": "get_source_chain_id",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_source_event_signature_hash",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "vector<u8>"
+      ]
+    },
+    {
+      "name": "get_source_hypernova_core_address",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "vector<u8>"
+      ]
+    },
+    {
+      "name": "get_sync_committee_threshold",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_total_balance",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_update_slot",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "initial_sync_committee_update",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "u64",
+        "u64",
+        "vector<u8>",
+        "vector<u8>",
+        "vector<u8>",
+        "vector<vector<u8>>",
+        "vector<u8>",
+        "vector<vector<u8>>",
+        "u64",
+        "u64",
+        "vector<u8>",
+        "vector<u8>",
+        "vector<u8>",
+        "vector<vector<u8>>",
+        "vector<bool>",
+        "vector<u8>",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "initialize_light_client_store",
+      "visibility": "private",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "u64",
+        "u64",
+        "vector<u8>",
+        "vector<u8>",
+        "vector<u8>",
+        "vector<vector<u8>>",
+        "vector<u8>",
+        "vector<vector<u8>>",
+        "u64",
+        "vector<u64>",
+        "vector<vector<u8>>",
+        "vector<u8>",
+        "u64",
+        "vector<u8>"
+      ],
+      "return": []
+    },
+    {
+      "name": "initialize_step",
+      "visibility": "private",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [],
+      "return": []
+    },
+    {
+      "name": "is_hypernova_paused",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "process_light_client_finality_update",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&mut 0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::LightClientUpdate"
+      ],
+      "return": []
+    },
+    {
+      "name": "process_light_client_optimistic_update",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&mut 0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::LightClientUpdate"
+      ],
+      "return": []
+    },
+    {
+      "name": "process_light_client_safe_update",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::LightClientUpdate",
+        "u64",
+        "u8"
+      ],
+      "return": []
+    },
+    {
+      "name": "process_verification_fee",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer"
+      ],
+      "return": []
+    },
+    {
+      "name": "set_hypernova_pause_state",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "bool"
+      ],
+      "return": []
+    },
+    {
+      "name": "sync_committee_update",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer"
+      ],
+      "return": []
+    },
+    {
+      "name": "update_fork_versions",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "vector<u64>",
+        "vector<vector<u8>>"
+      ],
+      "return": []
+    },
+    {
+      "name": "update_source_event_signature_hash",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "vector<u8>"
+      ],
+      "return": []
+    },
+    {
+      "name": "update_source_hypernova_contract_address_and_chain_id",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "vector<u8>",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "update_sync_committee_threshold",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "withdraw_collected_fee",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "u64"
+      ],
+      "return": []
+    }
+  ],
+  "structs": [
+    {
+      "name": "CommitteeValidEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "committee_valid",
+          "type": "bool"
+        },
+        {
+          "name": "current_step",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "FeeWithdrawalEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "deposit_account",
+          "type": "address"
+        },
+        {
+          "name": "withdrawal_amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "ForkVersionsUpdatedEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "new_protocol_fork_versions",
+          "type": "vector<0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::Fork>"
+        }
+      ]
+    },
+    {
+      "name": "ForksView",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "epochs",
+          "type": "vector<u64>"
+        },
+        {
+          "name": "versions",
+          "type": "vector<vector<u8>>"
+        }
+      ]
+    },
+    {
+      "name": "HNFeeConfig",
+      "is_native": false,
+      "abilities": [
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "committee_updater_margin",
+          "type": "u64"
+        },
+        {
+          "name": "verifier_margin",
+          "type": "u64"
+        },
+        {
+          "name": "traffic_per_day",
+          "type": "u64"
+        },
+        {
+          "name": "committee_updater_reward",
+          "type": "u64"
+        },
+        {
+          "name": "verification_fee",
+          "type": "u64"
+        },
+        {
+          "name": "committee_updater_gas_cost",
+          "type": "u256"
+        }
+      ]
+    },
+    {
+      "name": "HNFeeConfigUpdatedEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "committee_updater_margin",
+          "type": "u64"
+        },
+        {
+          "name": "verifier_margin",
+          "type": "u64"
+        },
+        {
+          "name": "traffic_per_day",
+          "type": "u64"
+        },
+        {
+          "name": "committee_updater_reward",
+          "type": "u64"
+        },
+        {
+          "name": "verification_fee",
+          "type": "u64"
+        },
+        {
+          "name": "committee_updater_gas_cost",
+          "type": "u256"
+        }
+      ]
+    },
+    {
+      "name": "HyperNovaPauseStatusEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "is_paused",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "HypernovaSourceUpdatedEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "source_hypernova_contract_address",
+          "type": "vector<u8>"
+        },
+        {
+          "name": "chain_id",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "InitializerScratchSpace",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "current_step",
+          "type": "u64"
+        },
+        {
+          "name": "committee_member_key_hashes",
+          "type": "vector<vector<u8>>"
+        },
+        {
+          "name": "committee_aggregate_key_hash",
+          "type": "vector<u8>"
+        },
+        {
+          "name": "current_sync_committee_branch",
+          "type": "vector<vector<u8>>"
+        },
+        {
+          "name": "genesis_header",
+          "type": "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::BeaconBlockHeader"
+        }
+      ]
+    },
+    {
+      "name": "LightClientState",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "is_paused",
+          "type": "bool"
+        },
+        {
+          "name": "light_client_store",
+          "type": "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::hypernova_core::LightClientStore"
+        },
+        {
+          "name": "verifier_config",
+          "type": "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::hypernova_core::VerifierConfig"
+        },
+        {
+          "name": "hn_fee_config",
+          "type": "0x1::option::Option<0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::hypernova_core::HNFeeConfig>"
+        }
+      ]
+    },
+    {
+      "name": "LightClientStore",
+      "is_native": false,
+      "abilities": [
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "last_update_slot",
+          "type": "u64"
+        },
+        {
+          "name": "current_sync_committee",
+          "type": "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::SyncCommittee"
+        },
+        {
+          "name": "next_sync_committee",
+          "type": "0x1::option::Option<0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::SyncCommittee>"
+        }
+      ]
+    },
+    {
+      "name": "LightClientStoreEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "latest_slot",
+          "type": "u64"
+        },
+        {
+          "name": "sync_committee_threshold",
+          "type": "u64"
+        },
+        {
+          "name": "source_chain_id",
+          "type": "u64"
+        },
+        {
+          "name": "source_hypernova_contract_address",
+          "type": "vector<u8>"
+        }
+      ]
+    },
+    {
+      "name": "LightClientUpdateScratchSpace",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "signature_slot",
+          "type": "u64"
+        },
+        {
+          "name": "current_step",
+          "type": "u64"
+        },
+        {
+          "name": "next_committee_merkle_proof",
+          "type": "vector<vector<u8>>"
+        },
+        {
+          "name": "finality_merkle_proof",
+          "type": "vector<vector<u8>>"
+        },
+        {
+          "name": "committee_member_key_hashes",
+          "type": "vector<vector<u8>>"
+        },
+        {
+          "name": "committee_aggregate_key_hash",
+          "type": "vector<u8>"
+        },
+        {
+          "name": "leaf_hash_tree_root_next_committee",
+          "type": "vector<u8>"
+        },
+        {
+          "name": "attested_block_header",
+          "type": "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::BeaconBlockHeader"
+        },
+        {
+          "name": "finalized_block_header",
+          "type": "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::BeaconBlockHeader"
+        },
+        {
+          "name": "next_sync_committee",
+          "type": "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::SyncCommittee"
+        },
+        {
+          "name": "sync_aggregate",
+          "type": "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::SyncAggregate"
+        }
+      ]
+    },
+    {
+      "name": "LightClientView",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "update_slot",
+          "type": "u64"
+        },
+        {
+          "name": "current_sync_committee_pubkeys",
+          "type": "vector<vector<u8>>"
+        },
+        {
+          "name": "current_sync_committee_aggregate_pubkey",
+          "type": "vector<u8>"
+        },
+        {
+          "name": "next_sync_committee_pubkeys",
+          "type": "0x1::option::Option<vector<vector<u8>>>"
+        },
+        {
+          "name": "next_sync_committee_aggregate_pubkey",
+          "type": "0x1::option::Option<vector<u8>>"
+        }
+      ]
+    },
+    {
+      "name": "SignerCap",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "signer_cap",
+          "type": "0x1::account::SignerCapability"
+        }
+      ]
+    },
+    {
+      "name": "SourceEventSignatureHashUpdatedEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "new_source_event_signature_hash",
+          "type": "vector<u8>"
+        }
+      ]
+    },
+    {
+      "name": "SyncCommitteeThresholdUpdatedEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "sync_committee_threshold",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "UpdateVerificationEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "next_sync_committee_public_keys",
+          "type": "0x1::option::Option<vector<vector<u8>>>"
+        },
+        {
+          "name": "next_sync_committee_aggregate_public_key",
+          "type": "0x1::option::Option<vector<u8>>"
+        },
+        {
+          "name": "current_sync_committee_public_keys",
+          "type": "vector<vector<u8>>"
+        },
+        {
+          "name": "current_sync_committee_aggregate_public_key",
+          "type": "vector<u8>"
+        }
+      ]
+    },
+    {
+      "name": "VerifierConfig",
+      "is_native": false,
+      "abilities": [
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "sync_committee_threshold",
+          "type": "u64"
+        },
+        {
+          "name": "source_chain_id",
+          "type": "u64"
+        },
+        {
+          "name": "admin_address",
+          "type": "address"
+        },
+        {
+          "name": "source_hypernova_contract_address",
+          "type": "vector<u8>"
+        },
+        {
+          "name": "protocol_fork_versions",
+          "type": "vector<0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::eth_types::Fork>"
+        },
+        {
+          "name": "source_event_signature_hash",
+          "type": "vector<u8>"
+        }
+      ]
+    }
+  ]
+}

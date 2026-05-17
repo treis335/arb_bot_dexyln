@@ -1,0 +1,50 @@
+{
+  "address": "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932",
+  "name": "redeem_router",
+  "friends": [
+    "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::poel"
+  ],
+  "exposed_functions": [
+    {
+      "name": "redeem_iasset",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "vector<u8>",
+        "u64",
+        "vector<u8>",
+        "u128",
+        "vector<u8>"
+      ],
+      "return": []
+    }
+  ],
+  "structs": [
+    {
+      "name": "IAssetRedeemedEvent",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "asset",
+          "type": "0x1::object::Object<0x1::fungible_asset::Metadata>"
+        },
+        {
+          "name": "amount",
+          "type": "u64"
+        },
+        {
+          "name": "destination",
+          "type": "address"
+        }
+      ]
+    }
+  ]
+}

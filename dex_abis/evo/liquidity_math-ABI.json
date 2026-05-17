@@ -1,0 +1,42 @@
+{
+  "address": "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64",
+  "name": "liquidity_math",
+  "friends": [],
+  "exposed_functions": [
+    {
+      "name": "get_amounts_for_liquidity",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u128",
+        "u128",
+        "u128",
+        "u128"
+      ],
+      "return": [
+        "u64",
+        "u64"
+      ]
+    },
+    {
+      "name": "get_liquidity_for_amounts",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u128",
+        "u128",
+        "u128",
+        "u64",
+        "u64"
+      ],
+      "return": [
+        "u128"
+      ]
+    }
+  ],
+  "structs": []
+}

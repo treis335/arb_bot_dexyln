@@ -1,0 +1,72 @@
+{
+  "address": "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64",
+  "name": "sqrt_price_math",
+  "friends": [],
+  "exposed_functions": [
+    {
+      "name": "get_amount_0_delta",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u128",
+        "u128",
+        "u128",
+        "bool"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_amount_1_delta",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u128",
+        "u128",
+        "u128",
+        "bool"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_next_sqrt_price_from_input",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u128",
+        "u128",
+        "u64",
+        "bool"
+      ],
+      "return": [
+        "u128"
+      ]
+    },
+    {
+      "name": "get_next_sqrt_price_from_output",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u128",
+        "u128",
+        "u64",
+        "bool"
+      ],
+      "return": [
+        "u128"
+      ]
+    }
+  ],
+  "structs": []
+}

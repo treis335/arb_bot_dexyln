@@ -1,0 +1,684 @@
+{
+  "address": "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083",
+  "name": "router_stake",
+  "friends": [],
+  "exposed_functions": [
+    {
+      "name": "boost",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "address",
+        "address",
+        "address",
+        "address",
+        "0x1::string::String",
+        "0x1::string::String",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "deposit_reward_assets",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "address",
+        "address",
+        "address",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "deposit_reward_coins",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "address",
+        "address",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "deposit_reward_for_rate_growth_coins",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "address",
+        "address",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "deposit_reward_for_rate_growth_fa",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "address",
+        "address",
+        "address",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "disable_emergency",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "address",
+        "address",
+        "address"
+      ],
+      "return": []
+    },
+    {
+      "name": "emergency_unstake",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "address",
+        "address",
+        "address"
+      ],
+      "return": []
+    },
+    {
+      "name": "emergency_unstake_fa_coin",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "address",
+        "address"
+      ],
+      "return": []
+    },
+    {
+      "name": "emergency_unstake_from_coins",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "address"
+      ],
+      "return": []
+    },
+    {
+      "name": "enable_emergency",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "address",
+        "address",
+        "address"
+      ],
+      "return": []
+    },
+    {
+      "name": "get_address_BWSUP",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "address"
+      ]
+    },
+    {
+      "name": "get_original_from_address",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "address"
+      ],
+      "return": [
+        "0x1::string::String"
+      ]
+    },
+    {
+      "name": "harvest_fa",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "address",
+        "address",
+        "address"
+      ],
+      "return": []
+    },
+    {
+      "name": "harvest_to_coin",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "address",
+        "address"
+      ],
+      "return": []
+    },
+    {
+      "name": "register_pool_coin_fa",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "address",
+        "u64",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "register_pool_fa",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "address",
+        "address",
+        "u64",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "register_pool_fa_coin",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "address",
+        "u64",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "register_pool_from_coins",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "u64",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "register_pool_with_collection_coin_fa",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "u64",
+        "address",
+        "u64",
+        "address",
+        "0x1::string::String",
+        "u128"
+      ],
+      "return": []
+    },
+    {
+      "name": "register_pool_with_collection_fa",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "u64",
+        "address",
+        "address",
+        "u64",
+        "address",
+        "0x1::string::String",
+        "u128"
+      ],
+      "return": []
+    },
+    {
+      "name": "register_pool_with_collection_fa_coin",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "u64",
+        "address",
+        "u64",
+        "address",
+        "0x1::string::String",
+        "u128"
+      ],
+      "return": []
+    },
+    {
+      "name": "register_pool_with_collection_from_coins",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "u64",
+        "u64",
+        "address",
+        "0x1::string::String",
+        "u128"
+      ],
+      "return": []
+    },
+    {
+      "name": "remove_boost",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "address",
+        "address",
+        "address"
+      ],
+      "return": []
+    },
+    {
+      "name": "renew_pool_coins",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "address",
+        "address",
+        "u64",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "renew_pool_fa",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "address",
+        "address",
+        "address",
+        "u64",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "stake_and_boost_coin_fa",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "address",
+        "address",
+        "u64",
+        "address",
+        "0x1::string::String",
+        "0x1::string::String",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "stake_and_boost_fa",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "address",
+        "address",
+        "address",
+        "u64",
+        "address",
+        "0x1::string::String",
+        "0x1::string::String",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "stake_and_boost_fa_coin",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "address",
+        "address",
+        "u64",
+        "address",
+        "0x1::string::String",
+        "0x1::string::String",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "stake_and_boost_from_coins",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "address",
+        "u64",
+        "address",
+        "0x1::string::String",
+        "0x1::string::String",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "stake_coin_fa",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "address",
+        "address",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "stake_fa",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "address",
+        "address",
+        "address",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "stake_fa_coin",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "address",
+        "address",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "stake_from_coins",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "address",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "unstake_and_remove_boost",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "address",
+        "address",
+        "address",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "unstake_and_remove_boost_to_coin",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "address",
+        "address",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "unstake_fa",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "address",
+        "address",
+        "address",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "unstake_to_coin",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "address",
+        "address",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "unwrap",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "address",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "withdraw_reward_to_treasury",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "address",
+        "address",
+        "address",
+        "u64"
+      ],
+      "return": []
+    }
+  ],
+  "structs": []
+}

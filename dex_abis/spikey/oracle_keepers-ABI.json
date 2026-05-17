@@ -1,0 +1,32 @@
+{
+  "address": "0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083",
+  "name": "oracle_keepers",
+  "friends": [],
+  "exposed_functions": [
+    {
+      "name": "call_update_block_info",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer"
+      ],
+      "return": []
+    },
+    {
+      "name": "call_update_by_address",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&signer",
+        "address",
+        "address"
+      ],
+      "return": []
+    }
+  ],
+  "structs": []
+}

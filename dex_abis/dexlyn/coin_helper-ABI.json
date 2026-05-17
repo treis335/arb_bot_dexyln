@@ -1,0 +1,94 @@
+{
+  "address": "0xdc694898dff98a1b0447e0992d0413e123ea80da1021d464a4fbaf0265870d8",
+  "name": "coin_helper",
+  "friends": [],
+  "exposed_functions": [
+    {
+      "name": "assert_is_coin",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [],
+      "return": []
+    },
+    {
+      "name": "compare",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [],
+      "return": [
+        "0x1::comparator::Result"
+      ]
+    },
+    {
+      "name": "generate_lp_name_and_symbol",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [],
+      "return": [
+        "0x1::string::String",
+        "0x1::string::String"
+      ]
+    },
+    {
+      "name": "is_sorted",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "supply",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [],
+      "return": [
+        "u128"
+      ]
+    }
+  ],
+  "structs": []
+}

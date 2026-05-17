@@ -1,0 +1,91 @@
+{
+  "address": "0xdc694898dff98a1b0447e0992d0413e123ea80da1021d464a4fbaf0265870d8",
+  "name": "curves",
+  "friends": [],
+  "exposed_functions": [
+    {
+      "name": "assert_valid_curve",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [],
+      "return": []
+    },
+    {
+      "name": "is_stable",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "is_uncorrelated",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "is_valid_curve",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [],
+      "return": [
+        "bool"
+      ]
+    }
+  ],
+  "structs": [
+    {
+      "name": "Stable",
+      "is_native": false,
+      "abilities": [],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "dummy_field",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "Uncorrelated",
+      "is_native": false,
+      "abilities": [],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "dummy_field",
+          "type": "bool"
+        }
+      ]
+    }
+  ]
+}

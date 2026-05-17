@@ -1,0 +1,314 @@
+{
+  "address": "0xdc694898dff98a1b0447e0992d0413e123ea80da1021d464a4fbaf0265870d8",
+  "name": "dao_storage",
+  "friends": [
+    "0xdc694898dff98a1b0447e0992d0413e123ea80da1021d464a4fbaf0265870d8::liquidity_pool"
+  ],
+  "exposed_functions": [
+    {
+      "name": "deposit",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "address",
+        "0x1::coin::Coin<T0>",
+        "0x1::coin::Coin<T1>"
+      ],
+      "return": []
+    },
+    {
+      "name": "get_accrued_dao_fee",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "address"
+      ],
+      "return": [
+        "u64",
+        "u64"
+      ]
+    },
+    {
+      "name": "register",
+      "visibility": "friend",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer"
+      ],
+      "return": []
+    },
+    {
+      "name": "withdraw",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        },
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "address",
+        "u64",
+        "u64"
+      ],
+      "return": [
+        "0x1::coin::Coin<T0>",
+        "0x1::coin::Coin<T1>"
+      ]
+    }
+  ],
+  "structs": [
+    {
+      "name": "CoinDepositedEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [
+        {
+          "constraints": [],
+          "is_phantom": true
+        },
+        {
+          "constraints": [],
+          "is_phantom": true
+        },
+        {
+          "constraints": [],
+          "is_phantom": true
+        }
+      ],
+      "fields": [
+        {
+          "name": "x_val",
+          "type": "u64"
+        },
+        {
+          "name": "y_val",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "CoinDepositedEventV2",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "pair_x",
+          "type": "0x1::string::String"
+        },
+        {
+          "name": "pair_y",
+          "type": "0x1::string::String"
+        },
+        {
+          "name": "curve",
+          "type": "0x1::string::String"
+        },
+        {
+          "name": "x_val",
+          "type": "u64"
+        },
+        {
+          "name": "y_val",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "CoinWithdrawnEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [
+        {
+          "constraints": [],
+          "is_phantom": true
+        },
+        {
+          "constraints": [],
+          "is_phantom": true
+        },
+        {
+          "constraints": [],
+          "is_phantom": true
+        }
+      ],
+      "fields": [
+        {
+          "name": "x_val",
+          "type": "u64"
+        },
+        {
+          "name": "y_val",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "CoinWithdrawnEventV2",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "pair_x",
+          "type": "0x1::string::String"
+        },
+        {
+          "name": "pair_y",
+          "type": "0x1::string::String"
+        },
+        {
+          "name": "curve",
+          "type": "0x1::string::String"
+        },
+        {
+          "name": "x_val",
+          "type": "u64"
+        },
+        {
+          "name": "y_val",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "Storage",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [
+        {
+          "constraints": [],
+          "is_phantom": true
+        },
+        {
+          "constraints": [],
+          "is_phantom": true
+        },
+        {
+          "constraints": [],
+          "is_phantom": true
+        }
+      ],
+      "fields": [
+        {
+          "name": "coin_x",
+          "type": "0x1::coin::Coin<T0>"
+        },
+        {
+          "name": "coin_y",
+          "type": "0x1::coin::Coin<T1>"
+        }
+      ]
+    },
+    {
+      "name": "StorageCreatedEvent",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [
+        {
+          "constraints": [],
+          "is_phantom": true
+        },
+        {
+          "constraints": [],
+          "is_phantom": true
+        },
+        {
+          "constraints": [],
+          "is_phantom": true
+        }
+      ],
+      "fields": [
+        {
+          "name": "dummy_field",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "StorageCreatedEventV2",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "pair_x",
+          "type": "0x1::string::String"
+        },
+        {
+          "name": "pair_y",
+          "type": "0x1::string::String"
+        },
+        {
+          "name": "curve",
+          "type": "0x1::string::String"
+        }
+      ]
+    }
+  ]
+}

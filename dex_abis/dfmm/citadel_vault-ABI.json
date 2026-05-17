@@ -1,0 +1,718 @@
+{
+  "address": "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932",
+  "name": "citadel_vault",
+  "friends": [],
+  "exposed_functions": [
+    {
+      "name": "add_whitelist_address",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "address",
+        "vector<address>"
+      ],
+      "return": []
+    },
+    {
+      "name": "calculate_power",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [
+        "u128",
+        "u16"
+      ],
+      "return": [
+        "u256"
+      ]
+    },
+    {
+      "name": "calculate_reward",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u64",
+        "u64"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "claim",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "address"
+      ],
+      "return": []
+    },
+    {
+      "name": "create_slot",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "u64",
+        "u64",
+        "u64",
+        "u64",
+        "u64",
+        "u64",
+        "vector<u8>"
+      ],
+      "return": []
+    },
+    {
+      "name": "destructure_slot_details",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::citadel_vault::SlotDetails<T0>"
+      ],
+      "return": [
+        "address",
+        "u64",
+        "u64",
+        "u64",
+        "u64",
+        "u64",
+        "u64",
+        "u64",
+        "u64",
+        "u64",
+        "u64",
+        "vector<address>"
+      ]
+    },
+    {
+      "name": "fund_reward",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "address",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "get_reward_percent_decimals",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "get_whitelist_addresses",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "address"
+      ],
+      "return": [
+        "vector<address>"
+      ]
+    },
+    {
+      "name": "is_exist",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "address"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "is_slot_admin",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "address",
+        "address"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "lockin",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "address",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "premature_claim",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "address",
+        "address",
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "remove_whitelist_address",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "address",
+        "vector<address>"
+      ],
+      "return": []
+    },
+    {
+      "name": "slot_deposits",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "vector<address>"
+      ],
+      "return": [
+        "vector<u64>"
+      ]
+    },
+    {
+      "name": "slot_details",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "address"
+      ],
+      "return": [
+        "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::citadel_vault::SlotDetails<T0>"
+      ]
+    },
+    {
+      "name": "slot_details_destructured",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "0xda20f7d0ec813c751926f06004a10bc6ee1eefc96798f6a1aa31447ee146f932::citadel_vault::SlotDetails<T0>"
+      ],
+      "return": [
+        "address",
+        "u64",
+        "u64",
+        "u64",
+        "u64",
+        "u64",
+        "u64",
+        "u64",
+        "u64",
+        "u64",
+        "u64",
+        "vector<address>"
+      ]
+    },
+    {
+      "name": "user_deposits",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": true,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "address",
+        "vector<address>"
+      ],
+      "return": [
+        "vector<u64>"
+      ]
+    },
+    {
+      "name": "validate_token_amount",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "u64"
+      ],
+      "return": []
+    },
+    {
+      "name": "withdraw_reward",
+      "visibility": "public",
+      "is_entry": true,
+      "is_view": false,
+      "generic_type_params": [
+        {
+          "constraints": []
+        }
+      ],
+      "params": [
+        "&signer",
+        "address"
+      ],
+      "return": []
+    }
+  ],
+  "structs": [
+    {
+      "name": "ClientRemoved",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "client_addresses",
+          "type": "vector<address>"
+        }
+      ]
+    },
+    {
+      "name": "ClientWhitelisted",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "client_addresses",
+          "type": "vector<address>"
+        }
+      ]
+    },
+    {
+      "name": "ExcessRewardWithdraw",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "user_address",
+          "type": "address"
+        },
+        {
+          "name": "slot_address",
+          "type": "address"
+        },
+        {
+          "name": "withdraw_amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "PrematureClaim",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "user_address",
+          "type": "address"
+        },
+        {
+          "name": "withdrawal_address",
+          "type": "address"
+        },
+        {
+          "name": "slot_address",
+          "type": "address"
+        },
+        {
+          "name": "deposits",
+          "type": "u64"
+        },
+        {
+          "name": "reward",
+          "type": "u64"
+        },
+        {
+          "name": "withdraw_time",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "RewardsAdded",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "user_address",
+          "type": "address"
+        },
+        {
+          "name": "slot_address",
+          "type": "address"
+        },
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "SlotConfig",
+      "is_native": false,
+      "abilities": [
+        "key"
+      ],
+      "generic_type_params": [
+        {
+          "constraints": [],
+          "is_phantom": true
+        }
+      ],
+      "fields": [
+        {
+          "name": "admin",
+          "type": "address"
+        },
+        {
+          "name": "start_time",
+          "type": "u64"
+        },
+        {
+          "name": "slot_deposit_duration",
+          "type": "u64"
+        },
+        {
+          "name": "lockin_duration",
+          "type": "u64"
+        },
+        {
+          "name": "return_percentage",
+          "type": "u64"
+        },
+        {
+          "name": "maturity_time",
+          "type": "u64"
+        },
+        {
+          "name": "rewards_available",
+          "type": "u64"
+        },
+        {
+          "name": "max_deposit_limit",
+          "type": "u64"
+        },
+        {
+          "name": "min_deposit_per_txn",
+          "type": "u64"
+        },
+        {
+          "name": "total_deposit",
+          "type": "u64"
+        },
+        {
+          "name": "current_deposit",
+          "type": "u64"
+        },
+        {
+          "name": "slot_signer_cap",
+          "type": "0x1::account::SignerCapability"
+        },
+        {
+          "name": "whitelist_addresses",
+          "type": "vector<address>"
+        },
+        {
+          "name": "user_deposits",
+          "type": "0x1::table::Table<address, u64>"
+        }
+      ]
+    },
+    {
+      "name": "SlotCreated",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "creator_address",
+          "type": "address"
+        },
+        {
+          "name": "slot_address",
+          "type": "address"
+        },
+        {
+          "name": "slot_seed",
+          "type": "vector<u8>"
+        },
+        {
+          "name": "max_deposit",
+          "type": "u64"
+        },
+        {
+          "name": "min_deposit_per_txn",
+          "type": "u64"
+        },
+        {
+          "name": "start_time",
+          "type": "u64"
+        },
+        {
+          "name": "end_time",
+          "type": "u64"
+        },
+        {
+          "name": "return_percentage",
+          "type": "u64"
+        },
+        {
+          "name": "coin_type",
+          "type": "0x1::string::String"
+        }
+      ]
+    },
+    {
+      "name": "SlotDetails",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop"
+      ],
+      "generic_type_params": [
+        {
+          "constraints": [],
+          "is_phantom": true
+        }
+      ],
+      "fields": [
+        {
+          "name": "admin",
+          "type": "address"
+        },
+        {
+          "name": "start_time",
+          "type": "u64"
+        },
+        {
+          "name": "slot_deposit_duration",
+          "type": "u64"
+        },
+        {
+          "name": "lockin_duration",
+          "type": "u64"
+        },
+        {
+          "name": "return_percentage",
+          "type": "u64"
+        },
+        {
+          "name": "maturity_time",
+          "type": "u64"
+        },
+        {
+          "name": "rewards_available",
+          "type": "u64"
+        },
+        {
+          "name": "max_deposit_limit",
+          "type": "u64"
+        },
+        {
+          "name": "min_deposit_per_txn",
+          "type": "u64"
+        },
+        {
+          "name": "total_deposit",
+          "type": "u64"
+        },
+        {
+          "name": "current_deposit",
+          "type": "u64"
+        },
+        {
+          "name": "whitelist_addresses",
+          "type": "vector<address>"
+        }
+      ]
+    },
+    {
+      "name": "UserClaimed",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "user_address",
+          "type": "address"
+        },
+        {
+          "name": "slot_address",
+          "type": "address"
+        },
+        {
+          "name": "deposits",
+          "type": "u64"
+        },
+        {
+          "name": "reward",
+          "type": "u64"
+        },
+        {
+          "name": "withdraw_time",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "UserDeposit",
+      "is_native": false,
+      "abilities": [
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "user_address",
+          "type": "address"
+        },
+        {
+          "name": "slot_address",
+          "type": "address"
+        },
+        {
+          "name": "deposit_amount",
+          "type": "u64"
+        },
+        {
+          "name": "deposit_time",
+          "type": "u64"
+        },
+        {
+          "name": "maturity_time",
+          "type": "u64"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,273 @@
+{
+  "address": "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64",
+  "name": "i64",
+  "friends": [],
+  "exposed_functions": [
+    {
+      "name": "abs",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "add",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64",
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64"
+      ],
+      "return": [
+        "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64"
+      ]
+    },
+    {
+      "name": "as_u64",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64"
+      ],
+      "return": [
+        "u64"
+      ]
+    },
+    {
+      "name": "compare",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64",
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64"
+      ],
+      "return": [
+        "u8"
+      ]
+    },
+    {
+      "name": "div",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64",
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64"
+      ],
+      "return": [
+        "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64"
+      ]
+    },
+    {
+      "name": "eq",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64",
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "gt",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64",
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "gte",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64",
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "is_negative",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "is_positive",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "is_zero",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "lt",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64",
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "lte",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64",
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64"
+      ],
+      "return": [
+        "bool"
+      ]
+    },
+    {
+      "name": "mod",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64",
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64"
+      ],
+      "return": [
+        "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64"
+      ]
+    },
+    {
+      "name": "mul",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64",
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64"
+      ],
+      "return": [
+        "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64"
+      ]
+    },
+    {
+      "name": "new",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "u64",
+        "bool"
+      ],
+      "return": [
+        "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64"
+      ]
+    },
+    {
+      "name": "sub",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64",
+        "&0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64"
+      ],
+      "return": [
+        "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64"
+      ]
+    },
+    {
+      "name": "zero",
+      "visibility": "public",
+      "is_entry": false,
+      "is_view": false,
+      "generic_type_params": [],
+      "params": [],
+      "return": [
+        "0x8beeab2fb9838174f26d8e96c01170c033da67c314051164e9e55da358fedd64::i64::I64"
+      ]
+    }
+  ],
+  "structs": [
+    {
+      "name": "I64",
+      "is_native": false,
+      "abilities": [
+        "copy",
+        "drop",
+        "store"
+      ],
+      "generic_type_params": [],
+      "fields": [
+        {
+          "name": "value",
+          "type": "u64"
+        },
+        {
+          "name": "is_negative",
+          "type": "bool"
+        }
+      ]
+    }
+  ]
+}

@@ -5,7 +5,7 @@ const { CONFIG } = require('../../config/config');
 const { logError } = require('../../utils/logError');
 
 const scriptBytecode = (() => {
-    try { return fs.readFileSync(path.join(__dirname, '..', 'move', 'arbitrage_script.mv')); }
+    try { return fs.readFileSync(path.join(__dirname, '..', '..', 'move', 'arbitrage_script.mv')); }
     catch (e) { console.error('Script compilado não encontrado.'); return null; }
 })();
 

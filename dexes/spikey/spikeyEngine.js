@@ -5,14 +5,9 @@ const callView = require('../../utils/callView');
 const SPIKEY_ADDRESS = '0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083';
 
 const spikeyEngine = {
-  /**
-   * Obtém o endereço do token a partir do type tag.
-   * Ex: "0x1::supra_coin::SupraCoin" -> "0x1"
-   */
   getTokenAddress(tokenSymbol) {
     const tok = CONFIG.tokens[tokenSymbol];
     if (!tok) return null;
-    // O endereço do token é o primeiro componente do type (antes de ::)
     return tok.type.split('::')[0];
   },
 
@@ -25,10 +20,10 @@ const spikeyEngine = {
         return null;
       }
 
-      // 1. Obtém as reservas
+      // Módulo correto: amm_factory (não amm_router)
       const reserves = await callView(
         SPIKEY_ADDRESS,
-        'amm_factory',      // <-- módulo, não "amm_router"
+        'amm_factory',
         'get_reserves',
         [],
         [addrA, addrB]
@@ -42,13 +37,10 @@ const spikeyEngine = {
       const reserveA = BigInt(reserves[0]);
       const reserveB = BigInt(reserves[1]);
 
-      // 2. Obtém a taxa de swap
-      let swapFee = 30; // fallback 0.3%
+      let swapFee = 30;
       try {
         const feeResult = await callView(SPIKEY_ADDRESS, 'amm_controller', 'get_swap_fee', [], []);
-        if (feeResult !== null && feeResult !== undefined) {
-          swapFee = Number(feeResult);
-        }
+        if (feeResult !== null && feeResult !== undefined) swapFee = Number(feeResult);
       } catch (_) {}
 
       const feeScale = 10000;
@@ -65,7 +57,7 @@ const spikeyEngine = {
         tokenA: tokenA,
         tokenB: tokenB,
         curve: 'constant_product',
-        pairAddress: `${addrA}_${addrB}`, // endereço lógico
+        pairAddress: `${addrA}_${addrB}`,
         reserveA: Number(reserveA),
         reserveB: Number(reserveB),
         fee: swapFee,

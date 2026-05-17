@@ -4,17 +4,24 @@ const { SupraClient, HexString, SupraAccount, BCS, TxnBuilderTypes } = require('
 const { CONFIG } = require('../config/config');
 const { logError } = require('../utils/logError');
 
-// Carregar bytecode
 const scriptBytecode = (() => {
     try { return fs.readFileSync(path.join(__dirname, '..', 'move', 'arbitrage_script.mv')); }
     catch (e) { console.error('Script compilado não encontrado.'); return null; }
 })();
 
-async function executeArbitrage(opportunity) {
-    if (!scriptBytecode) return null;
+async function executeArbitrage(opportunity, onLog = () => {}) {
+    if (!scriptBytecode) {
+        onLog('{red-fg}Script compilado não encontrado.{/}');
+        return null;
+    }
+
+    // Guarda a referência original do console.log
+    const originalLog = console.log;
 
     try {
-        // 1. Inicializar cliente e conta (exatamente como buyTest)
+        // 🔇 Silencia o console.log durante a transação para não sujar o terminal
+        console.log = () => {};
+
         const client = await SupraClient.init('https://rpc-mainnet.supra.com');
         const privateKeyHex = process.env.PRIVATE_KEY.startsWith('0x') ? process.env.PRIVATE_KEY : '0x' + process.env.PRIVATE_KEY;
         const account = new SupraAccount(HexString.ensure(privateKeyHex).toUint8Array());
@@ -42,15 +49,15 @@ async function executeArbitrage(opportunity) {
         const minOutBC = BigInt(Math.floor(steps[1].amtOut * CONFIG.tokens[steps[1].to].decimals * 0.995));
         const minOutCA = BigInt(Math.floor(steps[2].amtOut * CONFIG.tokens[steps[2].to].decimals * 0.995));
 
-        // 2. Obter sequence number (exatamente como buyTest)
+        onLog('{grey-fg}A obter sequence number...{/}');
         const accountInfo = await client.getAccountInfo(new HexString(process.env.SENDER_ADDRESS));
         const sequenceNumber = BigInt(accountInfo.sequence_number);
 
-        // 3. Construir o SCRIPT (não entry function)
+        onLog('{grey-fg}A construir script...{/}');
         const script = new TxnBuilderTypes.Script(
-            new Uint8Array(scriptBytecode),                              // code
-            typeArgs.map(ta => new TxnBuilderTypes.TypeTagParser(ta).parseTypeTag()), // type args
-            [                                                              // arguments
+            new Uint8Array(scriptBytecode),
+            typeArgs.map(ta => new TxnBuilderTypes.TypeTagParser(ta).parseTypeTag()),
+            [
                 new TxnBuilderTypes.TransactionArgumentU64(amountIn),
                 new TxnBuilderTypes.TransactionArgumentU64(minOutAB),
                 new TxnBuilderTypes.TransactionArgumentU64(minOutBC),
@@ -58,38 +65,37 @@ async function executeArbitrage(opportunity) {
             ]
         );
 
-        // 4. Construir o payload do script
         const payload = new TxnBuilderTypes.TransactionPayloadScript(script);
-
-        // 5. Construir a RawTransaction (exatamente como os tipos que o buyTest usa internamente)
         const rawTransaction = new TxnBuilderTypes.RawTransaction(
             new TxnBuilderTypes.AccountAddress(HexString.ensure(process.env.SENDER_ADDRESS).toUint8Array()),
             sequenceNumber,
             payload,
-            5000n,          // max_gas_amount
-            100000n,        // gas_unit_price
-            BigInt(Math.floor(Date.now() / 1000) + 300), // expiration
+            5000n,
+            100000n,
+            BigInt(Math.floor(Date.now() / 1000) + 300),
             new TxnBuilderTypes.ChainId(8)
         );
 
-        // 6. Serializar e enviar (exatamente como buyTest)
         const serializer = new BCS.Serializer();
         rawTransaction.serialize(serializer);
         const serializedRawTx = serializer.getBytes();
 
-        console.log('A assinar e submeter arbitragem...');
+        onLog('{yellow-fg}A submeter transação...{/}');
         const txResult = await client.sendTxUsingSerializedRawTransaction(
             account,
             serializedRawTx,
             { enableWaitForTransaction: true, enableTransactionSimulation: true }
         );
 
-        console.log('✅ Arbitragem submetida:', txResult.txHash);
+        onLog('{green-fg}✅ Transação submetida!{/}');
         return { txHash: txResult.txHash, success: true };
     } catch (err) {
         logError('executeArbitrage', err);
-        console.error('Erro na execução:', err.message);
+        onLog(`{red-fg}❌ Erro: ${err.message}{/}`);
         return null;
+    } finally {
+        // 🔊 Restaura o console.log original
+        console.log = originalLog;
     }
 }
 

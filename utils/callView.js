@@ -1,3 +1,4 @@
+// utils/callView.js (corrigido)
 const axios = require('axios');
 const { CONFIG } = require('../config/config');
 
@@ -12,7 +13,9 @@ async function callView(moduleAddr, fn, types = [], args = []) {
             return r.data.result ?? r.data;
         } catch (err) {
             if (attempt === CONFIG.viewRetries - 1) throw err;
-            await new Promise(res => setTimeout(res, Math.pow(2, attempt) * 200));
+            // Backoff exponencial com jitter para evitar thundering herd
+            const delay = Math.pow(2, attempt) * 500 + Math.random() * 300;
+            await new Promise(res => setTimeout(res, delay));
         }
     }
 }

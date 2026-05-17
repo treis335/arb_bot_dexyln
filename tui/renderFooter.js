@@ -1,3 +1,5 @@
+//renderFooter.js
+
 const { CONFIG } = require('../config/config');
 const { getErrorCount, getLastError } = require('../utils/logError');
 
@@ -14,12 +16,13 @@ function renderFooter(opps, tickMs, boxes) {
     : '{grey-fg}sem arb detectado{/}';
   const rpcIcon = rpcHealthy ? '{green-fg}🟢{/}' : '{red-fg}🔴{/}';
   const pauseStr = boxes.scrollPaused() ? '{yellow-fg}[PAUSADO] {/}' : '';
+  const autoStatus = CONFIG.autoExecute.enabled ? '{green-fg}🤖 AUTO{/}' : '{grey-fg}⏸ MANUAL{/}';
   const errStr   = getErrorCount() > 0 ? `{red-fg} ⚠${getErrorCount()}{/}` : '';
 
   footerBox.setContent(
-    `{grey-fg}─{/} ${pauseStr}${bestStr}` +
+    `{grey-fg}─{/} ${autoStatus} ${pauseStr}${bestStr}` +
     `  {grey-fg}${rpcIcon} RPC ${rpcHealthy ? 'ok' : 'falha'} · opps:${opps.length} tick:${tickMs}ms α=${CONFIG.emaAlpha} ${now}` +
-    `  TAB foco · SPACE pausa · ↑↓ rola · q sai${errStr}{/}`
+    `  TAB foco · SPACE pausa · a auto · q sai${errStr}{/}`
   );
 }
 

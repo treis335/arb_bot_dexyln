@@ -1,6 +1,11 @@
+//priceEngine.js
 const callView = require('../utils/callView');
 const { logError } = require('../utils/logError');
 const { CONFIG } = require('../config/config');
+
+// Cache de pares com TTL de 1,5 segundos
+const pairCache = new Map();
+const CACHE_TTL = 1500; // ms
 
 const priceEngine = {
   getAmountOut(reserveIn, reserveOut, amountIn, fee, feeScale) {
@@ -12,6 +17,17 @@ const priceEngine = {
   },
 
   async fetchPairState(dexKey, tokenAKey, tokenBKey, curveKey) {
+    const cacheKey = `${dexKey}:${tokenAKey}:${tokenBKey}:${curveKey}`;
+    const now = Date.now();
+
+    // 🔥 Cache: se o par foi atualizado há menos de 1,5s, retorna o valor em cache
+    if (pairCache.has(cacheKey)) {
+      const cached = pairCache.get(cacheKey);
+      if (now - cached.timestamp < CACHE_TTL) {
+        return cached.data;
+      }
+    }
+
     const dex   = CONFIG.dexes[dexKey];
     const tokA  = CONFIG.tokens[tokenAKey];
     const tokB  = CONFIG.tokens[tokenBKey];
@@ -33,8 +49,13 @@ const priceEngine = {
       const amountOut = this.getAmountOut(reserveA, reserveB, tokA.decimals, fee, feeScale);
       const priceAinB = amountOut / tokB.decimals;
 
-      return { dex: dexKey, tokenA: tokenAKey, tokenB: tokenBKey, curve: curveKey,
+      const result = { dex: dexKey, tokenA: tokenAKey, tokenB: tokenBKey, curve: curveKey,
                reserveA, reserveB, fee, feeScale, priceAinB };
+
+      // 🔥 Guarda no cache
+      pairCache.set(cacheKey, { data: result, timestamp: now });
+
+      return result;
     } catch (e) {
       logError(`fetchPairState ${tokenAKey}/${tokenBKey}`, e);
       return null;

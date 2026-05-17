@@ -7,9 +7,33 @@ const CONFIG = {
   optimalSearch: { min: 10, max: 10000, iterations: 30 },
   scoreWeights: { profit: 0.60, liquidity: 0.25, trend: 0.15 },
   arbLogMax: 8,
-  viewTimeout:   8000,
-  viewRetries:   3,
-  maxConcurrent: 5,
+  viewTimeout:   15000,
+  viewRetries:   2,
+  maxConcurrent: 3,
+
+  // ═══ Automação ═══
+  autoExecute: {
+    enabled: true,            // Inicia ligado – desliga com a tecla 'a'
+    minProfitPct: 0.35,       // Lucro mínimo para auto-execução (%)
+    minScore: 25,             // Score mínimo (0-100)
+    gasReserveSUPRA: 0.09,    // Reserva de SUPRA para gas
+    cooldownMs: 5000,         // Tempo mínimo entre execuções automáticas
+    maxConsecutiveFails: 3,   // Pausa automático após N falhas seguidas
+  },
+
+  // ═══ Pools V3 (liquidez concentrada) ═══
+  v3Pools: {
+    moduleAddress: '0xc3a610069fa7545cf14e266e849954bf385aca957bb489b1dc069a4baa29b502',
+    pools: [
+      // SUPRA-dexUSDC V3 0.3% ($80k TVL)
+      { address: '0x2d5d69aec278855e633baa332d2d32a486967fc40cd1ff59c4eaf3da66fbc917', tokenA: 'SUPRA', tokenB: 'DEXUSDC' },
+      // SUPRA-DXLYN V3 0.3% ($20k TVL)
+      { address: '0x1ff31a624ce0310e3067d695bbdba64c1f0821082e615bfce8d6a9eaca44f4', tokenA: 'SUPRA', tokenB: 'DXLYN' },
+      // SUPRA-STC V3 0.01% ($292 TVL)
+      { address: '0x186b999b60a3c88bc3e2b4c1c537519e046f5330a91f024839b2c39e6b391e78', tokenA: 'SUPRA', tokenB: 'STC' },
+    ],
+  },
+
   dexes: {
     DEXLYN: {
       moduleAddress: '0xdc694898dff98a1b0447e0992d0413e123ea80da1021d464a4fbaf0265870d8',
@@ -38,7 +62,7 @@ const CONFIG = {
         ['LUCKY',    'DEXUSDC',   'uncorrelated'],
         ['DAWGZ',    'DEXUSDC',   'uncorrelated'],
         ['CASH',     'DEXUSDC',   'uncorrelated'],
-        ['JOSH',     'DEXUSDC',   'uncorrelated'],        
+        ['JOSH',     'DEXUSDC',   'uncorrelated'],
         ['OG',       'SUPRA',     'uncorrelated'],
         ['SBC',      'SUPRA',     'uncorrelated'],
         ['MUMMY',    'DEXUSDC',   'uncorrelated'],
@@ -46,14 +70,17 @@ const CONFIG = {
         ['PUMP',     'SUPRA',     'uncorrelated'],
         ['SHILLBILL','SUPRA',     'uncorrelated'],
         ['FLP',      'SUPRA',     'uncorrelated'],
-        ['SUPD',     'SUPRA',     'uncorrelated'],        
+        ['SUPD',     'SUPRA',     'uncorrelated'],
         ['PECKY',    'DEXUSDC',   'uncorrelated'],
         ['SPIKE',    'DEXUSDC',   'uncorrelated'],
         ['MCB',      'JOSH',      'uncorrelated'],
         ['LOWCAPS',  'DEXUSDC',   'uncorrelated'],
+        ['DXLYN',    'DEXUSDC',   'uncorrelated'],
+        ['DXLYN',    'SUPRA',     'uncorrelated'],
       ],
     },
   },
+
   tokens: {
     SUPRA:    { type: '0x1::supra_coin::SupraCoin',                                                                                                          decimals: 1e8, symbol: 'SUPRA'    },
     DEXUSDC:  { type: '0x8f7d16ade319b0fce368ca6cdb98589c4527ce7f5b51e544a9e68e719934458b::hyper_coin::DexlynUSDC',                                          decimals: 1e6, symbol: 'dexUSDC'  },
@@ -81,6 +108,9 @@ const CONFIG = {
     PUMP:     { type: '0xc2896ec7a6ad3ac8a50626db9b832a142647ff065af6b30a089f64627c0c4a2b::pump_coin::PUMP',                                                  decimals: 1e6, symbol: 'PUMP'     },
     FLP:      { type: '0x159790ba3f3ca3b038d9234498ea14390ddcbab13ec96ca17c7396f77da8bf82::FLP::FLP',                                                        decimals: 1e6, symbol: 'FLP'      },
     SUPD:     { type: '0x16aae30a40726dec7737b738ff8c586623d52f861c0ed997994b0498b9a7cacd::SUPD::SUPD',                                                      decimals: 1e6, symbol: 'SUPD'     },
+    // 🆕 Novo token STC (SHITCOIN)
+    STC:      { type: '0xaccc77c23159a80af1fff5aaee9c29d07915836b26a1fd8c0e1bed149f24cabc::stc::STC',                                                         decimals: 1e6, symbol: 'STC'      },
   },
 };
+
 module.exports = { CONFIG };

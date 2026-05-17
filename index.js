@@ -1,3 +1,5 @@
+//index.js
+
 require('dotenv').config();
 const { initScreen } = require('./tui/monitor');
 const { tick } = require('./loop/tick');
@@ -12,7 +14,7 @@ const { getSupraClient } = require('./utils/supraClient');
 
   // Inicialização segura do SDK – se falhar, o bot continua só com deteção
   try {
-   // await getSupraClient();
+    // await getSupraClient();
     console.log('✅ Cliente Supra pronto.');
   } catch (e) {
     logError('SupraClient init', e);
@@ -36,11 +38,15 @@ const { getSupraClient } = require('./utils/supraClient');
     logError('tick inicial', e);
   }
 
+  // 🔥 setTimeout recursivo em vez de setInterval
+  // Evita sobreposição de ciclos: o próximo tick só é agendado DEPOIS do atual terminar
   let running = false;
-  setInterval(async () => {
+  async function scheduleTick() {
     if (running) return;
     running = true;
     try { await tick(boxes); } catch (e) { logError('tick interval', e); }
     running = false;
-  }, CONFIG.pollingMs);
+    setTimeout(scheduleTick, CONFIG.pollingMs);
+  }
+  setTimeout(scheduleTick, CONFIG.pollingMs);
 })();

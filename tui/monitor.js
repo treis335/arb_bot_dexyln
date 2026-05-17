@@ -1,10 +1,11 @@
+//monitor.js
 const blessed = require('blessed');
 const fs = require('fs');
 const path = require('path');
-
-// Importações movidas para o topo (boas práticas)
-const { getBestOpportunity } = require('../loop/tick');
+const { getBestOpportunity, getOpps } = require('../loop/tick');
 const { executeArbitrage } = require('../executor/executeArb');
+const { fetchWalletBalance } = require('../utils/walletBalance');
+const TxOverlay = require('./txOverlay');
 
 function initScreen() {
   const screen = blessed.screen({
@@ -61,6 +62,9 @@ function initScreen() {
   screen.append(arbBox);
   screen.append(logBox);
   screen.append(footerBox);
+
+  const txOverlay = new TxOverlay(screen);
+  let txInProgress = false;
 
   const scrollBoxes = [pricesBox, arbBox, logBox];
   let focusIdx = 1;
@@ -123,28 +127,93 @@ function initScreen() {
     }
   });
 
-    // ── Executar arbitragem (tecla 'e') ──────────────────
+  // ── Executar arbitragem manual (tecla 'e') ──────────
   screen.key(['e'], async () => {
-    const opp = getBestOpportunity();
-    if (!opp) {
-      footerBox.setContent('{yellow-fg} Nenhuma oportunidade para executar.{/}');
-      screen.render();
+    if (txInProgress) return;
+
+    const opps = getOpps();
+    if (!opps || opps.length === 0) {
+      txOverlay.show();
+      txOverlay.error('Nenhuma oportunidade disponível.');
       return;
     }
-    footerBox.setContent('{yellow-fg} A submeter transação...{/}');
-    screen.render();
-    
+
+    txInProgress = true;
+    txOverlay.show();
+    txOverlay.log('{yellow-fg}⏳ A analisar oportunidades...{/}');
+
+    let balances = {};
     try {
-      const res = await executeArbitrage(opp);
-      if (res && res.txHash) {
-        footerBox.setContent(`{green-fg}✅ Tx: ${res.txHash.slice(0,12)}... (aguarda confirmação){/}`);
-      } else {
-        footerBox.setContent('{red-fg}❌ Falhou. Vê logs.{/}');
-      }
+      balances = await fetchWalletBalance(process.env.SENDER_ADDRESS) || {};
     } catch (e) {
-      footerBox.setContent(`{red-fg}❌ Erro: ${e.message.slice(0,40)}{/}`);
+      txOverlay.error('Falha ao obter saldo.');
+      txInProgress = false;
+      return;
     }
+
+    const gasReserveSUPRA = 0.05;
+    const availableSUPRA = Math.max(0, (balances.SUPRA || 0) - gasReserveSUPRA);
+    txOverlay.log(`{grey-fg}Saldo disponível: ${availableSUPRA.toFixed(2)} SUPRA{/}`);
+
+    const viableOpps = opps.filter(opp => {
+      const tokenIn = opp.cycle.path[0];
+      if (tokenIn !== 'SUPRA') return false;
+      return opp.optimalAmount <= availableSUPRA;
+    });
+
+    if (viableOpps.length === 0) {
+      txOverlay.log(`{yellow-fg}Nenhuma oportunidade viável (saldo SUPRA: ${availableSUPRA.toFixed(2)}).{/}`);
+      txOverlay.error('Sem fundos suficientes.');
+      txInProgress = false;
+      return;
+    }
+
+    txOverlay.log(`{grey-fg}Encontradas ${viableOpps.length} oportunidades viáveis.{/}`);
+    let successCount = 0, failCount = 0;
+
+    for (let i = 0; i < viableOpps.length; i++) {
+      const opp = viableOpps[i];
+      txOverlay.log('');
+      txOverlay.log(`{bold}{cyan-fg}── Oportunidade ${i + 1}/${viableOpps.length} ──{/}`);
+      txOverlay.log(`{grey-fg}Rota: ${opp.cycle.path.map(t => require('../config/config').CONFIG.tokens[t]?.symbol || t).join(' → ')}{/}`);
+      txOverlay.log(`{grey-fg}Lucro: +${opp.result.profitPct.toFixed(3)}% (${opp.result.profitAbs.toFixed(3)} SUPRA){/}`);
+      txOverlay.log(`{grey-fg}Montante: ${opp.optimalAmount.toFixed(2)} SUPRA{/}`);
+
+      try {
+        const res = await executeArbitrage(opp, (msg) => txOverlay.log(msg));
+        if (res && res.txHash) {
+          successCount++;
+          txOverlay.log(`{green-fg}✅ Sucesso! Tx: ${res.txHash.slice(0, 10)}...{/}`);
+        } else {
+          failCount++;
+          txOverlay.log(`{red-fg}❌ Falhou.{/}`);
+        }
+      } catch (e) {
+        failCount++;
+        txOverlay.log(`{red-fg}❌ Erro: ${e.message}{/}`);
+      }
+      await new Promise(resolve => setTimeout(resolve, 3000));
+    }
+
+    txOverlay.log('');
+    txOverlay.log(`{bold}Resumo:{/} {green-fg}${successCount} sucessos{/}, {red-fg}${failCount} falhas{/}`);
+    txOverlay.success('Execução concluída.');
+    txInProgress = false;
+  });
+
+  // ── Ligar/Desligar modo automático (tecla 'a') ──────
+  screen.key(['a'], () => {
+    const cfg = require('../config/config').CONFIG.autoExecute;
+    cfg.enabled = !cfg.enabled;
+    const status = cfg.enabled ? '{green-fg}LIGADO{/}' : '{red-fg}DESLIGADO{/}';
+    footerBox.setContent(`{grey-fg}─ Modo automático: ${status}{/}`);
     screen.render();
+  });
+
+  // Fechar overlay manualmente com ESC
+  screen.key(['escape'], () => {
+    txOverlay.hide();
+    txInProgress = false;
   });
 
   screen.key(['C-c', 'q'], () => { screen.program.showCursor(); screen.destroy(); process.exit(0); });

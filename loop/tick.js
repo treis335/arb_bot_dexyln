@@ -3,8 +3,8 @@ const asyncLimit = require('../utils/asyncLimit');
 const { CONFIG } = require('../config/config');
 const priceEngine = require('../dexes/dexlyn/dexlynEngine');
 const priceEngineV3 = require('../dexes/dexlyn/dexlynEngineV3');
-const spikeyEngine = require('../dexes/spikey/spikeyEngine');       // NOVO
-const { SPIKEY_CONFIG } = require('../dexes/spikey/spikeyConfig'); // NOVO
+const spikeyEngine = require('../dexes/spikey/spikeyEngine');
+const { SPIKEY_CONFIG } = require('../dexes/spikey/spikeyConfig');
 const graphEngine = require('../engine/graphEngine');
 const { arbDetector } = require('../detector/arbDetector');
 const { logError } = require('../utils/logError');
@@ -144,10 +144,10 @@ async function tick(boxes) {
         for (const pair of SPIKEY_CONFIG.pairs) {
             tasks.push(limit(() =>
                 taskWithTimeout(
-                    spikeyEngine.fetchPairState(pair.address, pair.tokenA, pair.tokenB),
+                    spikeyEngine.fetchPairState(pair.tokenA, pair.tokenB),  // ← CORRIGIDO: removido pair.address
                     20000
                 ).catch(e => {
-                    logError(`fetchSpikeyPair ${pair.address}`, e);
+                    logError(`fetchSpikeyPair ${pair.tokenA}/${pair.tokenB}`, e);
                     return null;
                 })
             ));

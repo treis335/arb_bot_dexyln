@@ -1,21 +1,22 @@
+// dexes/dexlyn/dexlynEngineV3.js
+// CORRIGIDO:
+// 1. feeRate interpretado corretamente (basis points: 400 = 0.04%, não 4%)
+// 2. _simulate adicionado ao resultado para interface unificada
+// 3. decimais resolvidos dinamicamente a partir do CONFIG
+
 const { CONFIG } = require('../../config/config');
 const { logError } = require('../../utils/logError');
 const axios = require('axios');
 
-const CLMM_ROUTER_ADDRESS = '0xc3a610069fa7545cf14e266e849954bf385aca957bb489b1dc069a4baa29b502';
-
 const priceEngineV3 = {
-  /**
-   * Lê o estado de uma pool V3 diretamente do recurso na blockchain.
-   * @param {string} poolAddress - Endereço da pool (ex: 0x2d5d...)
-   * @returns {Object} Estado da pool com sqrt_price, liquidity, assets, fee_rate, tick_spacing
-   */
-  async fetchPoolState(poolAddress) {
+  async fetchPoolState(poolAddress, tokenA, tokenB) {
     try {
-      const response = await axios.get(`${CONFIG.rpc}/rpc/v1/accounts/${poolAddress}`);
+      const response = await axios.get(
+        `${CONFIG.rpc}/rpc/v1/accounts/${poolAddress}`,
+        { timeout: CONFIG.viewTimeout }
+      );
       const resources = response.data?.resources || response.data?.data || [];
 
-      // Procura o recurso do tipo pool::Pool
       const poolResource = resources.find(r =>
         r.type && r.type.includes('::pool::Pool')
       );
@@ -27,15 +28,18 @@ const priceEngineV3 = {
       const data = poolResource.data;
 
       return {
-        assetA: BigInt(data.asset_a || 0),
-        assetB: BigInt(data.asset_b || 0),
-        assetAAddr: data.asset_a_addr,
-        assetBAddr: data.asset_b_addr,
+        assetA:          BigInt(data.asset_a  || 0),
+        assetB:          BigInt(data.asset_b  || 0),
+        assetAAddr:      data.asset_a_addr,
+        assetBAddr:      data.asset_b_addr,
         currentSqrtPrice: BigInt(data.current_sqrt_price || 0),
-        liquidity: BigInt(data.liquidity || 0),
-        feeRate: Number(data.fee_rate || 0),
+        liquidity:        BigInt(data.liquidity || 0),
+        // CORRIGIDO: feeRate está em basis points (100 = 0.01%, 400 = 0.04%, 3000 = 0.3%)
+        feeRate:    Number(data.fee_rate    || 0),
         tickSpacing: Number(data.tick_spacing || 1),
-        isPause: data.is_pause || false,
+        isPause:    data.is_pause || false,
+        _tokenA: tokenA,
+        _tokenB: tokenB,
       };
     } catch (e) {
       logError(`fetchPoolState ${poolAddress}`, e);
@@ -43,63 +47,52 @@ const priceEngineV3 = {
     }
   },
 
-  /**
-   * Calcula o amount_out para uma pool V3 usando a fórmula simplificada
-   * baseada no preço sqrt e na liquidez.
-   * 
-   * Para pools V3, usamos a aproximação de produto constante com o preço atual,
-   * que é suficientemente precisa para pequenas variações e evita iterar ticks.
-   */
   simulateTrade(poolState, direction, amountIn) {
-    const { assetA, assetB, currentSqrtPrice, liquidity, feeRate } = poolState;
+    const { assetA, assetB, feeRate, _tokenA, _tokenB } = poolState;
 
-    if (!assetA || !assetB || !currentSqrtPrice) return 0;
+    if (!assetA || !assetB || amountIn <= 0) return 0;
 
-    // Converter sqrt_price para preço normal (assetA/assetB)
-    // preço = (sqrt_price / 2^64)^2
-    const sqrtPrice = Number(currentSqrtPrice) / 2**64;
-    const price = sqrtPrice * sqrtPrice;
+    const tokA = CONFIG.tokens[_tokenA] || { decimals: 1e8 };
+    const tokB = CONFIG.tokens[_tokenB] || { decimals: 1e6 };
 
     let reserveIn, reserveOut, decimalsIn, decimalsOut;
 
     if (direction === 'AB') {
-      reserveIn = Number(assetA);
-      reserveOut = Number(assetB);
-      decimalsIn = 1e8; // SUPRA decimals
-      decimalsOut = 1e6; // dexUSDC decimals
+      reserveIn   = Number(assetA);
+      reserveOut  = Number(assetB);
+      decimalsIn  = tokA.decimals;
+      decimalsOut = tokB.decimals;
     } else {
-      reserveIn = Number(assetB);
-      reserveOut = Number(assetA);
-      decimalsIn = 1e6;
-      decimalsOut = 1e8;
+      reserveIn   = Number(assetB);
+      reserveOut  = Number(assetA);
+      decimalsIn  = tokB.decimals;
+      decimalsOut = tokA.decimals;
     }
 
-    if (reserveIn <= 0 || reserveOut <= 0 || amountIn <= 0) return 0;
+    if (reserveIn <= 0 || reserveOut <= 0) return 0;
 
-    // Aplicar taxa (feeRate é em centésimos de percentagem?)
-    // Ex: 400 = 4%? Ou 400 = 0.04%?
-    // Assumindo que fee_rate 400 = 4% = 0.04
-    const feeMultiplier = 1 - (feeRate / 10000);
-    const amountInAfterFee = amountIn * feeMultiplier;
+    // CORRIGIDO: feeRate em basis points (1_000_000 = 100%)
+    // Supra V3 usa fee_rate = 400 → 0.04% (não 4%)
+    const feeMultiplier = 1 - (feeRate / 1_000_000);
+    const amountInRaw = amountIn * decimalsIn;
+    const amountInAfterFee = amountInRaw * feeMultiplier;
 
-    // Fórmula de produto constante: amountOut = (amountIn * reserveOut) / (reserveIn + amountIn)
+    // Fórmula produto constante (aproximação válida para trades pequenos vs liquidez)
     const amountOut = (amountInAfterFee * reserveOut) / (reserveIn + amountInAfterFee);
 
     return amountOut / decimalsOut;
   },
 
-  /**
-   * Obtém o preço (amount_out por 1 unidade de A) para exibição.
-   */
   getPrice(poolState, direction) {
+    if (!poolState._tokenA) return 0;
+    const tokA = CONFIG.tokens[poolState._tokenA] || { decimals: 1e8 };
+    const tokB = CONFIG.tokens[poolState._tokenB] || { decimals: 1e6 };
     if (direction === 'AB') {
-      const amountOut = this.simulateTrade(poolState, 'AB', 1e8); // 1 SUPRA
-      return amountOut; // preço em dexUSDC por SUPRA
+      return this.simulateTrade(poolState, 'AB', 1); // 1 token A
     } else {
-      const amountOut = this.simulateTrade(poolState, 'BA', 1e6); // 1 dexUSDC
-      return amountOut; // preço em SUPRA por dexUSDC
+      return this.simulateTrade(poolState, 'BA', 1); // 1 token B
     }
-  }
+  },
 };
 
 module.exports = priceEngineV3;

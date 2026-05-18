@@ -139,24 +139,18 @@ async function tick(boxes) {
     }
 
     // ═══ 3. Spikey ═══
-    if (SPIKEY_CONFIG) {
-        tasks.push(limit(() => taskWithTimeout(
-            (async () => {
-                const addresses = await spikeyEngine.fetchAllPairAddresses();
-                if (!addresses || addresses.length === 0) return [];
-                const batch = addresses.slice(0, 5); // Apenas 5 pares por ciclo para não bloquear
-                const results = [];
-                for (const addr of batch) {
-                    const state = await spikeyEngine.fetchPairState(addr);
-                    if (state) results.push(state);
-                }
-                return results;
-            })(),
-            10000 // 10 segundos de timeout
-        ).catch(e => {
-            logError('fetchAllSpikeyPairs', e);
-            return [];
-        })));
+    if (SPIKEY_CONFIG && SPIKEY_CONFIG.pools && SPIKEY_CONFIG.pools.length > 0) {
+        for (const pool of SPIKEY_CONFIG.pools) {
+            tasks.push(limit(() =>
+                taskWithTimeout(
+                    spikeyEngine.fetchPairState(pool.address, pool.tokenA, pool.tokenB),
+                    20000
+                ).catch(e => {
+                    logError(`fetchSpikeyPair ${pool.address}`, e);
+                    return null;
+                })
+            ));
+        }
     }
 
     let pairStates, graph, cycles, opps;

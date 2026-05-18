@@ -128,7 +128,7 @@ function initScreen() {
   });
 
   // ── Executar arbitragem manual (tecla 'e') ──────────
-  screen.key(['e'], async () => {
+    screen.key(['e'], async () => {
     if (txInProgress) return;
 
     const opps = getOpps();
@@ -180,7 +180,23 @@ function initScreen() {
       txOverlay.log(`{grey-fg}Montante: ${opp.optimalAmount.toFixed(2)} SUPRA{/}`);
 
       try {
-        const res = await executeArbitrage(opp, (msg) => txOverlay.log(msg));
+        // Escolhe o executor baseado na composição da rota
+        const dexesInRoute = new Set(opp.cycle.edges.map(e => e.pair.dex));
+        let res;
+        if (dexesInRoute.size === 1 && dexesInRoute.has('SPIKEY')) {
+          // Rota puramente Spikey
+          const { executeSpikeyArbitrage } = require('../dexes/spikey/spikeyExecute');
+          res = await executeSpikeyArbitrage(opp, (msg) => txOverlay.log(msg));
+        } else if (dexesInRoute.size === 1 && (dexesInRoute.has('DEXLYN') || dexesInRoute.has('DEXLYN_V3'))) {
+          // Rota puramente Dexlyn
+          const { executeArbitrage } = require('../dexes/dexlyn/dexlynExecute');
+          res = await executeArbitrage(opp, (msg) => txOverlay.log(msg));
+        } else {
+          // Rota cross‑DEX (precisa do script Move específico)
+          const { executeCrossArbitrage } = require('../executor/executeCrossArb');
+          res = await executeCrossArbitrage(opp, (msg) => txOverlay.log(msg));
+        }
+
         if (res && res.txHash) {
           successCount++;
           txOverlay.log(`{green-fg}✅ Sucesso! Tx: ${res.txHash.slice(0, 10)}...{/}`);

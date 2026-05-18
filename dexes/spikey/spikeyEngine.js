@@ -1,76 +1,38 @@
-const axios = require('axios');
 const { CONFIG } = require('../../config/config');
 const { logError } = require('../../utils/logError');
 const callView = require('../../utils/callView');
 
-const SPIKEY_ADDRESS = '0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083';
+const SPIKEY = '0x3045d27b5fada1e30897a741fb184e48ef0bff3717aea23918ebc1e5c7153083';
+
+const DECIMALS = { SUPRA: 1e8, CASH: 1e8, SPIKE: 1e3 };
+function getDecimals(sym) { return DECIMALS[sym] || 1e6; }
 
 const spikeyEngine = {
-    async fetchAllPairAddresses() {
+    async fetchPairState(poolAddress, tokenA, tokenB) {
         try {
-            const result = await callView(SPIKEY_ADDRESS, 'amm_factory::all_pairs', [], []);
-            if (Array.isArray(result)) return result;
-            if (result && Array.isArray(result.result)) return result.result;
-            return [];
-        } catch (e) {
-            logError('spikeyAllPairs', e);
-            return [];
-        }
-    },
+            const [reserves, fee] = await Promise.all([
+                callView(SPIKEY, 'amm_pair::get_reserves', [], [poolAddress]),
+                callView(SPIKEY, 'amm_controller::get_swap_fee', [], []).catch(() => [25]),
+            ]);
 
-    async fetchPairState(poolAddress) {
-        try {
-            const response = await axios.get(
-                `${CONFIG.rpc}/rpc/v1/accounts/${poolAddress}`,
-                { timeout: CONFIG.viewTimeout }
-            );
-            const resources = response.data?.resources || response.data?.data || [];
+            if (!reserves || !Array.isArray(reserves) || reserves.length < 2) return null;
+            const r0 = Number(reserves[0]), r1 = Number(reserves[1]);
+            if (r0 === 0 && r1 === 0) return null;
 
-            const pairResource = resources.find(r =>
-                r.type && r.type.includes('amm_pair') && r.type.includes('Pair')
-            );
+            const feeBps = Number(Array.isArray(fee) ? fee[0] : fee);
+            const decA = getDecimals(tokenA), decB = getDecimals(tokenB);
 
-            if (!pairResource || !pairResource.data) return null;
-
-            const data = pairResource.data;
-            const reserve0 = BigInt(data.reserve0 ?? 0);
-            const reserve1 = BigInt(data.reserve1 ?? 0);
-            const token0Addr = data.token0?.inner ?? data.token0 ?? '';
-            const token1Addr = data.token1?.inner ?? data.token1 ?? '';
-
-            if (reserve0 === 0n && reserve1 === 0n) return null;
-
-            const tokenA = this.getSymbolByAddress(token0Addr);
-            const tokenB = this.getSymbolByAddress(token1Addr);
-            if (!tokenA || !tokenB) return null;
-
-            let swapFee = 30;
-            try {
-                const feeResult = await callView(SPIKEY_ADDRESS, 'amm_controller::get_swap_fee', [], []);
-                if (feeResult !== null && feeResult !== undefined && !isNaN(Number(feeResult))) {
-                    swapFee = Number(feeResult);
-                }
-            } catch (_) {}
-
-            const feeScale = 10000;
-            const tokA = CONFIG.tokens[tokenA];
-            const tokB = CONFIG.tokens[tokenB];
-            if (!tokA || !tokB) return null;
-
-            const amountOut = this.getAmountOut(reserve0, reserve1, BigInt(tokA.decimals), swapFee, feeScale);
-            const priceAinB = Number(amountOut) / tokB.decimals;
+            const amountOut = this.getAmountOut(r0, r1, decA, feeBps, 10000);
+            const priceAinB = amountOut / decB;
 
             return {
                 dex: 'SPIKEY',
-                tokenA,
-                tokenB,
+                tokenA, tokenB,
                 curve: 'constant_product',
                 pairAddress: poolAddress,
-                reserveA: Number(reserve0),
-                reserveB: Number(reserve1),
-                fee: swapFee,
-                feeScale,
-                priceAinB,
+                reserveA: r0, reserveB: r1,
+                fee: feeBps, feeScale: 10000,
+                priceAinB: isNaN(priceAinB) ? 0 : priceAinB,
             };
         } catch (e) {
             logError(`fetchSpikeyPair ${poolAddress}`, e);
@@ -78,41 +40,24 @@ const spikeyEngine = {
         }
     },
 
-    getSymbolByAddress(moduleAddress) {
-        if (!moduleAddress) return null;
-        for (const [symbol, tok] of Object.entries(CONFIG.tokens)) {
-            if (tok.type.startsWith(moduleAddress + '::')) {
-                return symbol;
-            }
-        }
-        return null;
+    getAmountOut(reserveIn, reserveOut, amountIn, fee, feeScale) {
+        if (reserveIn <= 0 || reserveOut <= 0 || amountIn <= 0) return 0;
+        const feeMul = BigInt(feeScale - fee);
+        const afterFee = (BigInt(Math.floor(amountIn)) * feeMul) / BigInt(feeScale);
+        if (afterFee <= 0n) return 0;
+        return Number((afterFee * BigInt(Math.floor(reserveOut))) / (BigInt(Math.floor(reserveIn)) + afterFee));
     },
 
     simulateTrade(ps, direction, amountIn) {
-        const tokA = CONFIG.tokens[ps.tokenA] || { decimals: 1e6 };
-        const tokB = CONFIG.tokens[ps.tokenB] || { decimals: 1e6 };
-        if (amountIn <= 0) return 0;
-        const reserveIn = direction === 'AB' ? ps.reserveA : ps.reserveB;
-        const reserveOut = direction === 'AB' ? ps.reserveB : ps.reserveA;
-        const decimalsIn = direction === 'AB' ? tokA.decimals : tokB.decimals;
-        const decimalsOut = direction === 'AB' ? tokB.decimals : tokA.decimals;
-
-        const raw = this.getAmountOut(
-            BigInt(Math.floor(reserveIn)),
-            BigInt(Math.floor(reserveOut)),
-            BigInt(Math.floor(amountIn * decimalsIn)),
-            ps.fee,
-            ps.feeScale
-        );
-        return Number(raw) / decimalsOut;
-    },
-
-    getAmountOut(reserveIn, reserveOut, amountIn, fee, feeScale) {
-        if (reserveIn <= 0n || reserveOut <= 0n || amountIn <= 0n) return 0n;
-        const feeMul = BigInt(feeScale - fee);
-        const afterFee = (amountIn * feeMul) / BigInt(feeScale);
-        if (afterFee <= 0n) return 0n;
-        return (afterFee * reserveOut) / (reserveIn + afterFee);
+        const decA = getDecimals(ps.tokenA);
+        const decB = getDecimals(ps.tokenB);
+        if (direction === 'AB') {
+            const raw = this.getAmountOut(ps.reserveA, ps.reserveB, amountIn * decA, ps.fee, ps.feeScale);
+            return raw / decB;
+        } else {
+            const raw = this.getAmountOut(ps.reserveB, ps.reserveA, amountIn * decB, ps.fee, ps.feeScale);
+            return raw / decA;
+        }
     },
 };
 

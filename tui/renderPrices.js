@@ -12,15 +12,19 @@ const DEX_LABELS = {
 };
 
 function getDexLabel(dex) {
-  return DEX_LABELS[dex] || dex.substring(0, 4);
+  return DEX_LABELS[dex] || dex?.substring(0, 4) || '???';
 }
 
 function renderPrices(pairStates, boxes, walletBalances = {}) {
   const { headerBox, pricesBox } = boxes;
   const active = pairStates.filter(Boolean);
-  if (!sortedPairs) {
-    sortedPairs = [...active].sort((a, b) => a.tokenB.localeCompare(b.tokenB) || a.tokenA.localeCompare(a.tokenA));
-  }
+
+  // Ordena sempre pelos mais recentes (sem cache estática)
+  const sorted = [...active].sort((a, b) => {
+    const keyA = a.tokenB + a.tokenA + (a.dex || '');
+    const keyB = b.tokenB + b.tokenA + (b.dex || '');
+    return keyA.localeCompare(keyB);
+  });
 
   // Linha de saldos da carteira
   let balanceLine = '';
@@ -32,13 +36,13 @@ function renderPrices(pairStates, boxes, walletBalances = {}) {
     balanceLine = `{grey-fg}  Carteira: {/}${parts.join('  ')}\n`;
   }
 
-  const DEX_COL = 6; // nova coluna para a DEX
+  const DEX_COL = 6;
 
   const hdr = [
     '{bright-cyan-fg}{bold}  ◈  DEXLYN ARBITRAGE BOT v2.5.1{/}',
     '{grey-fg}  EMA Trend · Opt Size · Auto Score · ' + new Date().toLocaleDateString('pt-PT') + '{/}',
     balanceLine,
-    `{yellow-fg}{bold}  MERCADO — ${active.length} pares activos{/}`,
+    `{yellow-fg}{bold}  MERCADO — ${sorted.length} pares activos{/}`,
     '{grey-fg}  ' +
       'DEX'.padEnd(DEX_COL) +
       'PAR'.padEnd(12) +
@@ -55,20 +59,17 @@ function renderPrices(pairStates, boxes, walletBalances = {}) {
   headerBox.setContent(hdr.join('\n'));
 
   const L = [];
-  for (const orig of sortedPairs) {
-    const ps = active.find(p =>
-      p.tokenA === orig.tokenA && p.tokenB === orig.tokenB && p.curve === orig.curve
-    );
-    if (!ps) { L.push(''); continue; }
+  for (const ps of sorted) {
+    if (!ps || !ps.tokenA || !ps.tokenB) continue;
 
-    const key  = `${ps.tokenA}_${ps.tokenB}_${ps.curve}`;
+    const key  = `${ps.dex || 'UNK'}_${ps.tokenA}_${ps.tokenB}_${ps.curve || 'unknown'}`;
     const t    = trackPrice(key, ps.priceAinB);
-    const symA = CONFIG.tokens[ps.tokenA].symbol;
-    const symB = CONFIG.tokens[ps.tokenB].symbol;
+    const symA = ps.tokenA;
+    const symB = ps.tokenB;
 
     // DEX
     const dexLabel = getDexLabel(ps.dex);
-    const dexCol = `{magenta-fg}${dexLabel.padEnd(DEX_COL)}{/}`;  // usa cor magenta para destacar
+    const dexCol = `{magenta-fg}${dexLabel.padEnd(DEX_COL)}{/}`;
 
     // PAR
     const pairRaw = `${symA}/${symB}`;
@@ -76,25 +77,41 @@ function renderPrices(pairStates, boxes, walletBalances = {}) {
     const pairPad = ' '.repeat(Math.max(0, 12 - pairRaw.length));
 
     // PREÇO
-    const priceStr = `{${t.priceTag}-fg}${ps.priceAinB.toFixed(6)}{/}`;
-    const pricePad = ' '.repeat(Math.max(0, 12 - ps.priceAinB.toFixed(6).length));
+    const priceRaw = (ps.priceAinB || 0).toFixed(6);
+    const priceStr = `{${t.priceTag}-fg}${priceRaw}{/}`;
+    const pricePad = ' '.repeat(Math.max(0, 12 - priceRaw.length));
 
+    // TREND
     const trendStr = t.isNew ? '{grey-fg}─    {/}' : `${t.trendStr}   `;
+
+    // Δ%
     const tickStr = t.isNew
       ? '{grey-fg}─        {/}'
       : `{${t.dirTag}-fg}${t.pctStr.padEnd(8)}{/}`;
 
+    // SPARKLINE
     const sp = sparkline(t.ticks);
 
-    const rA = fmtReserve(ps.reserveA / CONFIG.tokens[ps.tokenA].decimals).padEnd(8);
-    const rB = fmtReserve(ps.reserveB / CONFIG.tokens[ps.tokenB].decimals).padEnd(8);
-    const feePct = ((ps.fee / ps.feeScale) * 100).toFixed(2) + '%';
+    // RESERVAS (com fallback para 0)
+    const decA = CONFIG.tokens[ps.tokenA]?.decimals || 1e6;
+    const decB = CONFIG.tokens[ps.tokenB]?.decimals || 1e6;
+    const rA = fmtReserve((ps.reserveA || 0) / decA).padEnd(8);
+    const rB = fmtReserve((ps.reserveB || 0) / decB).padEnd(8);
+
+    // FEE
+    let feePct = '0.30%';
+    if (ps.fee !== undefined && ps.feeScale) {
+      feePct = ((ps.fee / ps.feeScale) * 100).toFixed(2) + '%';
+    } else if (ps.fee !== undefined) {
+      feePct = (ps.fee / 100).toFixed(2) + '%'; // Spikey usa fee em bps
+    }
+    const feeCol = feePct.padEnd(6);
 
     L.push(
       `  ${dexCol}` +
       `${pairStr}${pairPad}${priceStr}${pricePad}` +
       `${trendStr}${tickStr}${sp}  ` +
-      `{grey-fg}${rA}${rB}${feePct}{/}`
+      `{grey-fg}${rA}${rB}${feeCol}{/}`
     );
   }
 

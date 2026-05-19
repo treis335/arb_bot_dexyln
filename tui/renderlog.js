@@ -1,13 +1,32 @@
 const { CONFIG } = require('../config/config');
 const { arbLog } = require('../detector/arbDetector');
 
+const DEX_LABELS = {
+  DEXLYN: 'DLyn',
+  DEXLYN_V3: 'DLV3',
+  SPIKEY: 'Spky',
+};
+
+function getDexLabel(dex) {
+  return DEX_LABELS[dex] || (dex ? dex.substring(0, 4) : '???');
+}
+
 function renderLog(opps, boxes) {
   const { logBox } = boxes;
   const now = new Date().toLocaleTimeString('pt-PT');
   for (const { cycle, result, score } of opps) {
+    const pathParts = cycle.path.map((token, idx) => {
+      const sym = CONFIG.tokens[token]?.symbol || token;
+      if (idx === 0) return sym;
+      const prevEdge = cycle.edges[idx - 1];
+      const dexLabel = getDexLabel(prevEdge.pair.dex);
+      return `[${dexLabel}] → ${sym}`;
+    });
+    const fullPath = pathParts.join(' ');
+
     arbLog.unshift({
       time: now,
-      path: cycle.path.map(t => CONFIG.tokens[t]?.symbol || t).join('→'),
+      path: fullPath,
       profitPct: result.profitPct,
       profitAbs: result.profitAbs,
       score,

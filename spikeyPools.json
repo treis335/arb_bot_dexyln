@@ -2,7 +2,6 @@
   { "address": "0xedefe502cabe49527b9fdb78baf36db44e476ae055bbe83b9121594f79a5bd22", "tokenA": "SUPRA", "tokenB": "DEXUSDC" },
   { "address": "0x5150c029c82353791a9e483010a2af673f9b02b4adaa8900295bdbe1d342954f", "tokenA": "SUPRA", "tokenB": "LUCKY" },
   { "address": "0x5fce71b9e64dc831776701b20d5b5c6a510430677541598b4ad9c78451d52444", "tokenA": "SUPRA", "tokenB": "LEO" },
-  { "address": "0x4ef8fd6d8501dd6e578a83b326bf10af2e7b516e0a7a65adb43eb9d904967696", "tokenA": "SUPRA", "tokenB": "CASH" },
   { "address": "0x7117dce3b042245f8b4f1a4e35cd0f63ff10200c4e8b9e67dbb9c6ab82626321", "tokenA": "SUPRA", "tokenB": "SPIKE" },
   { "address": "0x3eb42ab2a600633e3c30911464c5b07d5a486314de7b0e16ed161754489ae6ef", "tokenA": "SUPRA", "tokenB": "SOUP" },
   { "address": "0xb1c64262e00999763d49824bdf38edf87bc176994f937393f21e9f45b0bc2e5f", "tokenA": "SUPRA", "tokenB": "JONES" },
@@ -13,6 +12,7 @@
   { "address": "0x504d10c3c089a1e3ae9af54508c3d75783954d75da26db4bc521158685614649", "tokenA": "SPIKE", "tokenB": "supETH" },
   { "address": "0x2c1970cacb16b1ae04519876e63061ea2d7164fd84e1b4acc9b2f3cfac9cc50c", "tokenA": "SPIKE", "tokenB": "supUSDC" },
   { "address": "0xf00f1696b6ccbf80905fb60477838e9125b7f1f76643b83c8e02c73a4b52485c", "tokenA": "ACD", "tokenB": "SUPRA" },
+
   { "address": "0xe53b6c264bed589cf964d6e6cb52f3415c968606fca01eb713d84b5d22873d21", "tokenA": "OG", "tokenB": "SUPRA" },
   { "address": "0xc953d07f0ba7cdae425a6c01bca549f6994f66e6a9a36185821a881d433bf826", "tokenA": "SUPRA", "tokenB": "JOSH" },
   { "address": "0xd6e7943b900a532662db50421a3a25c3820ffecc6445223d93e55b7273c6eabe", "tokenA": "SUPRA", "tokenB": "CASH" },

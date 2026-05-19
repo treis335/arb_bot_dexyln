@@ -26,7 +26,6 @@ function taskWithTimeout(task, ms = 20000) {
 }
 
 let lastAutoTxTime = 0;
-let consecutiveFails = 0;
 let autoTxInProgress = false;
 
 async function maybeAutoExecute(opps, balances, boxes) {
@@ -66,21 +65,16 @@ async function maybeAutoExecute(opps, balances, boxes) {
     try {
         const res = await executeArbitrage(bestOpp, () => {});
         if (res && res.txHash) {
-            consecutiveFails = 0;
             log(`{green-fg}✅ Sucesso! Tx: ${res.txHash.slice(0,10)}...{/}`);
         } else {
-            consecutiveFails++;
             log(`{red-fg}❌ Falhou.{/}`);
         }
     } catch (e) {
-        consecutiveFails++;
         log(`{red-fg}❌ Erro: ${e.message}{/}`);
     }
 
-    if (consecutiveFails >= cfg.maxConsecutiveFails) {
-        CONFIG.autoExecute.enabled = false;
-        log(`{red-fg}⚠️ Muitas falhas seguidas. Auto-execução DESLIGADA.{/}`);
-    }
+    // 🔥 Removida a lógica que desligava o automático após falhas consecutivas.
+    // O bot permanece em modo AUTO até que o utilizador pressione a tecla 'a'.
 
     autoTxInProgress = false;
 }

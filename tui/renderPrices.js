@@ -2,9 +2,6 @@ const fmtReserve = require('../utils/fmtReserve');
 const { trackPrice, sparkline } = require('../tracker/priceTracker');
 const { CONFIG } = require('../config/config');
 
-let sortedPairs = null;
-
-// Mapeamento do nome interno da DEX para o que aparece no ecrã
 const DEX_LABELS = {
   DEXLYN:    'DLyn',
   DEXLYN_V3: 'DLV3',
@@ -12,21 +9,20 @@ const DEX_LABELS = {
 };
 
 function getDexLabel(dex) {
-  return DEX_LABELS[dex] || dex?.substring(0, 4) || '???';
+  return DEX_LABELS[dex] || (dex ? dex.substring(0, 4) : '???');
 }
 
 function renderPrices(pairStates, boxes, walletBalances = {}) {
   const { headerBox, pricesBox } = boxes;
   const active = pairStates.filter(Boolean);
 
-  // Ordena sempre pelos mais recentes (sem cache estática)
   const sorted = [...active].sort((a, b) => {
-    const keyA = a.tokenB + a.tokenA + (a.dex || '');
-    const keyB = b.tokenB + b.tokenA + (b.dex || '');
+    const keyA = (a.tokenB || '') + (a.tokenA || '') + (a.dex || '');
+    const keyB = (b.tokenB || '') + (b.tokenA || '') + (b.dex || '');
     return keyA.localeCompare(keyB);
   });
 
-  // Linha de saldos da carteira
+  // Linha de saldos
   let balanceLine = '';
   if (Object.keys(walletBalances).length > 0) {
     const parts = Object.entries(walletBalances).map(([symbol, amount]) => {
@@ -60,59 +56,64 @@ function renderPrices(pairStates, boxes, walletBalances = {}) {
 
   const L = [];
   for (const ps of sorted) {
-    if (!ps || !ps.tokenA || !ps.tokenB) continue;
+    try {
+      if (!ps || !ps.tokenA || !ps.tokenB) continue;
 
-    const key  = `${ps.dex || 'UNK'}_${ps.tokenA}_${ps.tokenB}_${ps.curve || 'unknown'}`;
-    const t    = trackPrice(key, ps.priceAinB);
-    const symA = ps.tokenA;
-    const symB = ps.tokenB;
+      const key  = `${ps.dex || 'UNK'}_${ps.tokenA}_${ps.tokenB}_${ps.curve || 'unknown'}`;
+      const priceVal = typeof ps.priceAinB === 'number' && !isNaN(ps.priceAinB) ? ps.priceAinB : 0;
+      const t    = trackPrice(key, priceVal);
+      const symA = ps.tokenA;
+      const symB = ps.tokenB;
 
-    // DEX
-    const dexLabel = getDexLabel(ps.dex);
-    const dexCol = `{magenta-fg}${dexLabel.padEnd(DEX_COL)}{/}`;
+      // DEX
+      const dexLabel = getDexLabel(ps.dex);
+      const dexCol = `{magenta-fg}${dexLabel.padEnd(DEX_COL)}{/}`;
 
-    // PAR
-    const pairRaw = `${symA}/${symB}`;
-    const pairStr = `{bold}${symA}{/}/{grey-fg}${symB}{/}`;
-    const pairPad = ' '.repeat(Math.max(0, 12 - pairRaw.length));
+      // PAR
+      const pairRaw = `${symA}/${symB}`;
+      const pairStr = `{bold}${symA}{/}/{grey-fg}${symB}{/}`;
+      const pairPad = ' '.repeat(Math.max(0, 12 - pairRaw.length));
 
-    // PREÇO
-    const priceRaw = (ps.priceAinB || 0).toFixed(6);
-    const priceStr = `{${t.priceTag}-fg}${priceRaw}{/}`;
-    const pricePad = ' '.repeat(Math.max(0, 12 - priceRaw.length));
+      // PREÇO
+      const priceRaw = priceVal.toFixed(6);
+      const priceStr = `{${t.priceTag}-fg}${priceRaw}{/}`;
+      const pricePad = ' '.repeat(Math.max(0, 12 - priceRaw.length));
 
-    // TREND
-    const trendStr = t.isNew ? '{grey-fg}─    {/}' : `${t.trendStr}   `;
+      // TREND
+      const trendStr = t.isNew ? '{grey-fg}─    {/}' : `${t.trendStr}   `;
 
-    // Δ%
-    const tickStr = t.isNew
-      ? '{grey-fg}─        {/}'
-      : `{${t.dirTag}-fg}${t.pctStr.padEnd(8)}{/}`;
+      // Δ%
+      const tickStr = t.isNew
+        ? '{grey-fg}─        {/}'
+        : `{${t.dirTag}-fg}${t.pctStr.padEnd(8)}{/}`;
 
-    // SPARKLINE
-    const sp = sparkline(t.ticks);
+      // SPARKLINE
+      const sp = sparkline(t.ticks);
 
-    // RESERVAS (com fallback para 0)
-    const decA = CONFIG.tokens[ps.tokenA]?.decimals || 1e6;
-    const decB = CONFIG.tokens[ps.tokenB]?.decimals || 1e6;
-    const rA = fmtReserve((ps.reserveA || 0) / decA).padEnd(8);
-    const rB = fmtReserve((ps.reserveB || 0) / decB).padEnd(8);
+      // RESERVAS
+      const decA = (CONFIG.tokens[symA]?.decimals) || (symA === 'SUPRA' || symA === 'CASH' ? 1e8 : 1e6);
+      const decB = (CONFIG.tokens[symB]?.decimals) || (symB === 'SUPRA' || symB === 'CASH' ? 1e8 : 1e6);
+      const rA = fmtReserve((ps.reserveA || 0) / decA).padEnd(8);
+      const rB = fmtReserve((ps.reserveB || 0) / decB).padEnd(8);
 
-    // FEE
-    let feePct = '0.30%';
-    if (ps.fee !== undefined && ps.feeScale) {
-      feePct = ((ps.fee / ps.feeScale) * 100).toFixed(2) + '%';
-    } else if (ps.fee !== undefined) {
-      feePct = (ps.fee / 100).toFixed(2) + '%'; // Spikey usa fee em bps
+      // FEE
+      let feePct = '0.30%';
+      if (ps.fee !== undefined && ps.feeScale) {
+        feePct = ((ps.fee / ps.feeScale) * 100).toFixed(2) + '%';
+      } else if (ps.fee !== undefined) {
+        feePct = (ps.fee / 100).toFixed(2) + '%';
+      }
+      const feeCol = feePct.padEnd(6);
+
+      L.push(
+        `  ${dexCol}` +
+        `${pairStr}${pairPad}${priceStr}${pricePad}` +
+        `${trendStr}${tickStr}${sp}  ` +
+        `{grey-fg}${rA}${rB}${feeCol}{/}`
+      );
+    } catch (e) {
+      // Ignora linhas que falham para não bloquear todo o render
     }
-    const feeCol = feePct.padEnd(6);
-
-    L.push(
-      `  ${dexCol}` +
-      `${pairStr}${pairPad}${priceStr}${pricePad}` +
-      `${trendStr}${tickStr}${sp}  ` +
-      `{grey-fg}${rA}${rB}${feeCol}{/}`
-    );
   }
 
   pricesBox.setContent(L.join('\n'));
